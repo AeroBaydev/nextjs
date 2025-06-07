@@ -33,7 +33,7 @@ jobs:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_KEY }}
-          script_timeout: 1800s   # Increase to 30 minutes
+          script_timeout: 7200s   # Increase to 2 hours
           source: "build.zip"
           target: "/var/www/html"
 
