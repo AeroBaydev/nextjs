@@ -8,6 +8,7 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 180   # <-- Set timeout here for the entire job
 
     steps:
       - name: Checkout repository
