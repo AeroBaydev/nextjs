@@ -3,7 +3,7 @@ name: Auto Deploy Next.js to EC2 (Live on Push to Master)
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   deploy:
