@@ -36,6 +36,7 @@ jobs:
           key: ${{ secrets.EC2_KEY }}
           source: "build.zip"
           target: "/var/www/html"
+          debug: true
 
       - name: SSH into EC2 and deploy
         uses: appleboy/ssh-action@v1.0.3
