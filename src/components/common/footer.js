@@ -61,7 +61,7 @@ const Footer = () => {
                             <div className="col-md-12 p-0 card ftr-card">
                                 <div className="row">
                                     <div className="col-md-8">
-                                        <p>‘AeroBay’ brand is owned and operated by Aviotron Aerospace Pvt Ltd. We are one of the fastest-growing companies in India and are focused on upskilling the next generation of Aviators, Designers, Scientists and much more. Our experiential learning solutions are adored by students, parents and educational institutions.</p>
+                                        <p>‘AeroBay’ brand is owned and operated by Aviotron Aerospace Pvt Ltd. We are one of the fastest-growing companies in India and are focused on upskilling the next generation of Aviators, Designers, Scientists and many more. Our experiential learning solutions are adored by students, parents and educational institutions.</p>
                                         <div className="col-md-10 p-0 crd-btm-content">
                                             <div className="row">
                                                 <div className="col-md-6">
@@ -74,7 +74,7 @@ const Footer = () => {
                                                         </li>
 														<li>
                                                             <a href="tel:9024770407">
-                                                                <FontAwesomeIcon icon={faPhone} /> +91 9024770407
+                                                                <FontAwesomeIcon icon={faPhone} /> +91 9942329092
                                                             </a>
                                                         </li>
                                                     </ul>

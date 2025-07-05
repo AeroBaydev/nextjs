@@ -1,0 +1,7 @@
+# Allow ChatGPT crawler full access
+User-agent: ChatGPT-User
+Disallow: /admin
+
+# Allow all other bots, except admin page
+User-agent: *
+Disallow: /admin

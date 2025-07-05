@@ -164,7 +164,7 @@ const AllJobs = () => {
                                                 {selectedJob?.status === 1 ?
                                                     <a className="box-active" href="#">Active</a> :
                                                     <a className="box-inactive" href="#">Inactive</a>}
-                                                <a className="btn btn-theme view-btn apply_btn" href="#"><span>Apply now <i>&#129109;</i></span></a>
+                                                <a className="btn btn-theme view-btn apply_btn" href="https://zfrmz.in/L7I9X4xicVQXNANUh9SN"><span>Apply now <i>&#129109;</i></span></a>
                                             </div>
                                         </div>
                                         <div className="card card-inner job-card-info">
