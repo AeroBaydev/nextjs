@@ -139,7 +139,7 @@ const GetInTouch = () => {
                                     </div>
                                 </div>
                                 <div class="col-md-6 map-rightblk text-right">
-                                    <a href="https://maps.app.goo.gl/F8t89AN26Jg9kvBX8" class="btn btn-primary"><span>NAVIGATE <span>&#129109;</span></span></a>
+                                    <a href="#" class="btn btn-primary"><span>NAVIGATE <span>&#129109;</span></span></a>
                                 </div>
                             </div>
                         </div>
