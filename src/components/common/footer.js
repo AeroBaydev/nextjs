@@ -73,8 +73,8 @@ const Footer = () => {
                                                             </a>
                                                         </li>
 														<li>
-                                                            <a href="tel:9024770407">
-                                                                <FontAwesomeIcon icon={faPhone} /> +91 9942329092
+                                                            <a href="tel:9942329092">
+                                                                <FontAwesomeIcon icon={faPhone} /> +91 9942329092 
                                                             </a>
                                                         </li>
                                                     </ul>
@@ -126,3 +126,4 @@ const Footer = () => {
     </>)
 }
 export default Footer;
+// Note: Ensure that the FontAwesome icons are properly imported and available in your project.
