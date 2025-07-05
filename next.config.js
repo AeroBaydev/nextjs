@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const webpack = require('webpack');
 const nextConfig = {
-  output: 'export',
+  output: 'next export',
   images: {
     unoptimized: true,
   },
