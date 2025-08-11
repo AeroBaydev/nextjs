@@ -38,7 +38,7 @@ const OurClient = () => {
   // Handle form opening
   const handleScheduleVisit = () => {
     // Replace # with your actual form link
-    window.open("#", "_blank")
+    window.open("https://zfrmz.in/GUfZeNcgc4tMmga3ETeP", "_blank")
   }
 
   // Simple auto-slide effect - no animations, just change images
