@@ -1,6 +1,6 @@
 const schools = [
   {
-    name: "Steamfield School, Jabalpur",
+    name: "Stemfield School, Jabalpur",
     logo: "/images/clients/19.png",
     joined: "2024",
     principal: "Ms. Manmeet Kohli",
@@ -15,7 +15,7 @@ const schools = [
       "/images/gallery/SF5.jpg",
       "/images/gallery/SF6.jpg",
     ],
-    about: "Aerobay started working with STEAMFIELD School, Jabalpur in 2024.",
+    about: "Aerobay started working with STEMFIELD School, Jabalpur in 2024.",
     board: "CBSE",
   },
   {

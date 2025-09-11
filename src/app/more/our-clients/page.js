@@ -639,10 +639,9 @@ const OurClient = () => {
                   </div>
 
                   <div className="info-card">
-                    <div className="info-label">Testimonial</div>
+                    <div className="info-label">Highlights</div>
                     <div className="info-value">
-                      {schools[expanded].testimonial ||
-                        "Collaborating with AeroBay has been a transformative experience for our educational programs."}
+                      <div className="info-value">{schools[expanded].highlights}</div>
                     </div>
                   </div>
                 </div>
