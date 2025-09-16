@@ -286,8 +286,8 @@ const schools = [
     name: "CPS, Kalikapur (Kolkata)",
     logo: "/images/clients/76.png",
     joined: "2024",
-    principal: "Mrs. Proma Dash",
-    website: "https://calcuttapublicschool.in/web-en/",
+    principal: "Mrs. Proma Das",  
+    website: "https://calcuttapublicschools.com/",
     highlights: "With their project ‘Guardian Robo’, students participated in the World Robot Olympiad 2025 and advanced to the Regional Level following a standout performance in the Virtual Round.",
     location: "West Bengal",
     gallery: [
