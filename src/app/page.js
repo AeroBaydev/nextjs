@@ -539,6 +539,8 @@ export default function Home() {
         </div> */}
       </section >
 
+
+                                                    {/* Why We Stand Out? */}
       <section className="whyus-section bg-blk">
         <div className="container">
           <div className="row">
@@ -564,7 +566,7 @@ export default function Home() {
                 </figure>
                 <div className="story tile-first1" style={{ backgroundColor: 'rgba(0, 0, 0, 0.85)' }}>
                   <h3 style={{ color: '#fff' }}>
-                    <span style={{ color: 'yellow' }}>NEP 2020</span> {' '} Framework-aligned Experimental Learning Ecosystem for your school.
+                    <span style={{ color: 'yellow' }}>NEP 2020</span> {' '} Framework-aligned Experiential Learning Ecosystem for your school.
 
                   </h3>
                 </div>
@@ -596,7 +598,7 @@ export default function Home() {
                 </figure>
                 <div className="story tile-first1" style={{ backgroundColor: 'rgba(0, 0, 0, 0.85)' }}>
                   <h3 style={{ color: '#fff' }}>
-                    A pathway to STEAM and career guidance with an increased focus on <span style={{ color: 'yellow' }}>enterpreneurship</span> from 6th grade and above.
+                    A pathway to STEAM and career guidance with an increased focus on <span style={{ color: 'yellow' }}>entrepreneurship</span> from 6th grade and above.
                   </h3>
                 </div>
               </div>
@@ -626,7 +628,6 @@ export default function Home() {
                   <img src="/images/gallery-5.png" alt="" />
                 </figure>
                 <div className="story tile-first1" style={{ backgroundColor: 'rgba(0, 0, 0, 0.85)' }}>
-
                   <h3 style={{ color: '#fff' }}>
                     A program focusing on the <span style={{ color: 'yellow' }}>21st-century skills</span> along with holistic student development rather than just Robotics and Coding.
                   </h3>
@@ -643,13 +644,10 @@ export default function Home() {
                 </figure>
                 <div className="story tile-first1" style={{ backgroundColor: 'rgba(0, 0, 0, 0.85)' }}>
                   <h3 style={{ color: '#fff' }}>
-                    A program ensuring complete hand-holding to achive  <span style={{ color: 'yellow' }}>guarnteed outcomes</span> customized for each board and each class.
+                   An outcome-driven program with <span style={{ color: 'yellow' }}>complete guidance</span>, personalized for each curriculum and grade.
                   </h3>
                 </div>
               </div>
-              {/** Repeat this block for other thumbnails with `onMouseEnter` for thumb2 to thumb6 */}
-
-              {/* Add other thumbnails similarly */}
             </div>
           </div>
 
@@ -678,7 +676,7 @@ export default function Home() {
           </span>
         </Link>
       </section>
-
+                                                         {/* Our Clients */}
 
       <section className="ourclients-section bg-blk">
         <div className="container">

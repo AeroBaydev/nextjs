@@ -14,7 +14,7 @@ const Footer = () => {
                         </div>
                         <div className="col-md-5">
                             <form className="subscribe_fm">
-                                <input type="email" className="form-control" value="" placeholder="Your Email" required />
+                                <input type="email" className="form-control" placeholder="Your Email" required />
                                 <button type="submit" className="btn btn-primary"><span class="outer-bx">Subscribe</span></button>
                             </form>
                         </div>
