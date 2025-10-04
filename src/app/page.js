@@ -559,7 +559,15 @@ export default function Home() {
                 className={`thumbnl items ${activeThumb == "thumb1" ? " show-card " : " "}`}
                 onMouseEnter={() => showAnyProduct('thumb1')}
                 onMouseLeave={() => showAnyProduct('')}
-                style={{ gridColumn: 'span 2', gridRow: 'span 4', display: 'block', alignItems: 'center', justifyContent: 'center' }}
+                style={{ 
+                  gridColumn: 'span 2', 
+                  gridRow: 'span 4', 
+                  display: 'block', 
+                  alignItems: 'center', 
+                  justifyContent: 'center',
+                  opacity: activeThumb === 'thumb1' ? '1' : (activeThumb ? '0' : '1'),
+                  zIndex: activeThumb === 'thumb1' ? '2' : '1'
+                }}
               >
                 <figure className="story-img-mob">
                   <img src="/images/gallery-1.png" alt="" />
@@ -575,7 +583,15 @@ export default function Home() {
                 className={`thumbnl items ${activeThumb == "thumb2" ? " show-card " : " "}`}
                 onMouseEnter={() => showAnyProduct('thumb2')}
                 onMouseLeave={() => showAnyProduct('')}
-                style={{ gridColumn: 'span 2', gridRow: 'span 3', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+                style={{ 
+                  gridColumn: 'span 2', 
+                  gridRow: 'span 3', 
+                  display: 'flex', 
+                  alignItems: 'center', 
+                  justifyContent: 'center',
+                  opacity: activeThumb === 'thumb2' ? '1' : (activeThumb ? '0' : '1'),
+                  zIndex: activeThumb === 'thumb2' ? '2' : '1'
+                }}
               >
                 <figure className="story-img-mob">
                   <img src="/images/gallery-2.png" alt="" />
@@ -591,7 +607,15 @@ export default function Home() {
                 className={`thumbnl items ${activeThumb == "thumb3" ? " show-card " : " "}`}
                 onMouseEnter={() => showAnyProduct('thumb3')}
                 onMouseLeave={() => showAnyProduct('')}
-                style={{ gridColumn: 'span 2', gridRow: 'span 4', display: 'block', alignItems: 'center', justifyContent: 'center' }}
+                style={{ 
+                  gridColumn: 'span 2', 
+                  gridRow: 'span 4', 
+                  display: 'block', 
+                  alignItems: 'center', 
+                  justifyContent: 'center',
+                  opacity: activeThumb === 'thumb3' ? '1' : (activeThumb ? '0' : '1'),
+                  zIndex: activeThumb === 'thumb3' ? '2' : '1'
+                }}
               >
                 <figure className="story-img-mob">
                   <img src="/images/gallery-3.png" alt="" />
@@ -606,7 +630,15 @@ export default function Home() {
                 className={`thumbnl items ${activeThumb == "thumb4" ? " show-card " : " "}`}
                 onMouseEnter={() => showAnyProduct('thumb4')}
                 onMouseLeave={() => showAnyProduct('')}
-                style={{ gridColumn: 'span 2', gridRow: 'span 4', display: 'block', alignItems: 'center', justifyContent: 'center' }}
+                style={{ 
+                  gridColumn: 'span 2', 
+                  gridRow: 'span 4', 
+                  display: 'block', 
+                  alignItems: 'center', 
+                  justifyContent: 'center',
+                  opacity: activeThumb === 'thumb4' ? '1' : (activeThumb ? '0' : '1'),
+                  zIndex: activeThumb === 'thumb4' ? '2' : '1'
+                }}
               >
                 <figure className="story-img-mob">
                   <img src="/images/gallery-4.png" alt="" />
@@ -622,7 +654,15 @@ export default function Home() {
                 className={`thumbnl items ${activeThumb == "thumb5" ? " show-card " : " "}`}
                 onMouseEnter={() => showAnyProduct('thumb5')}
                 onMouseLeave={() => showAnyProduct('')}
-                style={{ gridColumn: 'span 2', gridRow: 'span 4', display: 'block', alignItems: 'center', justifyContent: 'center' }}
+                style={{ 
+                  gridColumn: 'span 2', 
+                  gridRow: 'span 4', 
+                  display: 'block', 
+                  alignItems: 'center', 
+                  justifyContent: 'center',
+                  opacity: activeThumb === 'thumb5' ? '1' : (activeThumb ? '0' : '1'),
+                  zIndex: activeThumb === 'thumb5' ? '2' : '1'
+                }}
               >
                 <figure className="story-img-mob">
                   <img src="/images/gallery-5.png" alt="" />
@@ -637,7 +677,15 @@ export default function Home() {
                 className={`thumbnl items ${activeThumb == "thumb6" ? " show-card " : " "}`}
                 onMouseEnter={() => showAnyProduct('thumb6')}
                 onMouseLeave={() => showAnyProduct('')}
-                style={{ gridColumn: 'span 2', gridRow: 'span 4', display: 'block', alignItems: 'center', justifyContent: 'center' }}
+                style={{ 
+                  gridColumn: 'span 2', 
+                  gridRow: 'span 4', 
+                  display: 'block', 
+                  alignItems: 'center', 
+                  justifyContent: 'center',
+                  opacity: activeThumb === 'thumb6' ? '1' : (activeThumb ? '0' : '1'),
+                  zIndex: activeThumb === 'thumb6' ? '2' : '1'
+                }}
               >
                 <figure className="story-img-mob">
                   <img src="/images/gallery-6.png" alt="" />
