@@ -340,7 +340,7 @@ export default function MeetTheVisionaries() {
                     <div className="row">
                       <div className="col-md-3">
                         <div className="block1 wrap-pic-w team-card">
-                          <img src="/images/team/S7401934-17.jpg" alt="" />
+                          <img src="/images/team/vineet.png" alt="" />
                           <div className="fig-caption">
                             <div className="member-info">
                               <h4>Vineet Kumar Jaiswal</h4>
@@ -359,7 +359,7 @@ export default function MeetTheVisionaries() {
                       </div>
                       <div className="col-md-3">
                         <div className="block1 wrap-pic-w team-card">
-                          <img src="/images/team/S7402426-24.jpg" alt="" />
+                          <img src="/images/team/sarthak.png" alt="" />
                           <div className="fig-caption">
                             <div className="member-info">
                               <h4>
@@ -379,7 +379,7 @@ export default function MeetTheVisionaries() {
                       </div>
                       <div className="col-md-3">
                         <div className="block1 wrap-pic-w team-card">
-                          <img src="/images/team/S7402474-25.jpg" alt="" />
+                          <img src="/images/team/karan.png" alt="" />
                           <div className="fig-caption">
                             <div className="member-info">
                               <h4>
@@ -400,7 +400,7 @@ export default function MeetTheVisionaries() {
                       </div>
                       <div className="col-md-3">
                         <div className="block1 wrap-pic-w team-card">
-                          <img src="/images/team/S7401930-15.jpg" alt="" />
+                          <img src="/images/team/ritu.png" alt="" />
                           <div className="fig-caption">
                             <div className="member-info">
                               <h4>
@@ -430,9 +430,29 @@ export default function MeetTheVisionaries() {
                 >
                   <div className="col tab-content">
                     <div className="row">
+                        <div className="col-md-3">
+                        <div className="block1 wrap-pic-w team-card">
+                          <img src="/images/team/S7401885-14.jpg" alt="" />
+                          <div className="fig-caption">
+                            <div className="member-info">
+                              <h4>
+                                Manglesh <span className="d-block">Pandey</span>
+                              </h4>
+                              <p>
+                                <small>Training Admin Head</small>
+                              </p>
+                            </div>
+                            <div className="member-network">
+                              <a href="https://www.linkedin.com/in/manglesh-pandey-063275176/">
+                                <FontAwesomeIcon icon={faLinkedin} />
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                       <div className="col-md-3">
                         <div className="block1 wrap-pic-w team-card">
-                          <img src="/images/team/S7401864-12.jpg" alt="" />
+                          <img src="/images/team/ashwani.png" alt="" />
                           <div className="fig-caption">
                             <div className="member-info">
                               <h4>
@@ -473,7 +493,7 @@ export default function MeetTheVisionaries() {
                       </div>
                       <div className="col-md-3">
                         <div className="block1 wrap-pic-w team-card">
-                          <img src="/images/team/S7402363-21.jpg" alt="" />
+                          <img src="/images/team/nitish.png" alt="" />
                           <div className="fig-caption">
                             <div className="member-info">
                               <h4>
@@ -763,7 +783,7 @@ export default function MeetTheVisionaries() {
                     <div className="row">
                       <div className="col-md-3">
                         <div className="block1 wrap-pic-w team-card">
-                          <img src="/images/team/Satendra.jpg" alt="" />
+                          <img src="/images/team/saumya.png" alt="" />
                           <div className="fig-caption">
                             <div className="member-info">
                               <h4>
@@ -781,26 +801,7 @@ export default function MeetTheVisionaries() {
                           </div>
                         </div>
                       </div>
-                      <div className="col-md-3">
-                        <div className="block1 wrap-pic-w team-card">
-                          <img src="/images/team/S7401885-14.jpg" alt="" />
-                          <div className="fig-caption">
-                            <div className="member-info">
-                              <h4>
-                                Manglesh <span className="d-block">Pandey</span>
-                              </h4>
-                              <p>
-                                <small>Pre Sales Manager</small>
-                              </p>
-                            </div>
-                            <div className="member-network">
-                              <a href="https://www.linkedin.com/in/manglesh-pandey-063275176/">
-                                <FontAwesomeIcon icon={faLinkedin} />
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                      
                     </div>
                   </div>
                 </div>
@@ -817,7 +818,7 @@ export default function MeetTheVisionaries() {
                     <div className="row">
                       <div className="col-md-3">
                         <div className="block1 wrap-pic-w team-card">
-                          <img src="/images/team/Satendra.jpg"alt="Saumya Patel"/>
+                          <img src="/images/team/gaurav.png"alt="gaurav"/>
                           <div className="fig-caption">
                             <div className="member-info">
                               <h4>
@@ -854,7 +855,7 @@ export default function MeetTheVisionaries() {
                     <div className="row">
                       <div className="col-md-3">
                         <div className="block1 wrap-pic-w team-card">
-                          <img src="/images/team/Saonal.png" alt="" />
+                          <img src="/images/team/sonal.png" alt="" />
                           <div className="fig-caption">
                             <div className="member-info">
                               <h4>
@@ -875,7 +876,7 @@ export default function MeetTheVisionaries() {
                       </div>
                       <div className="col-md-3">
                         <div className="block1 wrap-pic-w team-card">
-                          <img src="/images/team/S7401952-18.jpg" alt="" />
+                          <img src="/images/team/samriddhi.png" alt="" />
                           <div className="fig-caption">
                             <div className="member-info">
                               <h4>
