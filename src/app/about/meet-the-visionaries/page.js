@@ -345,7 +345,7 @@ export default function MeetTheVisionaries() {
                             <div className="member-info">
                               <h4>Vineet Kumar Jaiswal</h4>
                               <p>
-                                <small>Graphic Design</small>
+                                <small>Graphic Designer</small>
                               </p>
                             </div>
                             <div className="member-network">
