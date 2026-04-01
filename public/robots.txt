@@ -5,3 +5,6 @@ Disallow: /admin
 # Allow all other bots, except admin page
 User-agent: *
 Disallow: /admin
+
+# Sitemap
+Sitemap: https://aerobay.in/sitemap.xml

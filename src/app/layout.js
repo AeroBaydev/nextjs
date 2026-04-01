@@ -41,7 +41,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={manrope.className}>
       <Head>
-        <title>Arobay</title>
+        <title>AeroBay</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link
           rel="stylesheet"

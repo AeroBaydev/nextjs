@@ -225,26 +225,6 @@ export default function MeetTheVisionaries() {
                     <div className="row">
                       <div className="col-md-3">
                         <div className="block1 wrap-pic-w team-card">
-                          <img src="/images/team/S7401840-10.jpg" alt="" />
-                          <div className="fig-caption">
-                            <div className="member-info">
-                              <h4>
-                                Aditya <span className="d-block">SV</span>
-                              </h4>
-                              <p>
-                                <small>VP - Operations</small>
-                              </p>
-                            </div>
-                            <div className="member-network">
-                              <a href="https://www.linkedin.com/in/aditya-s-v-16612a198/">
-                                <FontAwesomeIcon icon={faLinkedin} />
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-3">
-                        <div className="block1 wrap-pic-w team-card">
                           <img src="/images/team/S7402352-20.jpg" alt="" />
                           <div className="fig-caption">
                             <div className="member-info">
@@ -281,26 +261,6 @@ export default function MeetTheVisionaries() {
                             </div>
                             <div className="member-network">
                               <a href="https://www.linkedin.com/in/abhishek-shankar/">
-                                <FontAwesomeIcon icon={faLinkedin} />
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-3">
-                        <div className="block1 wrap-pic-w team-card">
-                          <img src="/images/team/S7402408-23.jpg" alt="" />
-                          <div className="fig-caption">
-                            <div className="member-info">
-                              <h4>
-                                Manisha <span className="d-block">Luthra</span>
-                              </h4>
-                              <p>
-                                <small>Cheif People Officer</small>
-                              </p>
-                            </div>
-                            <div className="member-network">
-                              <a href="https://www.linkedin.com/in/manisha-luthra-b30a511a4/">
                                 <FontAwesomeIcon icon={faLinkedin} />
                               </a>
                             </div>
