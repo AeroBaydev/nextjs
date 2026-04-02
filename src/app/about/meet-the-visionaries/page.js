@@ -320,27 +320,6 @@ export default function MeetTheVisionaries() {
                       </div>
                       <div className="col-md-3">
                         <div className="block1 wrap-pic-w team-card">
-                          <img src="/images/team/karan.png" alt="" />
-                          <div className="fig-caption">
-                            <div className="member-info">
-                              <h4>
-                                Karan
-                                <span className="d-block">Singh Khati</span>
-                              </h4>
-                              <p>
-                                <small>Interior Designer</small>
-                              </p>
-                            </div>
-                            <div className="member-network">
-                              <a href="https://www.linkedin.com/in/karan-singh-khati-7a694937b/">
-                                <FontAwesomeIcon icon={faLinkedin} />
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-3">
-                        <div className="block1 wrap-pic-w team-card">
                           <img src="/images/team/ritu.png" alt="" />
                           <div className="fig-caption">
                             <div className="member-info">

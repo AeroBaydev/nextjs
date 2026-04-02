@@ -68,13 +68,13 @@ const Footer = () => {
                                                     <h6>Phone</h6>
                                                     <ul className="list-inline">
                                                         <li>
-                                                            <a href="tel:6378782207">
-                                                                <FontAwesomeIcon icon={faPhone} /> +91 6378782207
+                                                            <a href="tel:9942329092">
+                                                                <FontAwesomeIcon icon={faPhone} /> +91 9942329092
                                                             </a>
                                                         </li>
 														<li>
-                                                            <a href="tel:9942329092">
-                                                                <FontAwesomeIcon icon={faPhone} /> +91 9942329092 
+                                                            <a href="tel:9871213152">
+                                                                <FontAwesomeIcon icon={faPhone} /> +91 9871213152
                                                             </a>
                                                         </li>
                                                     </ul>
