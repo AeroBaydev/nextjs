@@ -162,7 +162,7 @@ export default function CompositeSkillLabPage() {
                   className="light_heading"
                   style={{
                     position: "absolute",
-                    top: "-22px",
+                    top: "clamp(-10px, -6vw, -10px)",
                     left: 0,
                     right: 0,
                     zIndex: 0,
@@ -170,7 +170,7 @@ export default function CompositeSkillLabPage() {
                     fontSize: "clamp(45px, 10vw, 80px)",
                     fontWeight: "800",
                     letterSpacing: "3px",
-                    opacity: 2,
+                    opacity: 1,
                     lineHeight: 1,
                     textTransform: "uppercase",
                     transform: "translateY(0px)",
@@ -185,11 +185,11 @@ export default function CompositeSkillLabPage() {
                     position: "relative",
                     zIndex: 2,
                     fontSize: "clamp(1.25rem, 2vw, 3.6rem)",
-                    fontWeight: 800,
+                    fontWeight: 700,
                     lineHeight: 1.1,
                     color: "#ffffff",
                     maxWidth: "950px",
-                    margin: "60px auto 0 auto",
+                    margin: "clamp(105px, 10vw, 80px) auto 0 auto",
                     paddingTop: 0,
                     letterSpacing: "-0.02em",
                   }}
