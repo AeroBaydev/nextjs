@@ -610,7 +610,7 @@ export default function MeetTheVisionaries() {
                       </div>
                       <div className="col-md-3">
                         <div className="block1 wrap-pic-w team-card">
-                          <img src="/images/team/Faizan.png" alt="" />
+                          <img src="/images/team/faizan.png" alt="" />
                           <div className="fig-caption">
                             <div className="member-info">
                               <h4>

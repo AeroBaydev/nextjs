@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://aerobay.in";
@@ -93,6 +94,34 @@ const serviceJsonLd = {
   url: `${siteUrl.replace(/\/$/, "")}/composite-skill-lab`,
 };
 
+const benefitCardStyle = {
+  background: "linear-gradient(180deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.04) 100%)",
+  border: "1px solid rgba(255,255,255,0.16)",
+  boxShadow: "0 10px 24px rgba(0,0,0,0.24)",
+  minHeight: 200,
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "flex-start",
+};
+
+const benefitTitleStyle = {
+  color: "#ffffff",
+  fontSize: "clamp(1.15rem, 1.55vw, 1.55rem)",
+  lineHeight: 1.15,
+  marginBottom: 10,
+  wordBreak: "normal",
+  overflowWrap: "break-word",
+};
+
+const benefitBodyStyle = {
+  color: "rgba(255,255,255,0.86)",
+  lineHeight: 1.55,
+  fontSize: "0.97rem",
+  textAlign: "left",
+  wordSpacing: "normal",
+  letterSpacing: "normal",
+};
+
 export default function CompositeSkillLabPage() {
   return (
     <div className="page-main">
@@ -108,108 +137,363 @@ export default function CompositeSkillLabPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
       />
-      <section className="page_banner whatsnew-banner bg-blk">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-10 mx-auto heading-section text-center">
-              <div className="light_heading">Composite Skill Lab</div>
-              <h1>AeroBay Composite Skill Lab for CBSE & NEP-Aligned Schools</h1>
-              <p className="text-center col-md-10 mx-auto">
-                India&apos;s industrial grade Composite Skill Lab partner—end-to-end
-                lab design, equipment, CBSE skill modules, robotics, AI, aerospace,
-                drones, coding, and hands-on learning your students remember.
-              </p>
+      <section
+        className="page_banner whatsnew-banner bg-blk position-relative overflow-hidden"
+        style={{ paddingTop: "clamp(72px, 6vw, 110px)", paddingBottom: 64 }}
+      >
+        {/* Improves readability over dark hero background */}
+        <div
+          aria-hidden="true"
+          className="position-absolute top-0 start-0 w-100 h-100"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.88) 100%)",
+            pointerEvents: "none",
+            zIndex: 0,
+          }}
+        />
+        <div className="position-relative" style={{ zIndex: 1 }}>
+          <div className="container">
+            <div className="row">
+              <div className="col-md-10 mx-auto heading-section text-center px-3 position-relative">
+
+                {/* Background Watermark Text */}
+                <div
+                  className="light_heading"
+                  style={{
+                    position: "absolute",
+                    top: "-22px",
+                    left: 0,
+                    right: 0,
+                    zIndex: 0,
+                    pointerEvents: "none",
+                    fontSize: "clamp(45px, 10vw, 80px)",
+                    fontWeight: "800",
+                    letterSpacing: "3px",
+                    opacity: 2,
+                    lineHeight: 1,
+                    textTransform: "uppercase",
+                    transform: "translateY(0px)",
+                  }}
+                >
+                  Composite Skill Lab
+                </div>
+
+                {/* Main Heading */}
+                <h1
+                  style={{
+                    position: "relative",
+                    zIndex: 2,
+                    fontSize: "clamp(1.25rem, 2vw, 3.6rem)",
+                    fontWeight: 800,
+                    lineHeight: 1.1,
+                    color: "#ffffff",
+                    maxWidth: "950px",
+                    margin: "60px auto 0 auto",
+                    paddingTop: 0,
+                    letterSpacing: "-0.02em",
+                  }}
+                >
+                  AeroBay Composite Skill Lab for CBSE & NEP-Aligned Schools
+                </h1>
+
+                {/* Subheading */}
+                <p
+                  className="mx-auto"
+                  style={{
+                    position: "relative",
+                    zIndex: 2,
+                    maxWidth: "820px",
+                    marginTop: 14,
+                    fontSize: "clamp(1rem, 1.8vw, 1.35rem)",
+                    lineHeight: "1.8",
+                    color: "rgba(255,255,255,0.88)",
+                    fontWeight: 400,
+                    paddingBottom: 6,
+                  }}
+                >
+                  India's industrial grade Composite Skill Lab partner—end-to-end lab design,
+                  equipment, CBSE skill modules, robotics, AI, aerospace, drones, coding, and
+                  hands-on learning your students remember.
+                </p>
+
+              </div>
             </div>
           </div>
-        </div>
-        <div className="container">
-          <div className="row">
-            <div className="col-md-12 btm_wncontent">
-              <p>
-                When educators and administrators search for{" "}
-                <strong>top Composite Skill Lab</strong> options,{" "}
-                <strong>CBSE Composite Skill Lab providers</strong>, or{" "}
-                <strong>best composite skill lab in India</strong>, they need a
-                partner who combines regulatory alignment with real engineering and
-                maker culture. AeroBay builds{" "}
-                <strong>Composite Skill Labs</strong> that satisfy mandate intent:
-                experiential learning, multi-domain equipment, and curriculum links
-                across aerospace, space-ed, drones, robotics &amp; AI, design,
-                meteorology, e-vehicles, electronics, coding, data science, and
-                more.
-              </p>
-              <p>
-                Our teams work with schools to deliver aesthetically designed,
-                durable lab layouts with prototyping machinery chosen for years of
-                sustained use—not one-off demos. Whether your priority is meeting
-                the latest <strong>CBSE circular</strong> expectations for a{" "}
-                <strong>Composite Skill Lab</strong>, or exceeding them with a
-                flagship innovation space, AeroBay is structured to support you from
-                planning through faculty enablement.
-              </p>
+          <div className="container">
+            <div className="row">
+              <div className="col-md-12 btm_wncontent">
+                <div style={{ maxWidth: 1080 }} className="mx-auto px-3">
+                  <div className="mt-2">
+                    <div className="row g-4">
+                      <div className="col-12">
+                        <div
+                          className="rounded-4 overflow-hidden shadow-sm"
+                          style={{
+                            border: "1px solid rgba(255,255,255,0.14)",
+                            boxShadow: "0 18px 40px rgba(0,0,0,0.35)",
+                            background: "rgba(255,255,255,0.03)",
+                          }}
+                        >
+                          <Image
+                            src="/images/gallery/GDGSiliguri4.jpg"
+                            alt="Composite Skill Lab setup by AeroBay"
+                            width={1200}
+                            height={675}
+                            className="w-100 h-auto"
+                            sizes="(max-width: 768px) 100vw, 800px"
+                          />
+                        </div>
+                      </div>
 
-              <div className="btm-bx-content col">
-                <div className="row">
-                  <div className="col-md-7">
-                    <h2>What schools get with an AeroBay Composite Skill Lab</h2>
-                    <ul className="text-start">
-                      <li>
-                        Industrial grade lab concepts aligned with{" "}
-                        <strong>NEP 2020</strong> and{" "}
-                        <strong>NCF-SE</strong> skill goals
-                      </li>
-                      <li>
-                        Coverage of high-demand tracks: robotics, AI &amp; IoT,
-                        electronics, coding, design thinking, space and aerospace
-                        themes
-                      </li>
-                      <li>
-                        Prototyping and maker infrastructure designed for long-term
-                        programs, not disposable kits
-                      </li>
-                      <li>
-                        Support narrative for parents and leadership: clear STEAM
-                        outcomes and visibility for your institution
-                      </li>
-                    </ul>
+                      <div className="col-12 col-lg-16">
+                        <p>
+                          When educators and administrators search for{" "}
+                          <strong>top Composite Skill Lab</strong> options,{" "}
+                          <strong>CBSE Composite Skill Lab providers</strong>, or{" "}
+                          <strong>best composite skill lab in India</strong>, they need a
+                          partner who combines regulatory alignment with real engineering and
+                          maker culture.
+                        </p>
+                        <p className="mt-3">
+                          AeroBay builds{" "}
+                          <strong>Composite Skill Labs</strong> that satisfy mandate intent:
+                          experiential learning, multi-domain equipment, and curriculum links
+                          across aerospace, space-ed, drones, robotics &amp; AI, design,
+                          meteorology, e-vehicles, electronics, coding, data science, and
+                          more.
+                        </p>
+                        <p className="mt-3">
+                          Our teams work with schools to deliver aesthetically designed,
+                          durable lab layouts with prototyping machinery chosen for years of
+                          sustained use—not one-off demos.
+                        </p>
+                        <p className="mt-3">
+                          Whether your priority is meeting the latest{" "}
+                          <strong>CBSE circular</strong> expectations for a{" "}
+                          <strong>Composite Skill Lab</strong>, or exceeding them with a
+                          flagship innovation space, AeroBay is structured to support you from
+                          planning through faculty enablement.
+                        </p>
+                      </div>
+                    </div>
                   </div>
-                  <div className="col-md-5">
-                    <h2>Explore more from AeroBay</h2>
-                    <p>
-                      Read our deep dive on{" "}
-                      <Link href="/more/education">
-                        revolutionising education with Composite Skill Labs
-                      </Link>
-                      , see{" "}
-                      <Link href="/aerobay-for-school">AeroBay for Schools</Link> for
-                      lab storytelling and video, or{" "}
-                      <Link href="/get-in-touch">get in touch</Link> for a tailored
-                      proposal.
-                    </p>
-                    <p>
-                      Official reference:{" "}
-                      <a
-                        href="https://www.cbse.gov.in/cbsenew/documents/75_Circular_2024_Composite_Skill_Labs_27082024.pdf"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        CBSE circular on Composite Skill Labs (PDF)
-                      </a>
-                    </p>
+                  <div className="btm-bx-content col mt-5">
+                    <div className="row g-4 align-items-stretch">
+
+                      <section className="py-5">
+                        <div className="container">
+                          <div className="row g-5 align-items-start">
+
+                            {/* LEFT CONTENT */}
+                            <div className="col-lg-7">
+
+                              <h2
+                                className="fw-bold mb-3"
+                                style={{
+                                  color: "#ffffff",
+                                  fontSize: "clamp(1.6rem, 2.8vw, 2.25rem)",
+                                  lineHeight: 1.2,
+                                }}
+                              >
+                                What Schools Get with an AeroBay Composite Skill Lab
+                              </h2>
+
+                              <p
+                                className="mb-4"
+                                style={{
+                                  color: "rgba(255,255,255,0.84)",
+                                  fontSize: "1.02rem",
+                                  lineHeight: 1.7,
+                                  maxWidth: "700px",
+                                  textAlign: "left",
+                                  wordSpacing: "normal",
+                                  letterSpacing: "normal",
+                                }}
+                              >
+                                AeroBay helps schools implement future-ready Composite Skill Labs aligned
+                                with CBSE, NEP 2020, and practical skill-development goals.
+                              </p>
+
+                              <div className="row g-4">
+
+                                <div className="col-md-6">
+                                  <div
+                                    className="p-4 h-100 rounded-4"
+                                    style={benefitCardStyle}
+                                  >
+                                    <h3
+                                      className="fw-bold"
+                                      style={benefitTitleStyle}
+                                    >
+                                      NEP 2020 Aligned
+                                    </h3>
+                                    <p className="mb-0" style={benefitBodyStyle}>
+                                      Industrial-grade lab concepts designed around NEP 2020 and NCF-SE outcomes.
+                                    </p>
+                                  </div>
+                                </div>
+
+                                <div className="col-md-6">
+                                  <div
+                                    className="p-4 h-100 rounded-4"
+                                    style={benefitCardStyle}
+                                  >
+                                    <h3
+                                      className="fw-bold"
+                                      style={benefitTitleStyle}
+                                    >
+                                      Future Skills Coverage
+                                    </h3>
+                                    <p className="mb-0" style={benefitBodyStyle}>
+                                      Robotics, AI, IoT, coding, design thinking, aerospace and innovation themes.
+                                    </p>
+                                  </div>
+                                </div>
+
+                                <div className="col-md-6">
+                                  <div
+                                    className="p-4 h-100 rounded-4"
+                                    style={benefitCardStyle}
+                                  >
+                                    <h3
+                                      className="fw-bold"
+                                      style={benefitTitleStyle}
+                                    >
+                                      Long-Term Infrastructure
+                                    </h3>
+                                    <p className="mb-0" style={benefitBodyStyle}>
+                                      Sustainable maker-space systems instead of disposable activity kits.
+                                    </p>
+                                  </div>
+                                </div>
+
+                                <div className="col-md-6">
+                                  <div
+                                    className="p-4 h-100 rounded-4"
+                                    style={benefitCardStyle}
+                                  >
+                                    <h3
+                                      className="fw-bold"
+                                      style={benefitTitleStyle}
+                                    >
+                                      School Branding Value
+                                    </h3>
+                                    <p className="mb-0" style={benefitBodyStyle}>
+                                      Strong visibility for parents, students, and leadership teams.
+                                    </p>
+                                  </div>
+                                </div>
+
+                              </div>
+                            </div>
+
+                            {/* RIGHT CTA */}
+                            <div className="col-lg-5 d-flex">
+
+                              <div
+                                className="p-4 rounded-4 h-105 d-flex flex-column w-100"
+                                style={{
+                                  background:
+                                    "linear-gradient(180deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.04) 100%)",
+                                  border: "1px solid rgba(255,255,255,0.18)",
+                                  boxShadow: "0 12px 26px rgba(0,0,0,0.26)",
+                                }}
+                              >
+
+                                <h3 className="fw-bold mb-3" style={{ color: "#ffffff" }}>
+                                  Build a Future-Ready Campus
+                                </h3>
+
+                                <p
+                                  style={{
+                                    color: "rgba(255,255,255,0.92)",
+                                    lineHeight: 1.7,
+                                    textAlign: "left",
+                                    wordSpacing: "normal",
+                                    letterSpacing: "normal",
+                                  }}
+                                >
+                                  Discover how AeroBay Composite Skill Labs transform school learning environments.
+                                </p>
+
+                                <ul
+                                  className="mb-0 ps-3"
+                                  style={{
+                                    color: "rgba(255,255,255,0.86)",
+                                    lineHeight: 1.65,
+                                    fontSize: "0.95rem",
+                                  }}
+                                >
+                                  <li>• End-to-end lab planning and implementation support</li>
+                                  <li>• Future skills integration with practical activity design</li>
+                                  <li>• Faculty enablement and long-term infrastructure roadmap</li>
+                                </ul>
+
+                                <div className="d-grid gap-3 mt-4">
+                                  <Link href="/get-in-touch" className="btn btn-primary rounded-pill">
+                                    Request Proposal
+                                  </Link>
+
+                                  <Link
+                                    href="/aerobay-for-school"
+                                    className="btn rounded-pill"
+                                    style={{
+                                      border: "1px solid rgba(255,255,255,0.7)",
+                                      color: "#ffffff",
+                                      backgroundColor: "transparent",
+                                    }}
+                                  >
+                                    Explore Solutions
+                                  </Link>
+                                </div>
+
+                                <hr
+                                  className="mt-auto"
+                                  style={{ borderColor: "rgba(255,255,255,0.3)" }}
+                                />
+
+                                <small style={{ color: "rgba(255,255,255,0.78)" }}>
+                                  Official reference: CBSE Composite Skill Lab Circular
+                                </small>
+
+                              </div>
+
+                            </div>
+
+                          </div>
+
+                        </div>
+                      </section>
+
+                      <div className="col-md-12 full-content mt-5">
+                        <h2>Frequently asked questions</h2>
+                        <dl className="text-start mt-3">
+                          {faqItems.map((item) => (
+                            <div
+                              key={item.question}
+                              className="mb-4 rounded-3 p-4 shadow-sm"
+                              style={{
+                                background:
+                                  "linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.03) 100%)",
+                                border: "1px solid rgba(255,255,255,0.14)",
+                                color: "rgba(255,255,255,0.92)",
+                              }}
+                            >
+                              <dt
+                                className="fw-bold mb-2"
+                                style={{ fontSize: "1.02rem" }}
+                              >
+                                {item.question}
+                              </dt>
+                              <dd className="mt-0 lh-lg">{item.answer}</dd>
+                            </div>
+                          ))}
+                        </dl>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-
-              <div className="col-md-12 full-content">
-                <h2>Frequently asked questions</h2>
-                <dl className="text-start">
-                  {faqItems.map((item) => (
-                    <div key={item.question} className="mb-4">
-                      <dt className="fw-bold">{item.question}</dt>
-                      <dd className="mt-2">{item.answer}</dd>
-                    </div>
-                  ))}
-                </dl>
               </div>
             </div>
           </div>
