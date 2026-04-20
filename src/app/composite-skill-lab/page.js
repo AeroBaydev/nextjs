@@ -185,7 +185,7 @@ export default function CompositeSkillLabPage() {
                     position: "relative",
                     zIndex: 2,
                     fontSize: "clamp(1.25rem, 2vw, 3.6rem)",
-                    fontWeight: 700,
+                    fontWeight: 500,
                     lineHeight: 1.1,
                     color: "#ffffff",
                     maxWidth: "950px",

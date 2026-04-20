@@ -13,8 +13,18 @@ export default function Head() {
   return (
     <>
       <title>{title}</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta name="description" content={description} />
       <link rel="canonical" href={canonical} />
+      <link rel="icon" href="/images/Plane.png" type="image/png" sizes="32x32" />
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-PcAa7CN6dPpp2Cu+P+U7WOMCH2MYfj5qEim0b7/pIAXp2p56G+3m/ZwHVhdKgUyqybpFQ7Ey1eoM8rLQAMU1Hg=="
+        crossOrigin="anonymous"
+        referrerPolicy="no-referrer"
+      />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" />
 
       <meta property="og:type" content="website" />
       <meta property="og:site_name" content="AeroBay" />
