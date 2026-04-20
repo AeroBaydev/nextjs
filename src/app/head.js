@@ -24,8 +24,6 @@ export default function Head() {
         crossOrigin="anonymous"
         referrerPolicy="no-referrer"
       />
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" />
-
       <meta property="og:type" content="website" />
       <meta property="og:site_name" content="AeroBay" />
       <meta property="og:title" content={title} />

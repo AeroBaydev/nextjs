@@ -212,7 +212,7 @@ export default function CompositeSkillLabPage() {
                     paddingBottom: 6,
                   }}
                 >
-                  India's industrial grade Composite Skill Lab partner—end-to-end lab design,
+                  India&apos;s industrial grade Composite Skill Lab partner—end-to-end lab design,
                   equipment, CBSE skill modules, robotics, AI, aerospace, drones, coding, and
                   hands-on learning your students remember.
                 </p>
