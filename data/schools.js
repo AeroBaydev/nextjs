@@ -1,1918 +1,904 @@
 const schools = [
-  {
-    name: "Stemfield School, Jabalpur",
-    logo: "/images/clients/19.png",
-    joined: "2024",
-    principal: "Ms. Manmeet Kohli",
-    website: "https://www.stemfield.com/",
-    highlights: "The Grade 8 team’s creativity and teamwork led to a Vacuum Suction Robot that won second place at the World Robot Olympiad, earning them a spot on the national stage.",
-    location: "Madhya Pradesh",
-    gallery: [
-      "/images/gallery/SF1.jpg",
-      "/images/gallery/SF2.jpg",
-      "/images/gallery/SF3.jpg",
-      "/images/gallery/SF4.jpg",
-      "/images/gallery/SF5.jpg",
-      "/images/gallery/SF6.jpg",
-    ],
-    about: "Aerobay started working with STEMFIELD School, Jabalpur in 2024.",
-    board: "CBSE",
-  },
-  {
-    name: "DLF World School, Gr. Noida",
-    logo: "/images/clients/7.png",
-    joined: "2022",
-    principal: "Ms. Ruchi Jain",
-    website: "https://www.dlws.edu.in/",
-    highlights: "",
-    highlights: "The team secured 3rd place at Sharda University’s Hackathon with their Line Follower Robot, earning recognition and a ₹5,000 cash prize for their innovation.",
-    gallery: [
-      "/images/gallery/DLFW1.jpg",
-      "/images/gallery/DLFW2.JPG",
-      "/images/gallery/DLFW3.JPG",
-      "/images/gallery/DLFW4.JPG",
-      "/images/gallery/DLFW5.jpeg",
-      "/images/gallery/DLFW6.jpeg",
-    ],
-    about: "Aerobay started working with DLF World School, Gr. Noida in 2022.",
-    board: "CBSE",
-  },
-  {
-    name: "DLF, Ghaziabad",
-    logo: "/images/clients/9.png",
-    joined: "2022",
-    principal: "Ms. Seema Jerath",
-    website: "https://www.dlps.co.in/",
-    highlights: "Cutting-edge AI projects like Parkinson Diagnosis and NeuroSketch placed in the Top 5 of the EY STEM App and secured a spot in the Top 500 nationwide at the Youth Ideathon.",
-    location: "NCR",
-    gallery: [
-      "/images/gallery/DLFG0.png",
-      "/images/gallery/DLFG1.JPG",
-      "/images/gallery/DLFG2.JPG",
-      "/images/gallery/DLFG3.JPG",
-      "/images/gallery/DLFG4.jpeg",
-      "/images/gallery/DLFG5.jpeg",
-    ],
-    about: "Aerobay started working with DLF, Ghaziabad in 2022.",
-    board: "CBSE + Cambridge",
-  },
-  {
-    name: "Ganga International School, Delhi",
-    logo: "/images/clients/10.png",
-    joined: "2023",
-    principal: "Ms. Swati Joshi",
-    website: "https://www.gangainternationalschool.com/",
-    highlights: "The Annual Exhibition brought innovation to life, celebrating the school’s commitment to curiosity, creativity, and hands-on learning.",
-    location: "NCR",
-    gallery: [
-      "/images/gallery/Ganga1.jpeg",
-      "/images/gallery/Ganga2.jpeg",
-      "/images/gallery/Ganga3.jpeg",
-      "/images/gallery/Ganga4.jpeg",
-      "/images/gallery/Ganga5.jpeg",
-      "/images/gallery/Ganga6.jpeg",
-    ],
-    about: "Aerobay started working with Ganga International School, Delhi in 2023.",
-    board: "CBSE",
-  },
-  {
-    name: "Taurian International School, Ranchi",
-    logo: "/images/clients/11.png",
-    joined: "2023",
-    principal: "Mr. Dr. Subhash Kumar",
-    website: "https://tws.edu.in/",
-    highlights: "The WarRobot project clinched second place at RoboAviat, earning medals, certificates, and Lee Cooper bags for its exceptional performance.",
-    location: "Jharkhand",
-    gallery: [
-      "/images/gallery/Taurian1.jpeg",
-      "/images/gallery/Taurian2.jpg",
-      "/images/gallery/Taurian3.jpg",
-      "/images/gallery/Taurian4.jpg",
-      "/images/gallery/Taurian5.jpg",
-      "/images/gallery/Taurian6.jpg",
-    ],
-    about: "Aerobay started working with Taurian International School, Ranchi in 2023.",
-    board: "CBSE",
-  },
-  {
-    name: "GD Goenka, Purnea",
-    logo: "/images/clients/15.png",
-    joined: "2024",
-    principal: "Dr. Moupali Mittra",
-    website: "https://www.gdgoenkapurnea.com/",
-    highlights: "Whether observing lunar craters through telescopes or constructing working drones, students engaged in hands-on STEM learning that sparked curiosity and innovation.",
-    location: "Bihar",
-    gallery: [
-      "/images/gallery/GDGP1.JPG",
-      "/images/gallery/GDGP2.jpeg",
-      "/images/gallery/GDGP3.jpeg",
-      "/images/gallery/GDGP4.jpeg",
-      "/images/gallery/GDGP5.jpeg",
-      "/images/gallery/GDGP6.jpeg",
-    ],
-    about: "Aerobay started working with GD Goenka, Purnea in 2024.",
-    board: "CBSE",
-  },
-  {
-    name: "Sambhu Dayal, Ghaziabad",
-    logo: "/images/clients/8.png",
-    joined: "2023",
-    principal: "Ms. Dr. Jyotsna Sharma",
-    website: "https://sdglobalschool.com/",
-    highlights: "Innovative projects like Fruit Freshness Detection and Air Monitoring reached the national stage at the CBSE Science Exhibition and Youth Ideathon.",
-    location: "NCR",
-    gallery: [
-      "/images/gallery/SDG1.jpg",
-      "/images/gallery/SDG2.jpeg",
-      "/images/gallery/SDG3.jpeg",
-      "/images/gallery/SDG4.JPG",
-      "/images/gallery/SDG5.JPG",
-      "/images/gallery/SDG6.JPG",
-    ],
-    about: "Aerobay started working with Sambhu Dayal, Ghaziabad in 2023.",
-    board: "CBSE",
-  },
-  {
-    name: "GD Goenka, Siliguri",
-    logo: "/images/clients/17.png",
-    joined: "2024",
-    principal: "Ms. Sonika Sharma",
-    website: "https://gdgoenkaschool.in/",
-    highlights: "Dominating MTECHS 2024, AeroBay STEAM Labs secured top honors in Robot War, Soccer, and Robo Race, showcasing unmatched excellence in robotics.",
-    location: "West Bengal",
-    gallery: [
-      "/images/gallery/GDGSiliguri1.jpg",
-      "/images/gallery/GDGSiliguri2.jpg",
-      "/images/gallery/GDGSiliguri3.jpg",
-      "/images/gallery/GDGSiliguri4.jpg",
-      "/images/gallery/GDGSiliguri5.jpeg",
-      "/images/gallery/GDGSiliguri6.jpeg",
-    ],
-    about: "Aerobay started working with GD Goenka, Siliguri in 2024.",
-    board: "CBSE",
-  },
-  {
-    name: "DPS, Nagaon",
-    logo: "/images/clients/20.png",
-    joined: "2024",
-    principal: "Ms. Ritu Rajnish",
-    website: "https://dpsnagaon.com/",
-    highlights: "An idea rooted in purpose — the Pick-and-Place Robot for garbage collection advanced to the WRO 2025 Regionals, showcasing innovation.",
-    location: "Assam",
-    gallery: [
-      "/images/gallery/DPSN1.jpeg",
-      "/images/gallery/DPSN2.jpeg",
-      "/images/gallery/DPSN3.jpeg",
-      "/images/gallery/DPSN4.jpeg",
-      "/images/gallery/DPSN5.jpeg",
-      "/images/gallery/DPSN6.jpeg",
-    ],
-    about: "Aerobay started working with DPS, Nagaon in 2024.",
-    board: "CBSE",
-  },
-  {
-    name: "GD Goenka, Jabalpur",
-    logo: "/images/clients/22.png",
-    joined: "2024",
-    principal: "Ms. Meenal Madhan",
-    website: "https://gdgoenkajabalpur.com/",
-    highlights: "From May 1–20, the school’s Summer Camp filled with curiosity through engaging, real-world projects in electronics, sensor technology, and game-based learning.",
-    location: "Madhya Pradesh",
-    gallery: [
-      "/images/gallery/GDGJabalpur1.png",
-      "/images/gallery/GDGJabalpur2.jpg",
-      "/images/gallery/GDGJabalpur3.jpg",
-      "/images/gallery/GDGJabalpur4.jpg",
-      "/images/gallery/GDGJabalpur5.jpg",
-      "/images/gallery/GDGJabalpur6.jpg",
-    ],
-    about: "Aerobay started working with GD Goenka, Jabalpur in 2024.",
-    board: "CBSE",
-  },
-  {
-    name: "GD Goenka, Jhansi",
-    logo: "/images/clients/32.png",
-    joined: "2024",
-    principal: "Ms. Paramjeet Kaur",
-    website: "https://gdgoenkajhansi.com/principals-desk/",
-    highlights: "Qualified for the World Robot Olympiad Regionals with an innovative Pollution Tracker Robot, following an impressive showcase in the Virtual Round.",
-    location: "Uttar Pradesh",
-    gallery: [
-      "/images/gallery/GDGJ1.jpeg",
-      "/images/gallery/GDGJ2.jpeg",
-      "/images/gallery/GDGJ3.jpeg",
-      "/images/gallery/GDGJ4.jpeg",
-      "/images/gallery/GDGJ5.jpeg",
-      "/images/gallery/GDGJ6.jpeg",
-    ],
-    about: "Aerobay started working with GD Goenka, Jhansi in 2024.",
-    board: "CBSE",
-  },
-  {
-    name: "Prominence School, Greater Noida",
-    logo: "/images/clients/36.png",
-    joined: "2024",
-    principal: "",
-    website: "https://www.prominenceworldschool.com/",
-    highlights: "The PTM turned into a celebration of innovation as students showcased their Skill Lab projects, earning praise for their creativity, teamwork, and real-world problem-solving skills.",
-    location: "Uttar Pradesh",
-    gallery: [
-      "/images/gallery/PSG1.jpeg",
-      "/images/gallery/PSG2.jpeg",
-      "/images/gallery/PSG3.jpeg",
-      "/images/gallery/PSG4.jpeg",
-    ],
-    about: "Aerobay started working with Prominence School, Greater Noida in 2024.",
-    board: "CBSE",
-  },
-  {
-    name: "Don Bosco School, Kharagpur",
-    logo: "/images/clients/37.png",
-    joined: "2024",
-    principal: "Stanley Anthony",
-    website: "https://www.donboscokharagpur.org/",
-    highlights: "The FireFighterBot, along with the EvacuationBot, qualified in the WRO Virtual Round and will now be showcased as a working prototype at the Regional level.",
-    location: "West Bengal",
-    gallery: [
-      "/images/gallery/Don1.jpeg",
-      "/images/gallery/Don2.jpeg",
-      "/images/gallery/Don3.jpeg",
-      "/images/gallery/Don4.jpeg",
-      "/images/gallery/Don5.jpeg",
-      "/images/gallery/Don6.jpeg",
-    ],
-    about: "Aerobay started working with Don Bosco School, Kharagpur in 2024.",
-    board: "CBSE",
-  },
-  {
-    name: "Allenhouse Public School, Vasundhara",
-    logo: "/images/clients/67.png",
-    joined: "2024",
-    principal: "Mrs. Shalini Singh",
-    website: "https://allenhouseghaziabad.com/",
-    highlights: "Blending innovation with empathy, the ‘PetPal’ project impressed in the World Robot Olympiad Virtual Round, earning qualification for the next stage.",
-    location: "Uttar Pradesh",
-    gallery: [
-      "/images/gallery/Allen1.jpeg",
-      "/images/gallery/Allen2.jpeg",
-      "/images/gallery/Allen3.jpeg",
-      "/images/gallery/Allen4.jpeg",
-      "/images/gallery/Allen5.jpeg",
-      "/images/gallery/Allen6.jpeg",
-    ],
-    about: "Aerobay started working with Allenhouse Public School, Vasundhara, Ghaziabad in 2024.",
-    board: "CBSE",
-  },
-  {
-    name: "Allenhouse Public School, Rooma, Kanpur",
-    logo: "/images/clients/68.png",
-    joined: "2024",
-    principal: "Mrs. Karuna",
-    website: "https://allenhouserooma.com/",
-    highlights: "Advanced to the next stage of Eureka Junior 2025 by IIT Bombay after a successful performance in the quiz round.",
-    location: "Uttar Pradesh",
-    gallery: [
-      "/images/gallery/AllenK1.jpeg",
-      "/images/gallery/AllenK2.jpeg",
-      "/images/gallery/AllenK3.jpeg",
-      "/images/gallery/AllenK4.jpeg",
-      "/images/gallery/AllenK5.jpeg",
-      "/images/gallery/Allenk6.jpeg",
-    ],
-    about: "Aerobay started working with Allenhouse Public School, Rooma, Kanpur in 2024.",
-    board: "CBSE",
-  },
-  {
-    name: "CPS, Kalikapur (Kolkata)",
-    logo: "/images/clients/76.png",
-    joined: "2024",
-    principal: "Mrs. Proma Das",  
-    website: "https://calcuttapublicschools.com/",
-    highlights: "With their project ‘Guardian Robo’, students participated in the World Robot Olympiad 2025 and advanced to the Regional Level following a standout performance in the Virtual Round.",
-    location: "West Bengal",
-    gallery: [
-      "/images/gallery/CPSK1.jpeg",
-      "/images/gallery/CPSK2.jpeg",
-      "/images/gallery/CPSK3.jpeg",
-      "/images/gallery/CPSK5.jpeg",
-    ],
-    about: "Aerobay started working with CPS, Kalikapur (Kolkata) in 2024.",
-    board: "IB",
-  },
-  {
-    name: "CPS, Bidhan Park (Kolkata)",
-    logo: "/images/clients/76.png",
-    joined: "2024",
-    principal: "Protichi Lahiri Sengupta",
-    website: "https://calcuttapublicschools.com/",
-    highlights: "The ‘NeuroBand’ project, focused on mental health and safety, showcased in the World Robot Olympiad 2025 Virtual Round and qualified for the Regional Level.",
-    location: "West Bengal",
-    gallery: [
-      "/images/gallery/CPSBP1.jpeg",
-      "/images/gallery/CPSBP2.jpeg",
-      "/images/gallery/CPSBP3.jpeg",
-      "/images/gallery/CPSBP4.jpeg",
-      "/images/gallery/CPSBP5.jpeg",
-      "/images/gallery/CPSBP6.jpeg",
-    ],
-    about: "Aerobay started working with CPS, Bidhan Park (Kolkata) in 2024.",
-    board: "IB",
-  },
-  {
-    name: "DPS, Gangtok",
-    logo: "/images/clients/33.png",
-    joined: "2024",
-    principal: "Mr. Ravindra Varma",
-    website: "https://dpsgangtok.com/",
-    highlights: "The academic year 2023–24 came alive through experiential learning, with hands-on activities like rocket building, arrow sphere launches, wind tunnel experiments, and CNC machine operations.",
-    location: "Sikkim",
-    gallery: [
-      "/images/gallery/DPSG1.jpeg",
-      "/images/gallery/DPSG2.jpeg",
-      "/images/gallery/DPSG3.jpeg",
-      "/images/gallery/DPSG4.jpeg",
-      "/images/gallery/DPSG5.jpeg",
-      "/images/gallery/DPSG6.jpeg",
-    ],
-    about: "Aerobay started working with DPS, Gangtok in 2024.",
-    board: "CBSE",
-  },
-  {
-    name: "Digmani Public School",
-    logo: "/images/clients/38.png",
-    joined: "2024",
-    principal: "Mr. Basanta Kumar",
-    website: "https://digmaniglobalschool.org/",
-    highlights: "Scientific and mathematical concepts came to life through experiments with 3D printers, CNC machines, and wind tunnels, offering students a truly hands-on, real-world learning experience.",
-    location: "Gaya, Bihar",
-    gallery: [
-      "/images/gallery/Digmani1.jpg",
-      "/images/gallery/Digmani2.jpg",
-      "/images/gallery/Digmani3.jpg",
-      "/images/gallery/Digmani4.jpg",
-      "/images/gallery/Digmani5.jpeg",
-      "/images/gallery/Digmani6.jpeg",
-    ],
-    about: "Aerobay started working with Digmani Public School Gaya in 2024.",
-    board: "CBSE",
-  },
-  {
-    name: "GD Goenka Public School, Shahjahanpur",
-    logo: "/images/clients/39.png",
-    joined: "2024",
-    principal: "Ms. Kalpana Singh",
-    website: "https://gdgoenkashahjahanpur.com/",
-    highlights: "By collaborating through hands-on projects, learners transformed real-world challenges into creative, practical solutions.",
-    location: "Uttar Pradesh",
-    gallery: [
-      "/images/gallery/GDGS1.png",
-      "/images/gallery/GDGS2.jpeg",
-      "/images/gallery/GDGS3.jpeg",
-      "/images/gallery/GDGS4.jpeg",
-      "/images/gallery/GDGS5.jpeg",
-      "/images/gallery/GDGS6.jpeg",
-    ],
-    about: "Aerobay started working with GD Goenka Public School, Shahjahanpur in 2024.",
-    board: "CBSE",
-  },
-  {
-    name: "GD Goenka Public School, Firozabad",
-    logo: "/images/clients/40.png",
-    joined: "2024",
-    principal: "Mrs. Richa Prakash",
-    website: "https://gdgoenkafirozabad.com/",
-    highlights: "With advanced tools like 3D printers, CNCs, and wind tunnels, students brought science and math to life through immersive, hands-on experimentation.",
-    location: "Uttar Pradesh",
-    gallery: [
-      "/images/gallery/GDGF1.jpg",
-      "/images/gallery/GDGF2.jpg",
-      "/images/gallery/GDGF3.jpg",
-      "/images/gallery/GDGF4.jpg",
-      "/images/gallery/GDGF5.jpeg",
-      "/images/gallery/GDGF6.jpeg",
-    ],
-    about: "Aerobay started working with GD Goenka Public School, Firozabad in 2024.",
-    board: "CBSE",
-  },
-  {
-    name: "Birla Open Mind School, Singur",
-    logo: "/images/clients/49.png",
-    joined: "2024",
-    principal: "",
-    website: "https://www.birlaopenminds.com/k12/West_Bengal/Singur/",
-    highlights: "Step into the Experiential Learning Lab, where real-world technologies are explored through hands-on experiences and applied learning.",
-    location: "West Bengal",
-    gallery: [
-      "/images/gallery/BOMISS1.webp",
-      "/images/gallery/BOMISS2.jpeg",
-      "/images/gallery/BOMISS3.jpeg",
-      "/images/gallery/BOMISS4.jpeg",
-      "/images/gallery/BOMISS5.jpeg",
-      "/images/gallery/BOMISS6.jpeg",
-    ],
-    about: "Aerobay started working with Birla Open Mind School, Singur in 2024.",
-    board: "CBSE",
-  },
-  {
-    name: "Delhi World Public School, Orai",
-    logo: "/images/clients/50.png",
-    joined: "2024",
-    principal: "",
-    website: "https://dwpsorai.com",
-    highlights: "Real-world concepts came alive through engaging hands-on activities such as X-Grip, Catapult Cannon, Wind Tunnel, Arrow Sphere, and War Engine, driven by teamwork and creativity.",
-    location: "Uttar Pradesh",
-    gallery: [
-      "/images/gallery/DWPO1.jpeg",
-      "/images/gallery/DWPO2.jpeg",
-      "/images/gallery/DWPO3.jpeg",
-      "/images/gallery/DWPO4.jpeg",
-      "/images/gallery/DWPO5.jpeg",
-      "/images/gallery/DWPO6.jpeg",
-    ],
-    about: "Aerobay started working with Delhi World Public School, Orai in 2024.",
-    board: "CBSE",
-  },
-  {
-    name: "DPS Megacity, Kolkata",
-    logo: "/images/clients/51.png",
-    joined: "2024",
-    principal: "Mrs. Indrani Sanyal",
-    website: "",
-    highlights: "By experimenting with War Engine and Disc Blaster activities, students discovered core scientific principles through hands-on exploration of real-world mechanisms.",
-    location: "West Bengal",
-    gallery: [
-      "/images/gallery/DPSMK1.jpeg",
-      "/images/gallery/DPSMK2.jpeg",
-      "/images/gallery/DPSMK3.jpeg",
-      "/images/gallery/DPSMK4.jpeg",
-      "/images/gallery/DPSMK5.jpeg",
-      "/images/gallery/DPSMK6.jpeg",
-    ],
-    about: "Aerobay started working with DPS Megacity, Kolkata in 2024.",
-    board: "CBSE",
-  },
-  {
-    name: "GD Goenka Public School, Chhibramau",
-    logo: "/images/clients/43.png",
-    joined: "2024",
-    principal: "Dr. Manisha Singh",
-    website: "https://gdgoenkacbr.com/admissions/",
-    highlights: "From human body models to catapult cannons, learners engaged in hands-on activities to understand core concepts through real-world applications.",
-    location: "Uttar Pradesh",
-    gallery: [
-      "/images/gallery/GDGC1.jpeg",
-      "/images/gallery/GDGC2.jpeg",
-      "/images/gallery/GDGC3.jpeg",
-      "/images/gallery/GDGC4.jpeg",
-      "/images/gallery/GDGC5.jpeg",
-      "/images/gallery/GDGC6.jpeg",
-    ],
-    about: "Aerobay started working with GD Goenka Public School, Chhibramau in 2024.",
-    board: "CBSE",
-  },
-  {
-    name: "Mount Litera Zee School, Bihta",
-    logo: "/images/clients/63.png",
-    joined: "2024",
-    principal: "Mr. Kumar Ravi Prakash",
-    website: "https://mlzsbihta.com/",
-    highlights: "A hub of innovation — students in the Experiential Learning Lab explore real-world technology and build functional prototypes using Arduino, sensors, and electronics.",
-    location: "Bihar",
-    gallery: [
-      "/images/gallery/MLB1.jpeg",
-      "/images/gallery/MLB2.jpeg",
-      "/images/gallery/MLB3.jpeg",
-      "/images/gallery/MLB5.jpeg",
-      "/images/gallery/MLB6.jpeg",
-    ],
-    about: "Aerobay started working with Mount Litera Zee School, Bihta in 2024.",
-    board: "CBSE",
-  },
-  {
-    name: "DPS, Bhilaur Kanpur",
-    logo: "/images/clients/69.png",
-    joined: "2024",
-    principal: "Mr. Vivek Singh",
-    website: "https://www.dpsbilhaur.com/",
-    highlights: "At the PTM, students wowed parents with confident presentations of their hands-on projects, showcasing their journey of learning, creativity, and personal growth.",
-    location: "Uttar Pradesh",
-    gallery: [
-      "/images/gallery/DPSBK1.jpeg",
-      "/images/gallery/DPSBK2.jpg",
-      "/images/gallery/DPSBK3.jpg",
-      "/images/gallery/DPSBK4.jpg",
-      "/images/gallery/DPSBK5.jpeg",
-      "/images/gallery/DPSBK6.jpeg",
-    ],
-    about: "Aerobay started working with DPS, Bhilaur Kanpur in 2024.",
-    board: "CBSE",
-  },
-  {
-    name: "DWPS, Purulia",
-    logo: "/images/clients/70.png",
-    joined: "2024",
-    principal: "Mrs. Sudeshna Sinha",
-    website: "https://dwpspurulia.com/",
-    highlights: "During the summer camp, students built Rocket Race Cars, gaining a hands-on understanding of Newton’s Third Law through exciting, experiential learning.",
-    location: "West Bengal",
-    gallery: [
-      "/images/gallery/DWPSPurulia1.jpeg",
-      "/images/gallery/DWPSPurulia2.jpeg",
-      "/images/gallery/DWPSPurulia3.jpeg",
-      "/images/gallery/DWPSPurulia4.jpeg",
-      "/images/gallery/DWPSPurulia5.jpeg",
-      "/images/gallery/DWPSPurulia6.jpeg",
-    ],
-    about: "Aerobay started working with DWPS, Purulia in 2024.",
-    board: "CBSE",
-  },
-  {
-    name: "CPS, Barasat (Kolkata)",
-    logo: "/images/clients/76.png",
-    joined: "2024",
-    principal: "Ms. Abhilasha Dash",
-    website: "https://calcuttapublicschools.com/",
-    highlights: "Engaging in dynamic activities such as Catapult Cannon and Arrow Sphere, students discovered real-world scientific principles and developed innovative solutions through teamwork.",
-    location: "West Bengal",
-    gallery: [
-      "/images/gallery/CPSB1.jpeg",
-      "/images/gallery/CPSB2.jpeg",
-      "/images/gallery/CPSB3.jpeg",
-      "/images/gallery/CPSB4.jpeg",
-      "/images/gallery/CPSB5.jpeg",
-      "/images/gallery/CPSB6.jpeg",
-    ],
-    about: "Aerobay started working with CPS, Barasat (Kolkata) in 2024.",
-    board: "IB",
-  },
-  {
-    name: "AM NAIK School, Mumbai",
-    logo: "/images/clients/6.png",
-    joined: "2024",
-    principal: "Dr. Madhura Phadke",
-    website: "https://amnaikschool.in/",
-    highlights: "A stellar year (2023–24) of innovation, marked by 23 completed projects — including a working airplane prototype showcased at IIT Bombay’s Aeromodelling Competition.",
-    location: "Maharashtra",
-    gallery: [
-      "/images/gallery/AMN1.jpg",
-      "/images/gallery/AMN2.JPG",
-      "/images/gallery/AMN3.JPG",
-      "/images/gallery/AMN4.JPG",
-      "/images/gallery/AMN5.jpg",
-      "/images/gallery/AMN6.jpg",
-    ],
-    about: "Aerobay started working with AM NAIK School, Mumbai in 2024.",
-    board: "CBSE + Cambridge",
-  },
-  {
-    name: "GH Raisoni, Jalgaon",
-    logo: "/images/clients/24.png",
-    joined: "2022",
-    principal: "Ms. Christabel Perera",
-    website: "https://ghDigmanijal.raisoni.net/",
-    highlights: "From the World Robot Olympiad to the school’s Science Exhibition, innovation shone through in projects like an openable bridge, visitor counter with mail alerts, and a serving robot.",
-    location: "Maharashtra",
-    gallery: [
-      "/images/gallery/GHR1.jpg",
-      "/images/gallery/GHR2.jpeg",
-      "/images/gallery/GHR3.jpeg",
-
-      "/images/gallery/GHR5.jpg",
-      "/images/gallery/GHR6.jpeg",
-    ],
-    about: "Aerobay started working with GH Raisoni, Jalgaon in 2022.",
-    board: "CBSE",
-  },
-  {
-    name: "BD Somani International School",
-    logo: "/images/clients/27.png",
-    joined: "2024",
-    principal: "Ms. Shrutika Lawand",
-    website: "https://bdsomaniinternationalschool.com/",
-    highlights: "From drones and satellites to CNCs and wind tunnels, students brought experiential learning to life — proudly showcased at the intra-school ICT Tech Fest.",
-    location: "Maharashtra",
-    gallery: [
-      "/images/gallery/BDS1.jpg",
-      "/images/gallery/BDS2.jpeg",
-      "/images/gallery/BDS3.jpeg",
-      "/images/gallery/BDS5.jpeg",
-      "/images/gallery/BDS6.jpg",
-    ],
-    about: "Aerobay started working with BD Somani International School, Mumbai in 2024.",
-    board: "IB",
-  },
-  {
-    name: "Centre Point School International, Dhaba Road",
-    logo: "/images/clients/28.png",
-    joined: "2023",
-    principal: "Ms. Ashlesha Chintawish",
-    website: "https://cpsintl.in/",
-    highlights: "With two years of continuous innovation and experiential learning (2023–25), students took flight at SOARFEST 2025 in Jaipur, showcasing their talent and the program’s remarkable journey.",
-    location: "Maharashtra",
-    gallery: [
-      "/images/gallery/CPSDR1.jpg",
-      "/images/gallery/CPSDR2.jpeg",
-      "/images/gallery/CPSDR3.jpeg",
-      "/images/gallery/CPSDR4.jpeg",
-      "/images/gallery/CPSDR5.jpeg",
-      "/images/gallery/CPSDR6.jpeg",
-    ],
-    about: "Aerobay started working with Centre Point School International, Dhaba Road in 2023.",
-    board: "Cambridge",
-  },
-  {
-    name: "Acharyashri Sudarshan Patna Central School",
-    logo: "/images/clients/30.png",
-    joined: "2024",
-    principal: "Mr. Vasisth",
-    website: "https://www.centralschoolpatna.com/",
-    highlights: "The academic year 2024–25 was defined by experiential learning, with students engaging in practical applications using tools like wind tunnels, satellites, drones, and CNC machines.",
-    location: "Bihar",
-    gallery: [
-      "/images/gallery/ASP1.jpg",
-      "/images/gallery/ASP2.jpeg",
-      "/images/gallery/ASP3.jpeg",
-      "/images/gallery/ASP4.jpeg",
-      "/images/gallery/ASP5.jpg",
-      "/images/gallery/ASP6.jpg",
-    ],
-    about: "Aerobay started working with Acharyashri Sudarshan Patna Central School, Patna in 2024.",
-    board: "CBSE",
-  },
-  {
-    name: "Birla Open Minds International School",
-    logo: "/images/clients/31.png",
-    joined: "2024",
-    principal: "Mr. NS Punia",
-    website: "https://birlaopenmindsbuxar.com/",
-    highlights: "During the 2023–24 session, students embarked on a dynamic journey of experiential learning, exploring real-world tech like wind tunnels, satellites, drones, and CNC machines.",
-    location: "Buxar, Bihar",
-    gallery: [
-      "/images/gallery/BOMISBuxar1.jpg",
-      "/images/gallery/BOMISBuxar2.jpeg",
-      "/images/gallery/BOMISBuxar3.jpeg",
-      //"/images/gallery/BOMISBuxar4.jpg",
-      "/images/gallery/BOMISBuxar5.jpeg",
-      "/images/gallery/BOMISBuxar6.jpeg",
-    ],
-    about: "Aerobay started working with Birla Open Minds International School, Buxar in 2024.",
-    board: "CBSE",
-  },
-  {
-    name: "Delhi Public School, Etawah",
-    logo: "/images/clients/47.png",
-    joined: "2024",
-    principal: "Mrs. Bhavna Singh",
-    website: "https://www.dpsetawah.com/",
-    highlights: "The academic year started with immersive learning experiences—students explored 3D printing and cutting-edge technologies like drones.",
-    location: "Uttar Pradesh",
-    gallery: [
-      "/images/gallery/DPSE1.jpg",
-      "/images/gallery/DPSE2.jpeg",
-      "/images/gallery/DPSE3.jpeg",
-      "/images/gallery/DPSE4.jpeg",
-      "/images/gallery/DPSE5.jpeg",
-      "/images/gallery/DPSE6.jpeg",
-    ],
-    about: "Aerobay started working with Delhi Public School, Etawah in 2024.",
-    board: "CBSE",
-  },
-  {
-    name: "GD Goenka Public School, Basti",
-    logo: "/images/clients/52.png",
-    joined: "2024",
-    principal: "Ms. Huma Waseem",
-    website: "https://gdgoenkabasti.com/",
-    highlights: "Through project-based learning in hydraulics and pressure, students brought science to life using real-world tools and advanced machinery.",
-    location: "Uttar Pradesh",
-    gallery: [
-      "/images/gallery/GDGBasti1.jpeg",
-      "/images/gallery/GDGBasti2.jpg",
-      "/images/gallery/GDGBasti3.jpg",
-      "/images/gallery/GDGBasti4.jpg",
-      "/images/gallery/GDGBasti5.jpg",
-      "/images/gallery/GDGBasti6.jpeg",
-    ],
-    about: "Aerobay started working with GD Goenka Public School, Basti in 2024.",
-    board: "CBSE",
-  },
-  {
-    name: "Gopi Birla Memorial School, Walkeshwar",
-    logo: "/images/clients/57.png",
-    joined: "2024",
-    principal: "Mrs. Madhu Wadke",
-    website: "https://www.gbmschool.co.in/",
-    highlights: "With 3D printers and drones, students brought concepts like force and magnetism to life—merging creativity with real-world science.",
-    location: "Maharashtra",
-    gallery: [
-      "/images/gallery/GBM1.jpg",
-      "/images/gallery/GBM2.jpg",
-      "/images/gallery/GBM3.jpg",
-      "/images/gallery/GBM4.jpg",
-      "/images/gallery/GBM5.jpeg",
-      "/images/gallery/GBM6.jpeg",
-    ],
-    about: "Aerobay started working with Gopi Birla Memorial School, Walkeshwar Mumbai in 2024.",
-    board: "CBSE",
-  },
-  {
-    name: "Birla Open Minds, Amravati",
-    logo: "/images/clients/58.png",
-    joined: "2024",
-    principal: "Ms. Suneetha K",
-    website: "https://bomisamravati.com/",
-    highlights: "Through hands-on learning with CNCs, 3D printers, resin printers, and lathe machines, students transformed technical concepts into tangible understanding.",
-    location: "Maharashtra",
-    gallery: [
-      "/images/gallery/BOMISA1.webp",
-      "/images/gallery/BOMISA2.jpeg",
-      "/images/gallery/BOMISA3.jpeg",
-      "/images/gallery/BOMISA4.jpeg",
-      "/images/gallery/BOMISA5.jpg",
-      "/images/gallery/BOMISA6.jpg",
-    ],
-    about: "Aerobay started working with Birla Open Minds, Amravati in 2024.",
-    board: "CBSE",
-  },
-  {
-    name: "Indo Scots Global School, Kamotee",
-    logo: "/images/clients/66.png",
-    joined: "2024",
-    principal: "Mrs. Maymol Jitesh",
-    website: "https://www.indoscotsglobalschool.com/",
-    highlights: "Hands-on learning came alive through 3D printing and an exciting dive into the world of emerging drone technologies.",
-    location: "Maharashtra",
-    gallery: [
-      "/images/gallery/INDO1.jpg",
-      "/images/gallery/INDO2.jpeg",
-      "/images/gallery/INDO3.jpeg",
-      "/images/gallery/INDO4.jpeg",
-      "/images/gallery/INDO5.jpeg",
-      "/images/gallery/INDO6.jpeg",
-    ],
-    about: "Aerobay started working with Indo Scots Global School, Kamotee in 2024.",
-    board: "CBSE",
-  },
-  {
-    name: "Jayshree Periwal International School",
-    logo: "/images/clients/23.png",
-    joined: "2023",
-    principal: "Manisha Razdan",
-    website: "https://jpischool.com/",
-    highlights: "A tech-powered experiential learning year (2022–23) saw students bring ideas to life through hands-on projects—culminating in their participation at IIT Bombay’s Aeromodelling Competition.",
-    location: "Jaipur, Rajasthan",
-    gallery: [
-      "/images/gallery/JPIS1.jpeg",
-      "/images/gallery/JPIS2.jpeg",
-      "/images/gallery/JPIS3.jpeg",
-      "/images/gallery/JPIS4.jpeg",
-      "/images/gallery/JPIS5.jpeg",
-      "/images/gallery/JPIS6.jpeg",
-    ],
-    about: "Aerobay started working with Jayshree Periwal International School, Jaipur in 2023.",
-    board: "IB",
-  },
-  {
-    name: "Suditi Global Academy, Etawah",
-    logo: "/images/clients/45.png",
-    joined: "2024",
-    principal: "Mr. Kamal Kumar",
-    website: "https://www.suditietawah.in/",
-    highlights: "Exploring 3D printing and drone technologies firsthand, students gained practical insights and skills essential for the future.",
-    location: "Uttar Pradesh",
-    gallery: [
-      "/images/gallery/SDE1.jpg",
-      "/images/gallery/SDE2.jpeg",
-      "/images/gallery/SDE3.jpeg",
-      "/images/gallery/SDE4.jpeg",
-      "/images/gallery/SDE5.jpeg",
-      "/images/gallery/SDE6.jpeg",
-    ],
-    about: "Aerobay started working with Suditi Global Academy, Etawah in 2024.",
-    board: "CBSE",
-  },
-  {
-    name: "New Horizon International School, Mumbai",
-    logo: "/images/clients/73.png",
-    joined: "2024",
-    principal: "Ms. Namratha",
-    website: "https://www.nhisrodas.com/",
-    highlights: "Merging theory with innovation, students engaged in practical sessions using 3D printers and explored cutting-edge technologies like drones.",
-    location: "Maharashtra",
-    gallery: [
-      "/images/gallery/NHISM1.jpg",
-      "/images/gallery/NHISM2.jpeg",
-      "/images/gallery/NHISM3.jpeg",
-      "/images/gallery/NHISM4.jpeg",
-      "/images/gallery/NHISM5.jpg",
-      "/images/gallery/NHISM6.jpg",
-    ],
-    about: "Aerobay started working with New Horizon International School, Mumbai in 2024.",
-    board: "CBSE",
-  },
-  {
-    name: "New Horizon Public School, Mumbai",
-    logo: "/images/clients/74.png",
-    joined: "2024",
-    principal: "Mrs. Mani",
-    website: "https://www.nhssairoli.com/",
-    highlights: "Through hands-on learning, students explored innovative technologies like drones and built real-world skills using 3D printers.",
-    location: "Maharashtra",
-    gallery: [
-      "/images/gallery/NHPS1.jpeg",
-      "/images/gallery/NHPS2.jpeg",
-      "/images/gallery/NHPS3.jpeg",
-      "/images/gallery/NHPS4.jpeg",
-      "/images/gallery/NHPS5.jpg",
-      "/images/gallery/NHPS6.jpg",
-    ],
-    about: "Aerobay started working with New Horizon Public School, Mumbai in 2024.",
-    board: "CBSE",
-  },
-  {
-    name: "Vibgyor World Academy Nagpur",
-    logo: "/images/clients/54.png",
-    joined: "2024",
-    principal: "Tripti Parekh",
-    website: "https://www.vibgyorworldacademy.com/",
-    highlights: "Students explored core science concepts like hydraulics and pressure through project-based learning and hands-on work with advanced machinery.",
-    location: "Maharashtra",
-    gallery: [
-      "/images/gallery/Vibgyor1.jpg",
-      "/images/gallery/Vibgyor2.JPG",
-      "/images/gallery/Vibgyor3.JPG",
-      "/images/gallery/Vibgyor4.jpg",
-      "/images/gallery/Vibgyor5.jpeg",
-      "/images/gallery/Vibgyor6.jpeg",
-    ],
-    about: "Aerobay started working with Vibgyor World Academy Nagpur in 2024.",
-    board: "CBSE",
-  },
-  {
-    name: "Trinity Public School, Kolkata",
-    logo: "/images/clients/18.png",
-    joined: "2023",
-    principal: "Ms. Tahseen Mahmood",
-    website: "https://www.trinitypublicschool.org/",
-    highlights: "Demonstrating technical aptitude and creative thinking, Grade 7 students presented an IoT-based Smart Garbage Bin Alert System at the World Robot Olympiad (WRO) Regionals.",
-    location: "West Bengal",
-    gallery: [
-      "/images/gallery/Trinity1.jpg",
-      "/images/gallery/Trinity2.jpg",
-      "/images/gallery/Trinity3.jpg",
-      "/images/gallery/Trinity4.jpg",
-      "/images/gallery/Trinity5.jpeg",
-      "/images/gallery/Trinity6.jpeg",
-    ],
-    about: "Aerobay started working with Trinity Public School, Kolkata in 2023.",
-    board: "CBSE",
-  },
-  {
-    name: "DPS School, Bokaro",
-    logo: "/images/clients/12.png",
-    joined: "2023",
-    principal: "Dr. Awanindra singh gangwar",
-    website: "https://dpsbokaro.com/dpsn/",
-    highlights: "With their AI-powered Cattle Disease Detection and Drone Delivery project, Grade 9 students clinched 2nd place and ₹15,000 at the Industry-Academia Conclave—merging innovation with real-world impact.",
-    location: "Jharkhand",
-    gallery: [
-      "/images/gallery/DPSB1.jpeg",
-      "/images/gallery/DPSB2.jpeg",
-      "/images/gallery/DPSB3.jpeg",
-      "/images/gallery/DPSB4.jpeg",
-      "/images/gallery/DPSB5.jpeg",
-      "/images/gallery/DPSB6.jpeg",
-    ],
-    about: "Aerobay started working with DPS School, Bokaro in 2023.",
-    board: "CBSE",
-  },
-  {
-    name: "GD Goenka, Bhiwani",
-    logo: "/images/clients/13.png",
-    joined: "2024",
-    principal: "Ms. Garima Salwani",
-    website: "https://gdgoenkabhiwani.com/",
-    highlights: "At Soarfest 2025, the Wing Shot Catapult Glider soared to 1st place in Nationals and 2nd overall, winning accolades, medals, and certificates in a celebration of innovation and flight.",
-    location: "Haryana",
-    gallery: [
-      "/images/gallery/GDGB1.JPG",
-      "/images/gallery/GDGB2.jpeg",
-      "/images/gallery/GDGB3.jpeg",
-      "/images/gallery/GDGB4.jpeg",
-      "/images/gallery/GDGB5.jpeg",
-      "/images/gallery/GDGB6.jpg",
-    ],
-    about: "Aerobay started working with GD Goenka, Bhiwani in 2024.",
-    board: "CBSE",
-  },
-  {
-    name: "Seth MR Jaipuriya, Lucknow",
-    logo: "/images/clients/14.png",
-    joined: "2022",
-    principal: "Ms. Dr. Reena Pathak",
-    website: "https://www.jaipuriaschoolgoelcampus.in/",
-    highlights: " year of impactful innovation—qualifying for WRO Nationals, securing 2nd place for the Smart Bridge at the Science Fair, and actively participating in DESH AUR HUM 3.0.",
-    location: "Uttar Pradesh",
-    gallery: [
-      "/images/gallery/SMJ1.jpeg",
-      "/images/gallery/SMJ2.jpeg",
-      "/images/gallery/SMJ3.jpeg",
-      "/images/gallery/SMJ4.jpeg",
-      "/images/gallery/SMJ5.jpeg",
-      "/images/gallery/SMJ6.jpeg",
-    ],
-    about: "Aerobay started working with Seth MR Jaipuriya, Lucknow in 2022.",
-    board: "CBSE",
-  },
-  {
-    name: "Army Public School, Jaipur",
-    logo: "/images/clients/72.png",
-    joined: "2025",
-    principal: "Mrs. Gayatri Kulshreshtha",
-    website: "https://apsjaipur.edu.in/",
-    highlights: "Experiential learning with 3D printers, CNCs, lathe machines, and resin technology empowered students to apply engineering concepts in tangible ways.",
-    location: "Rajasthan",
-    gallery: [
-      "/images/gallery/APSJ1.jpg",
-      "/images/gallery/APSJ2.jpg",
-      "/images/gallery/APSJ3.jpg",
-      "/images/gallery/APSJ4.jpg",
-      "/images/gallery/APSJ5.jpg",
-      "/images/gallery/APSJ6.jpg",
-    ],
-    about: "Aerobay started working with Army Public School, Jaipur in 2024.",
-    board: "CBSE",
-  },
-  {
-    name: "Lady LRD Public School, Mandi Gobindgarh",
-    logo: "/images/clients/56.png",
-    joined: "2024",
-    principal: "Mr. Adesh Kumar Sharma",
-    website: "https://ladylrdschool.com/",
-    highlights: "Immersed in practical learning, students used 3D printers and explored drone technology while building prototypes on real-world concepts like force and magnetism.",
-    location: "Maharashtra",
-    gallery: [
-      "/images/gallery/LRD1.jpg",
-      "/images/gallery/LRD2.jpeg",
-      "/images/gallery/LRD3.jpeg",
-      //"/images/gallery/LRD4.jpg",
-      "/images/gallery/LRD5.jpeg",
-      "/images/gallery/LRD6.jpeg",
-    ],
-    about: "Aerobay started working with Lady LRD Public School, Mandi Gobindgarh in 2024.",
-    board: "CBSE",
-  },
-  {
-    name: "Jayshree Periwal Global School, Jaipur",
-    logo: "/images/clients/1.png",
-    joined: "2023",
-    principal: "Ms. Manju Khosla",
-    website: "https://jpgschool.com/",
-    highlights: "At IIT Bombay’s Techfest, Class 8 students made history by flying RC planes—setting a school record with four simultaneous pilots and celebrating the first successful flight by a girl student.",
-    location: "Rajasthan",
-    gallery: [
-      "/images/gallery/jpgs1.jpg",
-      "/images/gallery/jpgs2.JPG",
-      "/images/gallery/jpgs3.JPG",
-      "/images/gallery/jpgs4.jpeg",
-      "/images/gallery/jpgs5.JPG",
-      "/images/gallery/jpgs6.jpeg",
-    ],
-    about: "Aerobay started working with Jayshree Periwal Global School, Jaipur in 2023.",
-    board: "CBSE + Cambridge",
-  },
-  {
-    name: "Jayshree Periwal High School, Jaipur",
-    logo: "/images/clients/2.png",
-    joined: "2024",
-    principal: "Ms. Madhu",
-    website: "https://jphschool.com/",
-    highlights: "Demonstrated outstanding skills in aeromodelling and rocketry at SOARFEST’s national-level competition and qualified for the WRO Regional Round.",
-    location: "Rajasthan",
-    gallery: [
-      "/images/gallery/JPHS1.jpeg",
-      "/images/gallery/JPHS2.jpeg",
-      "/images/gallery/JPHS3.jpeg",
-      "/images/gallery/JPHS4.jpeg",
-      "/images/gallery/JPHS5.jpeg",
-      "/images/gallery/JPHS6.jpeg",
-    ],
-    about: "Aerobay started working with Jayshree Periwal High School, Jaipur in 2024.",
-    board: "CBSE",
-  },
-  {
-    name: "Meena Bhujbal School of Excellence, Nashik",
-    logo: "/images/clients/46.png",
-    joined: "2024",
-    principal: "Ms. Shubhra Varma",
-    website: "https://www.metmbse.ac.in/",
-    highlights: "Learners deepened their understanding of STEM principles through practical application with advanced lab equipment such as 3D printers, CNCs, and wind tunnels.",
-    location: "Maharashtra",
-    gallery: [
-      "/images/gallery/MBSN1.jpg",
-      "/images/gallery/MBSN2.jpg",
-      "/images/gallery/MBSN3.jpg",
-      "/images/gallery/MBSN4.jpg",
-      "/images/gallery/MBSN5.jpeg",
-      "/images/gallery/MBSN6.jpeg",
-    ],
-    about: "Aerobay started working with Meena Bhujbal School of Excellence, Nashik in 2024.",
-    board: "CBSE",
-  },
-  {
-    name: "The Nest, Chennai",
-    logo: "/images/clients/42.png",
-    joined: "2024",
-    principal: "Mrs. Shefali Tewary",
-    website: "https://thenest.school/",
-    highlights: "Through the integration of theory and technology, students applied STEM concepts using tools like CNC machines, 3D printers, and wind tunnels, leading to their qualification for the WRO Regional Round.",
-    location: "Tamil Nadu",
-    gallery: [
-      "/images/gallery/Nest1.png",
-      "/images/gallery/Nest2.jpeg",
-      "/images/gallery/Nest3.jpeg",
-      "/images/gallery/Nest4.jpeg",
-      "/images/gallery/Nest5.jpg",
-      "/images/gallery/Nest6.jpg",
-    ],
-    about: "Aerobay started working with The Nest, Chennai in 2024.",
-    board: "IB",
-  },
-  {
-    name: "Mount Litera Zee School, Nagpur",
-    logo: "/images/clients/44.png",
-    joined: "2024",
-    principal: "Ms. Vandhana Paul",
-    website: "https://www.mlzsnagpur.edu.in/",
-    highlights: "Through hands-on activities, students built science kits such as Magnetic Levitation trains, Human Body Models, and Disc Launchers—bringing concepts to life.",
-    location: "Maharashtra",
-    gallery: [
-      "/images/gallery/MLN1.jpeg",
-      // "/images/gallery/MLN2.jpg",
-      // "/images/gallery/MLN3.jpg",
-      // "/images/gallery/MLN4.jpg",
-      "/images/gallery/MLN5.jpg",
-      "/images/gallery/MLN6.jpg",
-    ],
-    about: "Aerobay started working with Mount Litera Zee School, Nagpur in 2024.",
-    board: "CBSE",
-  },
-  // {
-  //   name: "Aurobindo School, Jaipur",
-  //   logo: "/images/clients/3.png",
-  //   joined: "2022",
-  //   principal: "Ms. Karuna Nagpal",
-  //   website: "https://aisraj.org/",
-  //   highlights: "",
-  //   location: "Rajasthan",
-  //   gallery: [
-  //     "/images/gallery/Aurobindo1.jpg",
-  //     "/images/gallery/Aurobindo2.JPG",
-  //     "/images/gallery/Aurobindo3.JPG",
-  //     "/images/gallery/Aurobindo4.JPG",
-  //     "/images/gallery/Aurobindo5.JPG",
-  //     "/images/gallery/Aurobindo6.jpg",
-  //   ],
-  //   about: "Aerobay started working with Aurobindo School, Jaipur in 2022.",
-  //   board: "CBSE",
-  // },
-  {
-    name: "RN Saha International School, Mumbai",
-    logo: "/images/clients/4.png",
-    joined: "2024",
-    principal: "Ms. Payal Gupta",
-    website: "https://rnsis.edu.in/",
-    highlights: "Capping off the academic year (2023–24), students participated in Eureka by IIT Mumbai and explored the future of fabrication at WOL 3D.",
-    location: "Maharashtra",
-    gallery: [
-      "/images/gallery/RNS1.jpeg",
-      "/images/gallery/RNS2.jpeg",
-      "/images/gallery/RNS3.jpeg",
-      "/images/gallery/RNS4.jpeg",
-      "/images/gallery/RNS5.jpg",
-      "/images/gallery/RNS6.jpg",
-    ],
-    about: "Aerobay started working with RN Saha International School, Mumbai in 2024.",
-    board: "Cambridge",
-  },
-  {
-    name: "SVIS, Mumbai",
-    logo: "/images/clients/5.png",
-    joined: "2024",
-    principal: "Ms. Saibala Shetty",
-    website: "https://svischool.com/",
-    highlights: "The 2024–25 academic year blended experiential learning with achievement, as students worked with cutting-edge tools and earned selection in Eureka, the flagship innovation competition by IIT Bombay.",
-    location: "Maharashtra",
-    gallery: [
-      "/images/gallery/SVIS1.jpeg",
-      "/images/gallery/SVIS2.jpeg",
-      "/images/gallery/SVIS3.jpeg",
-      "/images/gallery/SVIS4.jpeg",
-      "/images/gallery/SVIS5.jpeg",
-      "/images/gallery/SVIS6.jpeg",
-    ],
-    about: "Aerobay started working with SVIS, Mumbai in 2024.",
-    board: "Cambridge",
-  },
-  {
-    name: "The Assam Valley School, Assam",
-    logo: "/images/clients/65.png",
-    joined: "2024",
-    principal: "Dr. Amit Jugran",
-    website: "https://www.assamvalleyschool.com/",
-    highlights: "Bridged classroom learning with future-ready skills through hands-on use of 3D printers and drone technology.",
-    location: "Assam",
-    gallery: [
-      "/images/gallery/AVS1.jpg",
-      "/images/gallery/AVS2.jpeg",
-      "/images/gallery/AVS3.jpeg",
-      "/images/gallery/AVS4.jpeg",
-      "/images/gallery/AVS5.jpeg",
-      "/images/gallery/AVS6.jpeg",
-    ],
-    about: "Aerobay started working with The Assam Valley School, Assam in 2024.",
-    board: "CBSE",
-  },
-  {
-    name: "Scholars Rosary Junior Wing, Rohtak",
-    logo: "/images/clients/29.png",
-    joined: "2023",
-    principal: "Mrs. Preeti Gugnani",
-    website: "https://scholarsrosary.co.in/",
-    highlights: "With orbiting planets and floating pencils, young minds in Classes 1 and 3 explored space and magnetism through fun-filled, hands-on activities.",
-    location: "Haryana",
-    gallery: [
-      "/images/gallery/SR1.jpeg",
-      "/images/gallery/SR2.jpeg",
-      "/images/gallery/SR3.jpeg",
-      "/images/gallery/SR4.jpeg",
-      "/images/gallery/SR5.jpeg",
-      "/images/gallery/SR6.jpeg",
-    ],
-    about: "Aerobay started working with Scholar Rosary Imperial, Rohtak in 2023.",
-    board: "CBSE",
-  },
-  {
-    name: "Scholars Rosary Senior Secondary School",
-    logo: "/images/clients/29.png",
-    joined: "2023",
-    principal: "Mrs. Preeti Gugnani",
-    website: "https://scholarsrosary.co.in/",
-    highlights: "With an exceptional showing in the Eureka Junior 2025 quiz round, students advanced to the next level of IIT Bombay’s esteemed competition.",
-    location: "Rohtak, Haryana",
-    gallery: [
-      "/images/gallery/SRR1.jpeg",
-      "/images/gallery/SRR2.jpeg",
-      "/images/gallery/SRR3.jpeg",
-      "/images/gallery/SRR4.jpeg",
-      "/images/gallery/SRR5.jpeg",
-      "/images/gallery/SRR6.jpeg",
-    ],
-    about: "Aerobay started working with Scholar's Rosary, Rohtak in 2023.",
-    board: "CBSE",
-  },
-  {
-    name: "NPS, Guwahati",
-    logo: "/images/clients/21.png",
-    joined: "2024",
-    principal: "Mr. Akhawari Nil Kishore Sinha",
-    website: "https://npsis.in/",
-    highlights: "Through innovative projects and exposure to advanced tech, students bridged creativity with real-world applications—concluding with participation at IIT Mumbai’s Aeromodelling Competition.",
-    location: "Assam",
-    gallery: [
-      "/images/gallery/NPSG1.jpg",
-      "/images/gallery/NPSG2.jpeg",
-      "/images/gallery/NPSG3.jpeg",
-      "/images/gallery/NPSG4.jpeg",
-      "/images/gallery/NPSG5.png",
-      "/images/gallery/NPSG6.png",
-    ],
-    about: "Aerobay started working with NPS, Guwahati in 2024.",
-    board: "CBSE",
-  },
-  {
-    name: "Narayana Vidyalayam",
-    logo: "/images/clients/25.png",
-    joined: "2022",
-    principal: "Ms. Rekha Nair",
-    website: "https://narayanavidyalayam.org/",
-    highlights: "The academic year (2022–23) concluded with vibrant participation in intra-school science competitions, where students showcased innovative projects like Smart Goggles, IoT Landslide Detectors, Ionic Thrusters, and more.",
-    location: "Nagpur, Maharashtra",
-    gallery: [
-      "/images/gallery/NVN1.jpeg",
-      "/images/gallery/NVN2.jpeg",
-      "/images/gallery/NVN3.jpeg",
-      "/images/gallery/NVN4.jpeg",
-      "/images/gallery/NVN5.jpeg",
-      "/images/gallery/NVN6.jpeg",
-    ],
-    about: "Aerobay started working with Narayana Vidyalayam, Nagpur in 2022.",
-    board: "CBSE",
-  },
-  {
-    name: "Shirdi Sai School, Moradabad",
-    logo: "/images/clients/48.png",
-    joined: "2024",
-    principal: "Ms. Shefali Agarwal",
-    website: "https://shirdisaipublicschool.com/",
-    highlights: "Students immersed themselves in hands-on learning with 3D printers and drones, building prototypes that applied real-world science concepts such as force and magnetism.",
-    location: "Uttar Pradesh",
-    gallery: [
-      "/images/gallery/SSM1.jpg",
-      "/images/gallery/SSM2.JPG",
-      "/images/gallery/SSM3.JPG",
-      "/images/gallery/SSM4.JPG",
-      "/images/gallery/SSM5.jpeg",
-      "/images/gallery/SSM6.jpeg",
-    ],
-    about: "Aerobay started working with Shirdi Sai School, Moradabad in 2024.",
-    board: "CBSE",
-  },
-  {
-    name: "Narayana Vidyalayam, Chandrapur",
-    logo: "/images/clients/25.png",
-    joined: "2024",
-    principal: "Ms. Shraboni Banerjee",
-    website: "https://narayanavidyalayam.org/principal-message-chandrapur/",
-    highlights: "Leveraging advanced tools like 3D printers and drones, students engineered real-world solutions in hydraulics and energy systems, showcasing true innovation in action.",
-    location: "Maharashtra",
-    gallery: [
-      "/images/gallery/NVC1.jpeg",
-      "/images/gallery/NVC2.jpeg",
-      "/images/gallery/NVC3.jpeg",
-      "/images/gallery/NVC4.jpeg",
-      "/images/gallery/NVC5.jpeg",
-      "/images/gallery/NVC6.jpeg",
-    ],
-    about: "Aerobay started working with Narayana Vidyalayam, Chandrapur in 2024.",
-    board: "CBSE",
-  },
-  // {
-  //   name: "Cohen International, Odisha",
-  //   logo: "/images/clients/16.png",
-  //   joined: "2022",
-  //   principal: "Jagjeevan Dash",
-  //   website: "https://www.coheninternationalschool.com/",
-  //   highlights: "",
-  //   location: "Odisha",
-  //   gallery: [
-  //     "/images/gallery/Cohen1.jpg",
-  //     "/images/gallery/Cohen2.jpg",
-  //     "/images/gallery/Cohen3.jpg",
-  //     "/images/gallery/Cohen4.jpg",
-  //     "/images/gallery/Cohen5.jpg",
-  //     "/images/gallery/Cohen6.jpg",
-  //   ],
-  //   about: "Aerobay started working with Cohen International, Odisha in 2022.",
-  //   board: "CBSE",
-  // },
-  // {
-  //   name: "SOS Wanadongri",
-  //   logo: "/images/clients/26.png",
-  //   joined: "2024",
-  //   principal: "Dr kavita nagarajan",
-  //   website: "https://schoolofscholars.edu.in/",
-  //   highlights: "",
-  //   location: "Maharashtra",
-  //   gallery: [
-  //     "/images/gallery/SOSW1.jpg",
-  //     "/images/gallery/SOSW2.jpg",
-  //     "/images/gallery/SOSW3.jpg",
-  //     "/images/gallery/SOSW4.jpg",
-  //     "/images/gallery/SOSW5.jpg",
-  //     "/images/gallery/SOSW6.jpg",
-  //   ],
-  //   about: "Aerobay started working with SOS Wanadongri in 2024.",
-  //   board: "CBSE",
-  // },
-  // {
-  //   name: "SOS Atreya Layout",
-  //   logo: "/images/clients/26.png",
-  //   joined: "2024",
-  //   principal: "Ms. Shilpa Newaskar",
-  //   website: "https://schoolofscholars.edu.in/atrey/",
-  //   highlights: "",
-  //   location: "Maharashtra",
-  //   gallery: [
-  //     "/images/gallery/SOSAL1.jpg",
-  //     "/images/gallery/SOSAL2.jpg",
-  //     "/images/gallery/SOSAL3.jpg",
-  //     "/images/gallery/SOSAL4.jpg",
-  //     "/images/gallery/SOSAL5.jpg",
-  //     "/images/gallery/SOSAL.jpg",
-  //   ],
-  //   about: "Aerobay started working with SOS Atreya Layout in 2024.",
-  //   board: "CBSE",
-  // },
-  // {
-  //   name: "SOS Beltarodi",
-  //   logo: "/images/clients/26.png",
-  //   joined: "2024",
-  //   principal: "Ms. Uma Bhalerao",
-  //   website: "https://schoolofscholars.edu.in/beltarodi/",
-  //   highlights: "",
-  //   location: "Maharashtra",
-  //   gallery: [
-  //     "/images/gallery/SOSB1.jpg",
-  //     "/images/gallery/SOSB2.jpg",
-  //     "/images/gallery/SOSB3.jpg",
-  //     "/images/gallery/SOSB4.jpg",
-  //     "/images/gallery/SOSB5.jpg",
-  //     "/images/gallery/SOSB6.jpg",
-  //   ],
-  //   about: "Aerobay started working with SOS Beltarodi in 2024.",
-  //   board: "CBSE",
-  // },
-  // {
-  //   name: "SOS Wardha",
-  //   logo: "/images/clients/26.png",
-  //   joined: "2024",
-  //   principal: "Mr. Suresh Lakde",
-  //   website: "https://schoolofscholars.edu.in/wardha/",
-  //   highlights: "",
-  //   location: "Maharashtra",
-  //   gallery: [
-  //     "/images/gallery/SOSWardha1.jpg",
-  //     "/images/gallery/SOSWardha2.jpg",
-  //     "/images/gallery/SOSWardha3.jpg",
-  //     "/images/gallery/SOSWardha4.jpg",
-  //     "/images/gallery/SOSWardha5.jpg",
-  //     "/images/gallery/SOSWardha6.jpg",
-  //   ],
-  //   about: "Aerobay started working with SOS Wardha in 2024.",
-  //   board: "CBSE",
-  // },
-  // {
-  //   name: "SOS Amravati",
-  //   logo: "/images/clients/26.png",
-  //   joined: "2024",
-  //   principal: "Mr. N Santosh Kumar",
-  //   website: "https://schoolofscholars.edu.in/amravati/",
-  //   highlights: "",
-  //   location: "Maharashtra",
-  //   gallery: [
-  //     "/images/gallery/SOSA1.jpg",
-  //     "/images/gallery/SOSA2.jpg",
-  //     "/images/gallery/SOSA3.jpg",
-  //     "/images/gallery/SOSA4.jpg",
-  //     "/images/gallery/SOSA5.jpg",
-  //     "/images/gallery/SOSA6.jpg",
-  //   ],
-  //   about: "Aerobay started working with SOS Amravati in 2024.",
-  //   board: "CBSE",
-  // },
-  // {
-  //   name: "SOS Akola",
-  //   logo: "/images/clients/26.png",
-  //   joined: "2024",
-  //   principal: "Mrs. Manisha Umbarkar",
-  //   website: "https://schoolofscholars.edu.in/akolakk/",
-  //   highlights: "",
-  //   location: "Maharashtra",
-  //   gallery: [
-  //     "/images/gallery/SOSAkola1.jpg",
-  //     "/images/gallery/SOSAkola2.jpg",
-  //     "/images/gallery/SOSAkola3.jpg",
-  //     "/images/gallery/SOSAkola4.jpg",
-  //     "/images/gallery/SOSAkola5.jpg",
-  //     "/images/gallery/SOSAkola6.jpg",
-  //   ],
-  //   about: "Aerobay started working with SOS Akola in 2024.",
-  //   board: "CBSE",
-  // },
-  // {
-  //   name: "SOS Yavatmal",
-  //   logo: "/images/clients/26.png",
-  //   joined: "2024",
-  //   principal: "Narendra Chawhan",
-  //   website: "https://schoolofscholars.edu.in/yavatmal/",
-  //   highlights: "",
-  //   location: "Maharashtra",
-  //   gallery: [
-  //     "/images/gallery/SOSY1.jpg",
-  //     "/images/gallery/SOSY2.jpg",
-  //     "/images/gallery/SOSY3.jpg",
-  //     "/images/gallery/SOSY4.jpg",
-  //     "/images/gallery/SOSY5.jpg",
-  //     "/images/gallery/SOSY6.jpg",
-  //   ],
-  //   about: "Aerobay started working with SOS Yavatmal in 2024.",
-  //   board: "CBSE",
-  // },
-  // {
-  //   name: "Schemford",
-  //   logo: "/images/clients/34.png",
-  //   joined: "2024",
-  //   principal: "",
-  //   website: "https://shemford.com/",
-  //   highlights: "",
-  //   location: "",
-  //   gallery: [
-  //     "/images/gallery/Schemford1.jpg",
-  //     "/images/gallery/Schemford2.jpg",
-  //     "/images/gallery/Schemford3.jpg",
-  //     "/images/gallery/Schemford4.jpg",
-  //     "/images/gallery/Schemford5.jpg",
-  //     "/images/gallery/Shemford6.jpg",
-  //   ],
-  //   about: "Aerobay started working with Schemford in 2024.",
-  //   board: "",
-  // },
-  // {
-  //   name: "Stellar World School, Bandra",
-  //   logo: "/images/clients/35.png",
-  //   joined: "2024",
-  //   principal: "",
-  //   website: "https://sws.edu.in/bandra/",
-  //   highlights: "",
-  //   location: "Maharashtra",
-  //   gallery: [
-  //     "/images/gallery/SWB1.jpg",
-  //     "/images/gallery/SWB2.jpg",
-  //     "/images/gallery/SWB3.jpg",
-  //     "/images/gallery/SWB4.jpg",
-  //     "/images/gallery/SWB5.jpg",
-  //     "/images/gallery/SWB6.jpg",
-  //   ],
-  //   about: "Aerobay started working with Stellar World School, Bandra in 2024.",
-  //   board: "IB",
-  // },
-  // {
-  //   name: "Birla Open Mind, BKT Lucknow",
-  //   logo: "/images/clients/41.png",
-  //   joined: "2024",
-  //   principal: "",
-  //   website: "https://www.birlaopenmindslko.com/",
-  //   highlights: "",
-  //   location: "Uttar Pradesh",
-  //   gallery: [
-  //     "/images/gallery/BOMISL1.jpg",
-  //     "/images/gallery/BOMISL2.jpeg",
-  //     "/images/gallery/BOMISL3.jpeg",
-  //     "/images/gallery/BOMISL4.jpeg",
-  //     "/images/gallery/BOMISL5.jpg",
-  //     "/images/gallery/BOMISL6.jpg",
-  //   ],
-  //   about: "Aerobay started working with Birla Open Mind, BKT Lucknow in 2024.",
-  //   board: "CBSE",
-  // },
-  // {
-  //   name: "Jeta Science Academy, Chalisgaon",
-  //   logo: "/images/clients/53.png",
-  //   joined: "2024",
-  //   principal: "",
-  //   website: "",
-  //   highlights: "",
-  //   location: "Maharashtra",
-  //   gallery: [
-  //     "/images/gallery/Jetta1.jpg",
-  //     "/images/gallery/Jettta2.jpg",
-  //     "/images/gallery/Jetta3.jpg",
-  //     "/images/gallery/Jetta4.jpg",
-  //     "/images/gallery/Jetta5.jpg",
-  //     "/images/gallery/Jetta6.jpg",
-  //   ],
-  //   about: "Aerobay started working with Jeta Science Academy, Chalisgaon in 2024.",
-  //   board: "CBSE",
-  // },
-  // {
-  //   name: "Birla Open Minds, Punpun",
-  //   logo: "/images/clients/55.png",
-  //   joined: "2024",
-  //   principal: "",
-  //   website: "https://www.birlaopenminds.com/k12/Bihar/Punpun/",
-  //   highlights: "",
-  //   location: "Bihar",
-  //   gallery: [
-  //     "/images/gallery/Punpun1.jpg",
-  //     "/images/gallery/Punpun2.jpg",
-  //     "/images/gallery/Punpun3.jpg",
-  //     "/images/gallery/Punpun4.jpg",
-  //     "/images/gallery/Punpun5.jpg",
-  //     "/images/gallery/Punpun6.jpg",
-  //   ],
-  //   about: "Aerobay started working with Birla Open Minds, Punpun in 2024.",
-  //   board: "CBSE",
-  // },
-
-  // {
-  //   name: "Gems Academia",
-  //   logo: "/images/clients/59.png",
-  //   joined: "2024",
-  //   principal: "Mrs. Sarmistha Banerjee",
-  //   website: "https://gemsakademia.in/",
-  //   highlights: "",
-  //   location: "West Bengal",
-  //   gallery: [
-  //     "/images/gallery/Gems1.jpg",
-  //     "/images/gallery/Gems2.jpg",
-  //     "/images/gallery/Gems3.jpg",
-  //     "/images/gallery/Gems4.jpg",
-  //     "/images/gallery/Gems5.jpg",
-  //     "/images/gallery/Gems6.jpg",
-  //   ],
-  //   about: "Aerobay started working with Gems Academia in 2024.",
-  //   board: "CBSE",
-  // },
-  // {
-  //   name: "Narayana International School - Khidderpore",
-  //   logo: "/images/clients/60.png",
-  //   joined: "2024",
-  //   principal: "ASHIF IKBAL",
-  //   website: "https://www.narayanainternationalschools.com/",
-  //   highlights: "",
-  //   location: "West Bengal",
-  //   gallery: [
-  //     "/images/gallery/NISK1.jpg",
-  //     "/images/gallery/NISK2.jpg",
-  //     "/images/gallery/NISK3.jpg",
-  //     "/images/gallery/NISK4.jpg",
-  //     "/images/gallery/NISK5.jpg",
-  //     "/images/gallery/NISK6.jpg",
-  //   ],
-  //   about: "Aerobay started working with Narayana International School - Khidderpore in 2024.",
-  //   board: "CBSE",
-  // },
-  // {
-  //   name: "Narayana School - Bally",
-  //   logo: "/images/clients/61.png",
-  //   joined: "2024",
-  //   principal: "RASHMI RASTOGI",
-  //   website: "https://www.narayanaschools.in/west-bengal/bally",
-  //   highlights: "",
-  //   location: "West Bengal",
-  //   gallery: [
-  //     "/images/gallery/NSB1.jpg",
-  //     "/images/gallery/NSB2.jpg",
-  //     "/images/gallery/NSB3.jpg",
-  //     "/images/gallery/NSB4.jpg",
-  //     "/images/gallery/NSB5.jpg",
-  //     "/images/gallery/NSB6.jpg",
-  //   ],
-  //   about: "Aerobay started working with Narayana School - Bally in 2024.",
-  //   board: "CBSE",
-  // },
-  // {
-  //   name: "Narayana School - Contai",
-  //   logo: "/images/clients/61.png",
-  //   joined: "2024",
-  //   principal: "RANJAN KUITY",
-  //   website: "https://www.narayanaschools.in/west-bengal/purba-medinipur-contai",
-  //   highlights: "",
-  //   location: "West Bengal",
-  //   gallery: [
-  //     "/images/gallery/NSC1.jpg",
-  //     "/images/gallery/NSC2.jpg",
-  //     "/images/gallery/NSC3.jpg",
-  //     "/images/gallery/NSC4.jpg",
-  //     "/images/gallery/NSC5.jpg",
-  //     "/images/gallery/NSC6.jpg",
-  //   ],
-  //   about: "Aerobay started working with Narayana School - Contai in 2024.",
-  //   board: "CBSE",
-  // },
-  // {
-  //   name: "Narayana School - Krishnanagar",
-  //   logo: "/images/clients/61.png",
-  //   joined: "2024",
-  //   principal: "KRISHNA KISHORE BADDRI",
-  //   website: "https://www.narayanaschools.in/west-bengal/krishnanagar-city",
-  //   highlights: "",
-  //   location: "West Bengal",
-  //   gallery: [
-  //     "/images/gallery/NSK1.jpg",
-  //     "/images/gallery/NSK2.jpg",
-  //     "/images/gallery/NSK3.jpg",
-  //     "/images/gallery/NSK4.jpg",
-  //     "/images/gallery/NSK5.jpg",
-  //     "/images/gallery/NSK6.jpg",
-  //   ],
-  //   about: "Aerobay started working with Narayana School - Krishnanagar in 2024.",
-  //   board: "CBSE",
-  // },
-  // {
-  //   name: "Narayana School - Ranaghat",
-  //   logo: "/images/clients/61.png",
-  //   joined: "2024",
-  //   principal: "TYRON MARCAR",
-  //   website: "https://www.narayanaschools.in/west-bengal/nadia-ranaghat",
-  //   highlights: "",
-  //   location: "West Bengal",
-  //   gallery: [
-  //     "/images/gallery/NSR1.jpg",
-  //     "/images/gallery/NSR2.jpg",
-  //     "/images/gallery/NSR3.jpg",
-  //     "/images/gallery/NSR4.jpg",
-  //     "/images/gallery/NSR5.jpg",
-  //     "/images/gallery/NSR6.jpg",
-  //   ],
-  //   about: "Aerobay started working with Narayana School - Ranaghat in 2024.",
-  //   board: "CBSE",
-  // },
-  // {
-  //   name: "Narayana School - Barasat",
-  //   logo: "/images/clients/61.png",
-  //   joined: "2024",
-  //   principal: "TILAK RAJ SHARMA",
-  //   website: "https://www.narayanaschools.in/west-bengal/barasat",
-  //   highlights: "",
-  //   location: "West Bengal",
-  //   gallery: [
-  //     "/images/gallery/NSBarasat1.jpg",
-  //     "/images/gallery/NSBarasat2.jpg",
-  //     "/images/gallery/NSBarasat3.jpg",
-  //     "/images/gallery/NSBarasat4.jpg",
-  //     "/images/gallery/NSBarasat5.jpg",
-  //     "/images/gallery/NSBarasat6.jpg",
-  //   ],
-  //   about: "Aerobay started working with Narayana School - Barasat in 2024.",
-  //   board: "CBSE",
-  // },
-  // {
-  //   name: "Narayana School - Haldia",
-  //   logo: "/images/clients/61.png",
-  //   joined: "2024",
-  //   principal: "ANINDITA DEY",
-  //   website: "https://www.narayanaschools.in/west-bengal/haldia",
-  //   highlights: "",
-  //   location: "West Bengal",
-  //   gallery: [
-  //     "/images/gallery/NSH1.jpg",
-  //     "/images/gallery/NSH2.jpg",
-  //     "/images/gallery/NSH3.jpg",
-  //     "/images/gallery/NSH4.jpg",
-  //     "/images/gallery/NSH5.jpg",
-  //     "/images/gallery/NSH6.jpg",
-  //   ],
-  //   about: "Aerobay started working with Narayana School - Haldia in 2024.",
-  //   board: "CBSE",
-  // },
-  // {
-  //   name: "Narayana School - Kalyani Town",
-  //   logo: "/images/clients/61.png",
-  //   joined: "2024",
-  //   principal: "KATURI. MAMATHA",
-  //   website: "https://www.narayanaschools.in/west-bengal/kalyani-town",
-  //   highlights: "",
-  //   location: "West Bengal",
-  //   gallery: [
-  //     "/images/gallery/NSKT1.jpg",
-  //     "/images/gallery/NSKT2.jpg",
-  //     "/images/gallery/NSKT3.jpg",
-  //     "/images/gallery/NSKT4.jpg",
-  //     "/images/gallery/NSKT5.jpg",
-  //     "/images/gallery/NSKT6.jpg",
-  //   ],
-  //   about: "Aerobay started working with Narayana School - Kalyani Town in 2024.",
-  //   board: "CBSE",
-  // },
-  // {
-  //   name: "Narayana International School - Ramachandrapur",
-  //   logo: "/images/clients/60.png",
-  //   joined: "2024",
-  //   principal: "",
-  //   website: "https://www.narayanainternationalschools.com/ramchandrapur-campus.html",
-  //   highlights: "",
-  //   location: "West Bengal",
-  //   gallery: [
-  //     "/images/gallery/NISR1.jpg",
-  //     "/images/gallery/NISR2.jpg",
-  //     "/images/gallery/NISR3.jpg",
-  //     "/images/gallery/NISR4.jpg",
-  //     "/images/gallery/NISR5.jpg",
-  //     "/images/gallery/NISR6.jpg",
-  //   ],
-  //   about: "Aerobay started working with Narayana International School - Ramachandrapur in 2024.",
-  //   board: "CBSE",
-  // },
-  // {
-  //   name: "Narayana School - Berhampore",
-  //   logo: "/images/clients/61.png",
-  //   joined: "2024",
-  //   principal: "SUJANA GHOSH",
-  //   website: "https://www.narayanaschools.in/west-bengal/murshidabad-berhampore",
-  //   highlights: "",
-  //   location: "West Bengal",
-  //   gallery: [
-  //     "/images/gallery/NB1.jpg",
-  //     "/images/gallery/NB2.jpg",
-  //     "/images/gallery/NB3.jpg",
-  //     "/images/gallery/NB4.jpg",
-  //     "/images/gallery/NB5.jpg",
-  //     "/images/gallery/NB6.jpg",
-  //   ],
-  //   about: "Aerobay started working with Narayana School - Berhampore in 2024.",
-  //   board: "CBSE",
-  // },
-  // {
-  //   name: "Narayana School - Basirhat",
-  //   logo: "/images/clients/61.png",
-  //   joined: "2024",
-  //   principal: "KUNAL SHAW",
-  //   website: "https://www.narayanaschools.in/west-bengal/basirhat",
-  //   highlights: "",
-  //   location: "West Bengal",
-  //   gallery: [
-  //     "/images/gallery/NBasirhat1.jpg",
-  //     "/images/gallery/NBasirhat2.jpg",
-  //     "/images/gallery/NBasirhat3.jpg",
-  //     "/images/gallery/NBasirhat4.jpg",
-  //     "/images/gallery/NBasirhat5.jpg",
-  //     "/images/gallery/NBasirhat6.jpg",
-  //   ],
-  //   about: "Aerobay started working with Narayana School - Basirhat in 2024.",
-  //   board: "CBSE",
-  // },
-  // {
-  //   name: "GD Goenka Public School, North Lakhimpur",
-  //   logo: "/images/clients/62.png",
-  //   joined: "2024",
-  //   principal: "",
-  //   website: "https://gdgoenkanorthlakhimpur.com/",
-  //   highlights: "",
-  //   location: "Bihar",
-  //   gallery: [
-  //     "/images/gallery/GDGNL1.jpg",
-  //     "/images/gallery/GDGNL2.jpg",
-  //     "/images/gallery/GDGNL3.jpg",
-  //     "/images/gallery/GDGNL4.jpg",
-  //     "/images/gallery/GDGNL5.jpg",
-  //     "/images/gallery/GDGNL6.jpg",
-  //   ],
-  //   about: "Aerobay started working with GD Goenka Public School, North Lakhimpur in 2024.",
-  //   board: "CBSE",
-  // },
-  // {
-  //   name: "Guwahati International School, Assam",
-  //   logo: "/images/clients/64.png",
-  //   joined: "2024",
-  //   principal: "Mr. Sanjay Kumar",
-  //   website: "https://internationalschoolguwahati.com/",
-  //   highlights: "",
-  //   location: "Assam",
-  //   gallery: [
-  //     "/images/gallery/GISA1.jpg",
-  //     "/images/gallery/GISA2.jpg",
-  //     "/images/gallery/GISA3.jpg",
-  //     "/images/gallery/GISA4.jpg",
-  //     "/images/gallery/GISA5.jpg",
-  //     "/images/gallery/GISA6.jpg",
-  //   ],
-  //   about: "Aerobay started working with Guwahati International School, Assam in 2024.",
-  //   board: "CBSE",
-  // },
-  // {
-  //   name: "GD Goenka, Gola Gokarnath",
-  //   logo: "/images/clients/71.png",
-  //   joined: "2024",
-  //   principal: "",
-  //   website: "https://gdgoenkagola.com/",
-  //   highlights: "",
-  //   location: "Uttar Pradesh",
-  //   gallery: [
-  //     "/images/gallery/GDGGG1.jpg",
-  //     "/images/gallery/GDGGG2.jpg",
-  //     "/images/gallery/GDGGG3.jpg",
-  //     "/images/gallery/GDGG4.jpg",
-  //     "/images/gallery/GDGG5.jpg",
-  //     "/images/gallery/GDGG6.jpg",
-  //   ],
-  //   about: "Aerobay started working with GD Goenka, Gola Gokarnath in 2024.",
-  //   board: "CBSE",
-  // },
-  // {
-  //   name: "GD Goenka International, Gandhidham",
-  //   logo: "/images/clients/75.png",
-  //   joined: "2024",
-  //   principal: "Mr. Lokesh Kuumar Shah",
-  //   website: "https://gdgoenkagandhidham.com/",
-  //   highlights: "",
-  //   location: "Gujarat",
-  //   gallery: [
-  //     "/images/gallery/GDGGandhidham1.jpg",
-  //     "/images/gallery/GDGGandhidham2.jpg",
-  //     "/images/gallery/GDGGandhidham3.jpg",
-  //     "/images/gallery/GDGGandhidham4.jpg",
-  //     "/images/gallery/GDGGandhidham5.jpg",
-  //     "/images/gallery/GDGGandhidham6.jpg",
-  //   ],
-  //   about: "Aerobay started working with GD Goenka International, Gandhidham in 2024.",
-  //   board: "CBSE",
-  // },
-  // {
-  //   name: "GD Goenka, Sitapur",
-  //   logo: "/images/clients/77.png",
-  //   joined: "2024",
-  //   principal: "Mrs. Shah Trishla Sandip Kumar",
-  //   website: "https://www.gdgoenkasitapur.com/",
-  //   highlights: "",
-  //   location: "Uttar Pradesh",
-  //   gallery: [
-  //     "/images/gallery/GDGSitapur1.jpg",
-  //     "/images/gallery/GDGSitapur2.jpg",
-  //     "/images/gallery/GDGSitapur3.jpg",
-  //     "/images/gallery/GDGSitapur4.jpg",
-  //     "/images/gallery/GDGDSitapur5.jpg",
-  //     "/images/gallery/GDGSitapur6.jpg",
-  //   ],
-  //   about: "Aerobay started working with GD Goenka, Sitapur in 2024.",
-  //   board: "CBSE",
-  // },
-  // {
-  //   name: "Arya Gurukul, Kalyan",
-  //   logo: "/images/clients/78.png",
-  //   joined: "2024",
-  //   principal: "Mrs. Divya Borse",
-  //   website: "https://aryagurukul.in/",
-  //   highlights: "",
-  //   location: "Maharashtra",
-  //   gallery: [
-  //     "/images/gallery/Arya1.jpg",
-  //     "/images/gallery/Arya2.jpg",
-  //     "/images/gallery/Arya3.jpg",
-  //     "/images/gallery/Arya4.jpg",
-  //     "/images/gallery/Arya5.jpg",
-  //     "/images/gallery/Arya6.jpg",
-  //   ],
-  //   about: "Aerobay started working with Arya Gurukul, Kalyan in 2024.",
-  //   board: "CBSE",
-  // },
-  // {
-  //   name: "Hill View Public School, Anantnag",
-  //   logo: "/images/clients/79.png",
-  //   joined: "2024",
-  //   principal: "",
-  //   website: "",
-  //   highlights: "",
-  //   location: "Jammu",
-  //   gallery: [
-  //     "/images/gallery/dlfpublicschool1.jpg",
-  //     "/images/gallery/dlfpublicschool2.jpg",
-  //     "/images/gallery/dlfpublicschool3.jpg",
-  //     "/images/gallery/dlfpublicschool4.jpg",
-  //     "/images/gallery/dlfpublicschool5.jpg",
-  //     "/images/gallery/dlfpublicschool6.jpg",
-  //   ],
-  //   about: "Aerobay started working with Hill View Public School, Anantnag in 2024.",
-  //   board: "CBSE",
-  // },
-  // {
-  //   name: "The Presidency School, Bhiwandi, Thane",
-  //   logo: "/images/clients/80.png",
-  //   joined: "2024",
-  //   principal: "Ms. Manpreet Kaur",
-  //   website: "https://www.presidencyschools.in/",
-  //   highlights: "",
-  //   location: "Mumbai",
-  //   gallery: [
-  //     "/images/gallery/PS1.jpg",
-  //     "/images/gallery/PS2.jpg",
-  //     "/images/gallery/PS3.jpg",
-  //     "/images/gallery/PS4.jpg",
-  //     "/images/gallery/PS5.jpg",
-  //     "/images/gallery/PS6.jpg",
-  //   ],
-  //   about: "Aerobay started working with The Presidency School, Bhiwandi, Thane in 2024.",
-  //   board: "CBSE",
-  // },
-  // {
-  //   name: "Snehlata, Mumbai",
-  //   logo: "/images/clients/81.png",
-  //   joined: "2024",
-  //   principal: "",
-  //   website: "",
-  //   highlights: "",
-  //   location: "",
-  //   gallery: [
-  //     "/images/gallery/bdsomani1.jpg",
-  //     "/images/gallery/bdsomani2.jpg",
-  //     "/images/gallery/bdsomani3.jpg",
-  //     "/images/gallery/bdsomani4.jpg",
-  //     "/images/gallery/bdsomani5.jpg",
-  //     "/images/gallery/bdsomani6.jpg",
-  //   ],
-  //   about: "Aerobay started working with Snehlata, Mumbai in 2024.",
-  //   board: "",
-  // },
-  // {
-  //   name: "Gautam Singhania, Thane",
-  //   logo: "/images/clients/82.png",
-  //   joined: "2024",
-  //   principal: "Mrs Deepika Sachar",
-  //   website: "https://gsgs.in/",
-  //   highlights: "",
-  //   location: "Mumbai",
-  //   gallery: [
-  //     "/images/gallery/Gautam1.jpg",
-  //     "/images/gallery/Gautam2.jpg",
-  //     "/images/gallery/Gautam3.jpg",
-  //     "/images/gallery/Gautam4.jpg",
-  //     "/images/gallery/Gautam5.jpg",
-  //     "/images/gallery/Gautam6.jpg",
-  //   ],
-  //   about: "Aerobay started working with Gautam Singhania, Thane in 2024.",
-  //   board: "ICSE",
-  // },
+    {
+        "name":  "Jayshree Periwal Global School",
+        "location":  "Jaipur, Rajasthan",
+        "logo":  "/images/clients/1.png"
+    },
+    {
+        "name":  "Jayshree Periwal High School",
+        "location":  "Jaipur, Rajasthan",
+        "logo":  "/images/clients/2.png"
+    },
+    {
+        "name":  "Aurobindo School",
+        "location":  "Jaipur, Rajasthan",
+        "logo":  "/images/clients/3.png"
+    },
+    {
+        "name":  "RN Saha International School",
+        "location":  "Mumbai, Maharashtra",
+        "logo":  "/images/clients/4.png"
+    },
+    {
+        "name":  "SVIS, Mumbai",
+        "location":  "Maharashtra",
+        "logo":  "/images/clients/5.png"
+    },
+    {
+        "name":  "AM NAIK School, Mumbai",
+        "location":  "Maharashtra",
+        "logo":  "/images/clients/6.png"
+    },
+    {
+        "name":  "DLF World School",
+        "location":  "Greater Noida",
+        "logo":  "/images/clients/7.png"
+    },
+    {
+        "name":  "Shambhu Dayal Global School",
+        "location":  "Ghaziabad",
+        "logo":  "/images/clients/8.png"
+    },
+    {
+        "name":  "DLF Public School",
+        "location":  "Delhi NCR",
+        "logo":  "/images/clients/9.png"
+    },
+    {
+        "name":  "Ganga International School",
+        "location":  "Delhi NCR",
+        "logo":  "/images/clients/10.png"
+    },
+    {
+        "name":  "Taurian International School",
+        "location":  "Ranchi, Jharkhand",
+        "logo":  "/images/clients/11.png"
+    },
+    {
+        "name":  "DPS School, Bokaro",
+        "location":  "Jharkhand",
+        "logo":  "/images/clients/12.png"
+    },
+    {
+        "name":  "GD Goenka, Bhiwani",
+        "location":  "Haryana",
+        "logo":  "/images/clients/13.png"
+    },
+    {
+        "name":  "Seth MR Jaipuriya, Lucknow",
+        "location":  "Uttar Pradesh",
+        "logo":  "/images/clients/14.png"
+    },
+    {
+        "name":  "GD Goenka, Purnea",
+        "location":  "Bihar",
+        "logo":  "/images/clients/15.png"
+    },
+    {
+        "name":  "Cohen International, Odisha",
+        "location":  "Odisha",
+        "logo":  "/images/clients/16.png"
+    },
+    {
+        "name":  "GD Goenka, Siliguri",
+        "location":  "West Bengal",
+        "logo":  "/images/clients/17.png"
+    },
+    {
+        "name":  "Trinity Public School, Kolkata",
+        "location":  "West Bengal",
+        "logo":  "/images/clients/18.png"
+    },
+    {
+        "name":  "Stemfield School, Jabalpur",
+        "location":  "Madhya Pradesh",
+        "logo":  "/images/clients/19.png"
+    },
+    {
+        "name":  "DPS, Nagaon",
+        "location":  "Assam",
+        "logo":  "/images/clients/20.png"
+    },
+    {
+        "name":  "NPS, Guwahati",
+        "location":  "Assam",
+        "logo":  "/images/clients/21.png"
+    },
+    {
+        "name":  "GD Goenka, Jabalpur",
+        "location":  "Madhya Pradesh",
+        "logo":  "/images/clients/22.png"
+    },
+    {
+        "name":  "Jayshree Periwal International School",
+        "location":  "Jaipur, Rajasthan",
+        "logo":  "/images/clients/23.png"
+    },
+    {
+        "name":  "GH Raisoni, Jalgaon",
+        "location":  "Maharashtra",
+        "logo":  "/images/clients/24.png"
+    },
+    {
+        "name":  "Narayana Vidyalayam",
+        "location":  "Nagpur, Maharashtra",
+        "logo":  "/images/clients/25.png"
+    },
+    {
+        "name":  "SOS Wanadongri",
+        "location":  "Maharashtra",
+        "logo":  "/images/clients/26.png"
+    },
+    {
+        "name":  "BD Somani International School",
+        "location":  "Maharashtra",
+        "logo":  "/images/clients/27.png"
+    },
+    {
+        "name":  "Centre Point School International, Dhaba Road",
+        "location":  "Maharashtra",
+        "logo":  "/images/clients/28.png"
+    },
+    {
+        "name":  "Scholars Rosary Junior Wing, Rohtak",
+        "location":  "Haryana",
+        "logo":  "/images/clients/29.png"
+    },
+    {
+        "name":  "Acharyashri Sudarshan Patna Central School",
+        "location":  "Bihar",
+        "logo":  "/images/clients/30.png"
+    },
+    {
+        "name":  "Birla Open Minds International School",
+        "location":  "Buxar, Bihar",
+        "logo":  "/images/clients/31.png"
+    },
+    {
+        "name":  "GD Goenka, Jhansi",
+        "location":  "Uttar Pradesh",
+        "logo":  "/images/clients/32.png"
+    },
+    {
+        "name":  "DPS, Gangtok",
+        "location":  "Sikkim",
+        "logo":  "/images/clients/33.png"
+    },
+    {
+        "name":  "Shemford Futuristic K12 School",
+        "location":  "Auraiya, Uttar Pradesh",
+        "logo":  "/images/clients/34.png"
+    },
+    {
+        "name":  "Stellar World School, Bandra",
+        "location":  "Maharashtra",
+        "logo":  "/images/clients/35.png"
+    },
+    {
+        "name":  "Prominence School, Greater Noida",
+        "location":  "Uttar Pradesh",
+        "logo":  "/images/clients/36.png"
+    },
+    {
+        "name":  "Don Bosco School, Kharagpur",
+        "location":  "West Bengal",
+        "logo":  "/images/clients/37.png"
+    },
+    {
+        "name":  "Digmani Public School",
+        "location":  "Gaya, Bihar",
+        "logo":  "/images/clients/38.png"
+    },
+    {
+        "name":  "GD Goenka Public School, Shahjahanpur",
+        "location":  "Uttar Pradesh",
+        "logo":  "/images/clients/39.png"
+    },
+    {
+        "name":  "GD Goenka Public School, Firozabad",
+        "location":  "Uttar Pradesh",
+        "logo":  "/images/clients/40.png"
+    },
+    {
+        "name":  "Birla Open Mind, BKT Lucknow",
+        "location":  "Uttar Pradesh",
+        "logo":  "/images/clients/41.png"
+    },
+    {
+        "name":  "The Nest, Chennai",
+        "location":  "Tamil Nadu",
+        "logo":  "/images/clients/42.png"
+    },
+    {
+        "name":  "GD Goenka Public School, Chhibramau",
+        "location":  "Uttar Pradesh",
+        "logo":  "/images/clients/43.png"
+    },
+    {
+        "name":  "Mount Litera Zee School, Nagpur",
+        "location":  "Maharashtra",
+        "logo":  "/images/clients/44.png"
+    },
+    {
+        "name":  "Suditi Global Academy, Etawah",
+        "location":  "Uttar Pradesh",
+        "logo":  "/images/clients/45.png"
+    },
+    {
+        "name":  "Meena Bhujbal School of Excellence, Nashik",
+        "location":  "Maharashtra",
+        "logo":  "/images/clients/46.png"
+    },
+    {
+        "name":  "Delhi Public School, Etawah",
+        "location":  "Uttar Pradesh",
+        "logo":  "/images/clients/47.png"
+    },
+    {
+        "name":  "Shirdi Sai School, Moradabad",
+        "location":  "Uttar Pradesh",
+        "logo":  "/images/clients/48.png"
+    },
+    {
+        "name":  "Birla Open Mind School, Singur",
+        "location":  "West Bengal",
+        "logo":  "/images/clients/49.png"
+    },
+    {
+        "name":  "Delhi World Public School, Orai",
+        "location":  "Uttar Pradesh",
+        "logo":  "/images/clients/50.png"
+    },
+    {
+        "name":  "DPS Megacity, Kolkata",
+        "location":  "West Bengal",
+        "logo":  "/images/clients/51.png"
+    },
+    {
+        "name":  "GD Goenka Public School, Basti",
+        "location":  "Uttar Pradesh",
+        "logo":  "/images/clients/52.png"
+    },
+    {
+        "name":  "Jeta Science Academy, Chalisgaon",
+        "location":  "Maharashtra",
+        "logo":  "/images/clients/53.png"
+    },
+    {
+        "name":  "Vibgyor World Academy Nagpur",
+        "location":  "Maharashtra",
+        "logo":  "/images/clients/54.png"
+    },
+    {
+        "name":  "Birla Open Minds, Punpun",
+        "location":  "Bihar",
+        "logo":  "/images/clients/55.png"
+    },
+    {
+        "name":  "Lady LRD Public School, Mandi Gobindgarh",
+        "location":  "Maharashtra",
+        "logo":  "/images/clients/56.png"
+    },
+    {
+        "name":  "Gopi Birla Memorial School, Walkeshwar",
+        "location":  "Maharashtra",
+        "logo":  "/images/clients/57.png"
+    },
+    {
+        "name":  "Birla Open Minds, Amravati",
+        "location":  "Maharashtra",
+        "logo":  "/images/clients/58.png"
+    },
+    {
+        "name":  "Gems Academia",
+        "location":  "West Bengal",
+        "logo":  "/images/clients/59.png"
+    },
+    {
+        "name":  "Narayana International School - Khidderpore",
+        "location":  "West Bengal",
+        "logo":  "/images/clients/60.png"
+    },
+    {
+        "name":  "Narayana School - Bally",
+        "location":  "West Bengal",
+        "logo":  "/images/clients/61.png"
+    },
+    {
+        "name":  "GD Goenka Public School, North Lakhimpur",
+        "location":  "Bihar",
+        "logo":  "/images/clients/62.png"
+    },
+    {
+        "name":  "Mount Litera Zee School, Bihta",
+        "location":  "Bihar",
+        "logo":  "/images/clients/63.png"
+    },
+    {
+        "name":  "Guwahati International School, Assam",
+        "location":  "Assam",
+        "logo":  "/images/clients/64.png"
+    },
+    {
+        "name":  "The Assam Valley School, Assam",
+        "location":  "Assam",
+        "logo":  "/images/clients/65.png"
+    },
+    {
+        "name":  "Indo Scots Global School, Kamotee",
+        "location":  "Maharashtra",
+        "logo":  "/images/clients/66.png"
+    },
+    {
+        "name":  "Allenhouse Public School, Vasundhara",
+        "location":  "Uttar Pradesh",
+        "logo":  "/images/clients/67.png"
+    },
+    {
+        "name":  "Allenhouse Public School, Rooma, Kanpur",
+        "location":  "Uttar Pradesh",
+        "logo":  "/images/clients/68.png"
+    },
+    {
+        "name":  "DPS, Bhilaur Kanpur",
+        "location":  "Uttar Pradesh",
+        "logo":  "/images/clients/69.png"
+    },
+    {
+        "name":  "DWPS, Purulia",
+        "location":  "West Bengal",
+        "logo":  "/images/clients/70.png"
+    },
+    {
+        "name":  "Army Public School, Jaipur",
+        "location":  "Rajasthan",
+        "logo":  "/images/clients/72.png"
+    },
+    {
+        "name":  "New Horizon International School, Mumbai",
+        "location":  "Maharashtra",
+        "logo":  "/images/clients/73.png"
+    },
+    {
+        "name":  "New Horizon Public School, Mumbai",
+        "location":  "Maharashtra",
+        "logo":  "/images/clients/74.png"
+    },
+    {
+        "name":  "GD Goenka International, Gandhidham",
+        "location":  "Gujarat",
+        "logo":  "/images/clients/75.png"
+    },
+    {
+        "name":  "CPS, Kalikapur (Kolkata)",
+        "location":  "West Bengal",
+        "logo":  "/images/clients/76.png"
+    },
+    {
+        "name":  "GD Goenka, Sitapur",
+        "location":  "Uttar Pradesh",
+        "logo":  "/images/clients/77.png"
+    },
+    {
+        "name":  "Arya Gurukul, Kalyan",
+        "location":  "Maharashtra",
+        "logo":  "/images/clients/78.png"
+    },
+    {
+        "name":  "The Presidency School, Bhiwandi, Thane",
+        "location":  "Mumbai",
+        "logo":  "/images/clients/80.png"
+    },
+    {
+        "name":  "Gautam Singhania, Thane",
+        "location":  "Mumbai",
+        "logo":  "/images/clients/82.png"
+    },
+    {
+        "name":  "Adani Vidya Mandir",
+        "location":  "Ahmedabad",
+        "logo":  "/images/clients/Adani Vidya Mandir, Ahmedabad.jpg"
+    },
+    {
+        "name":  "Aikya World School",
+        "location":  "Bengaluru",
+        "logo":  "/images/clients/Aikya World School, Bengaluru.jpg"
+    },
+    {
+        "name":  "Al- Huda Matriculation Hr. Secondary School",
+        "location":  "Vaniyambadi",
+        "logo":  "/images/clients/Al- Huda Matriculation Hr. Secondary School, Vaniyambadi.jpg"
+    },
+    {
+        "name":  "Army Public School",
+        "location":  "Ahmednagar",
+        "logo":  "/images/clients/Army Public School, Ahmednagar.jpg"
+    },
+    {
+        "name":  "Ashoka Universal School",
+        "location":  "Nashik",
+        "logo":  "/images/clients/Ashoka Universal School - Ashoka Marg, Nashik.png"
+    },
+    {
+        "name":  "Bal Bharti School",
+        "location":  "Rewa",
+        "logo":  "/images/clients/Bal Bharti School, Rewa.jpg"
+    },
+    {
+        "name":  "Baryons International Girls School",
+        "location":  "Calicut",
+        "logo":  "/images/clients/Baryons International Girls School, Calicut.jpg"
+    },
+    {
+        "name":  "Birla Open Minds International School",
+        "location":  "Bhopal",
+        "logo":  "/images/clients/Birla Open Minds International School, Bhopal.png"
+    },
+    {
+        "name":  "Birla Open Minds International School",
+        "location":  "Chapra",
+        "logo":  "/images/clients/Birla Open Minds International School, Chapra.png"
+    },
+    {
+        "name":  "Birla Open Minds International School",
+        "location":  "Nashik",
+        "logo":  "/images/clients/Birla Open Minds International School, Nashik.png"
+    },
+    {
+        "name":  "Central Academy",
+        "location":  "Rewa",
+        "logo":  "/images/clients/Central Academy, Rewa.jpg"
+    },
+    {
+        "name":  "Central Model School",
+        "location":  "Barrackpore",
+        "logo":  "/images/clients/Central Model School, Barrackpore.jpg"
+    },
+    {
+        "name":  "Central Model School, Konnagar",
+        "location":  "Mirpur",
+        "logo":  "/images/clients/Central Model School, Konnagar, Mirpur.jpg"
+    },
+    {
+        "name":  "Chief Minister's Model School",
+        "location":  "",
+        "logo":  "/images/clients/Chief Minister's Model School.jpg"
+    },
+    {
+        "name":  "CP Goenka International School",
+        "location":  "Mumbai",
+        "logo":  "/images/clients/CP Goenka International School, Mumbai.png"
+    },
+    {
+        "name":  "Delhi Public School",
+        "location":  "Chhatarpur",
+        "logo":  "/images/clients/Delhi Public School, Chhatarpur.jpg"
+    },
+    {
+        "name":  "Delhi Public School",
+        "location":  "Karnal",
+        "logo":  "/images/clients/Delhi Public School, Karnal.png"
+    },
+    {
+        "name":  "Delhi Public School",
+        "location":  "Tajpur",
+        "logo":  "/images/clients/Delhi Public School, Tajpur.jpg"
+    },
+    {
+        "name":  "DG Khetan International School",
+        "location":  "Malad",
+        "logo":  "/images/clients/DG Khetan International School, Malad.jpg"
+    },
+    {
+        "name":  "DY Patil Public School",
+        "location":  "Pune",
+        "logo":  "/images/clients/DY Patil Public School, Pune.jpg"
+    },
+    {
+        "name":  "Edify World School",
+        "location":  "Attapur",
+        "logo":  "/images/clients/Edify World School, Attapur.png"
+    },
+    {
+        "name":  "Faith British School",
+        "location":  "Bengaluru",
+        "logo":  "/images/clients/Faith British School, Bengaluru.png"
+    },
+    {
+        "name":  "Fortune High School",
+        "location":  "Pune",
+        "logo":  "/images/clients/Fortune High School, Pune.jpg"
+    },
+    {
+        "name":  "Gayatri English Medium School",
+        "location":  "Pune",
+        "logo":  "/images/clients/Gayatri English Medium School, Pune.jpg"
+    },
+    {
+        "name":  "GD Goenka Public School",
+        "location":  "Ayodhya",
+        "logo":  "/images/clients/GD Goenka Public School, Ayodhya.png"
+    },
+    {
+        "name":  "GD Goenka Public School",
+        "location":  "Begusarai",
+        "logo":  "/images/clients/GD Goenka Public School, Begusarai.png"
+    },
+    {
+        "name":  "GD Goenka Public School",
+        "location":  "Darbhanga",
+        "logo":  "/images/clients/GD Goenka Public School, Darbhanga - AeroBay.jpg"
+    },
+    {
+        "name":  "GD Goenka Public School",
+        "location":  "Gola",
+        "logo":  "/images/clients/GD Goenka Public School, Gola.png"
+    },
+    {
+        "name":  "Geeta Jyothi School",
+        "location":  "Rewa",
+        "logo":  "/images/clients/Geeta Jyothi School, Rewa.png"
+    },
+    {
+        "name":  "Gems Akademia - Kolkata",
+        "location":  "",
+        "logo":  "/images/clients/Gems Akademia - Kolkata.jpg"
+    },
+    {
+        "name":  "GM Global School",
+        "location":  "Udupi",
+        "logo":  "/images/clients/GM Global School, Udupi.png"
+    },
+    {
+        "name":  "Greenfield School International",
+        "location":  "Kakinada",
+        "logo":  "/images/clients/Greenfield School International, Kakinada.png"
+    },
+    {
+        "name":  "Greenfield School",
+        "location":  "Birtamod",
+        "logo":  "/images/clients/Greenfield School, Birtamod.jpg"
+    },
+    {
+        "name":  "Greenwood High",
+        "location":  "Sarjapur",
+        "logo":  "/images/clients/Greenwood High, Sarjapur ICSE.png"
+    },
+    {
+        "name":  "Gyansthali Senior Secondary School",
+        "location":  "Rewa",
+        "logo":  "/images/clients/Gyansthali Senior Secondary School, Rewa.jpg"
+    },
+    {
+        "name":  "Indo Scots Global School",
+        "location":  "Kalyan",
+        "logo":  "/images/clients/Indo Scots Global School, Kalyan.jpg"
+    },
+    {
+        "name":  "Indo Scots Global School",
+        "location":  "Nashik",
+        "logo":  "/images/clients/Indo Scots Global School, Nashik.png"
+    },
+    {
+        "name":  "Jamnabai Narsee International School",
+        "location":  "Mumbai",
+        "logo":  "/images/clients/Jamnabai Narsee International School, Mumbai.png"
+    },
+    {
+        "name":  "JBM Global School",
+        "location":  "Noida",
+        "logo":  "/images/clients/JBM Global School, Noida.jpg"
+    },
+    {
+        "name":  "Jindal Vidya Mandir",
+        "location":  "Hillside Township",
+        "logo":  "/images/clients/Jindal Vidya Mandir, Hillside Township.png"
+    },
+    {
+        "name":  "Jindal Vidya Mandir",
+        "location":  "Vasind",
+        "logo":  "/images/clients/Jindal Vidya Mandir, Vasind.png"
+    },
+    {
+        "name":  "Jindal Vidya Mandir",
+        "location":  "Vidyanagar",
+        "logo":  "/images/clients/Jindal Vidya Mandir, Vidyanagar.jpg"
+    },
+    {
+        "name":  "Kalyani Central Model School",
+        "location":  "Kalyani",
+        "logo":  "/images/clients/Kalyani Central Model School, Kalyani.jpg"
+    },
+    {
+        "name":  "Kalyani Public School",
+        "location":  "Barasat",
+        "logo":  "/images/clients/Kalyani Public School, Barasat.jpg"
+    },
+    {
+        "name":  "Kalyani Public School",
+        "location":  "Salt Lake",
+        "logo":  "/images/clients/Kalyani Public School, Salt Lake.jpg"
+    },
+    {
+        "name":  "Kids Gurukul International School",
+        "location":  "Jalgaon",
+        "logo":  "/images/clients/Kids Gurukul International School, Jalgaon.jpg"
+    },
+    {
+        "name":  "KLM International School",
+        "location":  "Pathankot",
+        "logo":  "/images/clients/KLM International School, Pathankot.jpg"
+    },
+    {
+        "name":  "KR Mangalam World School",
+        "location":  "Bahadurgarh",
+        "logo":  "/images/clients/KR Mangalam World School, Bahadurgarh.png"
+    },
+    {
+        "name":  "KR Mangalam World School",
+        "location":  "South City, Gurgaon",
+        "logo":  "/images/clients/KR Mangalam World School, South City I, Gurgaon.jpg"
+    },
+    {
+        "name":  "KR Mangalam World School",
+        "location":  "Vaishali",
+        "logo":  "/images/clients/KR Mangalam World School, Vaishali.jpg"
+    },
+    {
+        "name":  "KVTR",
+        "location":  "Dhule",
+        "logo":  "/images/clients/KVTR, Dhule.jpg"
+    },
+    {
+        "name":  "Loreto Convent",
+        "location":  "Ranchi",
+        "logo":  "/images/clients/Loreto Convent, Ranchi.jpg"
+    },
+    {
+        "name":  "MET Rishikul Vidyalaya",
+        "location":  "Mumbai",
+        "logo":  "/images/clients/MET Rishikul Vidyalaya, Mumbai.webp"
+    },
+    {
+        "name":  "MIT Group of Institutions",
+        "location":  "Pune",
+        "logo":  "/images/clients/MIT Group of Institutions, Pune.jpg"
+    },
+    {
+        "name":  "Montfort School",
+        "location":  "Nagpur",
+        "logo":  "/images/clients/Montfort School, Nagpur.png"
+    },
+    {
+        "name":  "Mount Litera Zee School",
+        "location":  "Bhopal",
+        "logo":  "/images/clients/Mount Litera Zee School, Bhopal.jpg"
+    },
+    {
+        "name":  "Mount Litera Zee School",
+        "location":  "Pali",
+        "logo":  "/images/clients/Mt. Litera Zee School, Pali.jpg"
+    },
+    {
+        "name":  "Nankana Sahib Public School",
+        "location":  "Ludhiana",
+        "logo":  "/images/clients/Nankana Sahib Public School, Ludhiana.png"
+    },
+    {
+        "name":  "Nankana Sahib Sr. Sec. Public School, Kila Raipur",
+        "location":  "Ludhiana",
+        "logo":  "/images/clients/Nankana Sahib Sr. Sec. Public School, Kila Raipur, Ludhiana.png"
+    },
+    {
+        "name":  "Narayana International School - Ramachandrapur Sonarpur",
+        "location":  "",
+        "logo":  "/images/clients/Narayana International School - Ramachandrapur Sonarpur.png"
+    },
+    {
+        "name":  "Narayana School - Barasat",
+        "location":  "",
+        "logo":  "/images/clients/Narayana School - Barasat.png"
+    },
+    {
+        "name":  "Narayana School - Basirhat",
+        "location":  "",
+        "logo":  "/images/clients/Narayana School - Basirhat.png"
+    },
+    {
+        "name":  "Narayana School - Berhampore",
+        "location":  "",
+        "logo":  "/images/clients/Narayana School - Berhampore.png"
+    },
+    {
+        "name":  "Narayana School - Contai",
+        "location":  "",
+        "logo":  "/images/clients/Narayana School - Contai.png"
+    },
+    {
+        "name":  "Narayana School - Haldia",
+        "location":  "",
+        "logo":  "/images/clients/Narayana School - Haldia.png"
+    },
+    {
+        "name":  "Narayana School - Kalyani Town",
+        "location":  "",
+        "logo":  "/images/clients/Narayana School - Kalyani Town.png"
+    },
+    {
+        "name":  "Narayana School - Krishnanagar",
+        "location":  "",
+        "logo":  "/images/clients/Narayana School - Krishnanagar.jpg"
+    },
+    {
+        "name":  "Narayana School - Ranaghat",
+        "location":  "",
+        "logo":  "/images/clients/Narayana School - Ranaghat.png"
+    },
+    {
+        "name":  "New Horizon World Academy",
+        "location":  "Mumbai",
+        "logo":  "/images/clients/New Horizon World Academy, Mumbai.jpg"
+    },
+    {
+        "name":  "Prince Education",
+        "location":  "Sikar",
+        "logo":  "/images/clients/Prince Education, Sikar.jpg"
+    },
+    {
+        "name":  "Ram Ratna Vidya Mandir",
+        "location":  "Mumbai",
+        "logo":  "/images/clients/Ram Ratna Vidya Mandir, Mumbai.jpg"
+    },
+    {
+        "name":  "Ramakrishna Mission School",
+        "location":  "Imphal",
+        "logo":  "/images/clients/Ramakrishna Mission School, Imphal.jpg"
+    },
+    {
+        "name":  "Raunaq Public School",
+        "location":  "Sonipat",
+        "logo":  "/images/clients/Raunaq Public School, Sonipat.jpg"
+    },
+    {
+        "name":  "River Trail School",
+        "location":  "Betul",
+        "logo":  "/images/clients/River Trail School, Betul.png"
+    },
+    {
+        "name":  "RPS Public School",
+        "location":  "Patna",
+        "logo":  "/images/clients/RPS Public School, Patna.jpg"
+    },
+    {
+        "name":  "Sai Vikash Vidya Niketan",
+        "location":  "Guwahati.",
+        "logo":  "/images/clients/Sai Vikash Vidya Niketan, Guwahati..jpg"
+    },
+    {
+        "name":  "Sai Vikash Vidya Niketan",
+        "location":  "Silchar",
+        "logo":  "/images/clients/Sai Vikash Vidya Niketan, Silchar.jpg"
+    },
+    {
+        "name":  "Saini International School",
+        "location":  "Howrah",
+        "logo":  "/images/clients/Saini International School, Howrah.png"
+    },
+    {
+        "name":  "Saini International School",
+        "location":  "Maheshtala",
+        "logo":  "/images/clients/Saini International School, Maheshtala.png"
+    },
+    {
+        "name":  "Saint Patrick's Academy",
+        "location":  "Dehradun",
+        "logo":  "/images/clients/Saint Patrick's Academy, Dehradun.png"
+    },
+    {
+        "name":  "Sanctus World School",
+        "location":  "Shamshabad",
+        "logo":  "/images/clients/Sanctus World School, Shamshabad.png"
+    },
+    {
+        "name":  "Sandipani School",
+        "location":  "Nagpur",
+        "logo":  "/images/clients/Sandipani School, Nagpur.jpg"
+    },
+    {
+        "name":  "Sanjivani Academy",
+        "location":  "Kopargaon",
+        "logo":  "/images/clients/Sanjivani Academy, Kopargaon.png"
+    },
+    {
+        "name":  "Satya Prakash Public School",
+        "location":  "Jabalpur",
+        "logo":  "/images/clients/Satya Prakash Public School, Jabalpur.jpg"
+    },
+    {
+        "name":  "School of Scholars Groups",
+        "location":  "",
+        "logo":  "/images/clients/School of Scholars, Amravati.jpg"
+    },
+    {
+        "name":  "Seth MR Jaipuria",
+        "location":  "Aligarh",
+        "logo":  "/images/clients/Seth MR Jaipuria, Aligarh.png"
+    },
+    {
+        "name":  "Seth MR Jaipuria",
+        "location":  "Bahraich",
+        "logo":  "/images/clients/SMRB.jpg"
+    },
+    {
+        "name":  "Shri Ram Global School",
+        "location":  "South City Ludhiana",
+        "logo":  "/images/clients/Shri Ram Global School, South City Ludhiana.png"
+    },
+    {
+        "name":  "SKD International School",
+        "location":  "Lucknow",
+        "logo":  "/images/clients/SKD International School, Lucknow.png"
+    },
+    {
+        "name":  "Sloka International School",
+        "location":  "Hyderabad",
+        "logo":  "/images/clients/Sloka International School, Hyderabad.png"
+    },
+    {
+        "name":  "Sri Sri Academy",
+        "location":  "Hyderabad",
+        "logo":  "/images/clients/Sri Sri Academy, Hyderabad.png"
+    },
+    {
+        "name":  "Sri Venkateshwar International School",
+        "location":  "Dwarka",
+        "logo":  "/images/clients/Sri Venkateshwar International School, Dwarka.jpg"
+    },
+    {
+        "name":  "St. Joseph's Academy",
+        "location":  "Dehradun",
+        "logo":  "/images/clients/St. Joseph's Academy, Dehradun.png"
+    },
+    {
+        "name":  "St. Peter Senior Secondary School",
+        "location":  "Chandigarh",
+        "logo":  "/images/clients/St. Peter Senior Secondary School, Chandigarh.jpg"
+    },
+    {
+        "name":  "St. Xavier's School",
+        "location":  "Bokaro",
+        "logo":  "/images/clients/St. Xavier's School, Bokaro.jpg"
+    },
+    {
+        "name":  "Takshila Progressive School",
+        "location":  "Birtamod",
+        "logo":  "/images/clients/Takshila Progressive School, Birtamod.jpg"
+    },
+    {
+        "name":  "Thanekar International School",
+        "location":  "Badlapur",
+        "logo":  "/images/clients/Thanekar International School, Badlapur.png"
+    },
+    {
+        "name":  "The Gramodaya School",
+        "location":  "Bilara",
+        "logo":  "/images/clients/The Gramodaya School, Bilara.jpg"
+    },
+    {
+        "name":  "The Somaiya School",
+        "location":  "Mumbai",
+        "logo":  "/images/clients/The Somaiya School, Mumbai.png"
+    },
+    {
+        "name":  "The Takshilah Global School",
+        "location":  "Vellore",
+        "logo":  "/images/clients/The Takshilah Global School, Vellore.png"
+    },
+    {
+        "name":  "Utpal Shanghvi Global School",
+        "location":  "Mumbai",
+        "logo":  "/images/clients/Utpal Shanghvi Global School, Mumbai.jpg"
+    },
 ]
 
 export default schools

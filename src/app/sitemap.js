@@ -1,11 +1,12 @@
 const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || "https://aerobay.in").replace(
   /\/$/,
   ""
-);
+);  
 
 const routes = [
   { path: "", priority: 1, changeFrequency: "weekly" },
   { path: "/composite-skill-lab", priority: 0.95, changeFrequency: "weekly" },
+  { path: "/ai-robotics-lab", priority: 0.95, changeFrequency: "weekly" },
   { path: "/aerobay-for-school", priority: 0.9, changeFrequency: "monthly" },
   { path: "/more/education", priority: 0.9, changeFrequency: "monthly" },
   { path: "/about/the-aerobay-story", priority: 0.7, changeFrequency: "monthly" },

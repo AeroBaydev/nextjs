@@ -19,11 +19,11 @@ export default function AerobayForSchool() {
                         <div class="col-md-10 mx-auto video_block">
                             <div class="figure banner-fig">
                                 <div class="embed-responsive embed-responsive-16by9">
-                                    <iframe height="450" class="embed-responsive-item" src="https://www.youtube.com/embed/G0xJwi-xJfE?si=oTpEboSU8oQjBJoJ"></iframe>
+                                    <iframe height="450" class="embed-responsive-item" src="https://www.youtube.com/embed/nTwKXnehBmY"></iframe>
                                 </div>
                             </div>
-                            <h4 style={{ fontSize: "5vh" }}><b>Industrial Grade <span style={{ color: "#FFE500" }}>Composite Skill Lab</span> Set-ups</b></h4>
-                            <p class="text-left">Our uniquely curated, aesthetically designed lab set-ups caters to diverse range of machineries, equipment, raw material and tools covering concepts and activities from multiple domains including but not limited to Aerospace, Space-Ed, Drones, Robotics & AI, Designing, Meteorology, E-Vehicles and much more. The lab also includes a range of prototyping machineries to make it self-sustainable for multiple years.</p>
+                            <h4 style={{ fontSize: "5vh" }}><b>Industrial Grade <span style={{ color: "#FFE500" }}>Composite Skill Lab</span> Set-up</b></h4>
+                            <p class="text-left">Our uniquely curated, aesthetically designed lab set-up caters to diverse range of machineries, equipment, raw material and tools covering concepts and activities from multiple domains including but not limited to Aerospace, Space-Ed, Drones, Robotics & AI, Designing, Meteorology, E-Vehicles and much more. The lab also includes a range of prototyping machineries to make it self-sustainable for multiple years.</p>
                         </div>
 
                     </div>
