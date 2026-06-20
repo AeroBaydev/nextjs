@@ -1,5 +1,17 @@
-# Allow ChatGPT crawler full access
+# Allow major AI and answer-engine crawlers to discover public pages
 User-agent: ChatGPT-User
+Disallow: /admin
+
+User-agent: GPTBot
+Disallow: /admin
+
+User-agent: PerplexityBot
+Disallow: /admin
+
+User-agent: ClaudeBot
+Disallow: /admin
+
+User-agent: Google-Extended
 Disallow: /admin
 
 # Allow all other bots, except admin page

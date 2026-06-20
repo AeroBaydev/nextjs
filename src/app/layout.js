@@ -18,7 +18,28 @@ const manrope = Manrope({
 });
 
 export const metadata = {
-  title: "AeroBay",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://aerobay.in"),
+  title: {
+    default: "AeroBay | Composite Skill Lab, AI Lab and Robotics Lab for Schools",
+    template: "%s | AeroBay",
+  },
+  description:
+    "AeroBay by Aviotron Aerospace builds Composite Skill Labs, AI Labs, Robotics Labs and STEAM learning ecosystems for schools across India.",
+  applicationName: "AeroBay",
+  authors: [{ name: "AeroBay" }],
+  creator: "AeroBay",
+  publisher: "Aviotron Aerospace Pvt Ltd",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   icons: {
     icon: "/images/Plane.png",
     shortcut: "/images/Plane.png",

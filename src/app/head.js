@@ -7,7 +7,7 @@ export default function Head() {
   const title =
     "AeroBay | Industrial Grade Composite Skill Lab & STEAM Education for Schools";
   const description =
-    "AeroBay by Aviotron Aerospace delivers CBSE-aligned industrial grade Composite Skill Lab setups for schools across India—robotics, AI, aerospace, drones, coding, and NEP 2020 experiential learning.";
+    "AeroBay by Aviotron Aerospace delivers CBSE-aligned industrial grade Composite Skill Lab setups for schools across India: robotics, AI, aerospace, drones, coding, and NEP 2020 experiential learning.";
   const canonical = `${siteUrl}/`;
 
   return (
@@ -36,4 +36,3 @@ export default function Head() {
     </>
   );
 }
-
