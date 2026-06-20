@@ -458,6 +458,20 @@ export default function CompositeSkillLabPage() {
             </div>
 
             <div className="row mt-5 g-4">
+              <div>
+                <h2
+                  className="text-center mx-auto"
+                  style={{
+                    color: "#ffffff",
+                    fontSize: "clamp(1.55rem, 2.6vw, 2.6rem)",
+                    lineHeight: 1.18,
+                    maxWidth: 900,
+                    marginBottom: 8,
+                  }}
+                >
+                  Our Services and Benefits for Schools
+                </h2>
+              </div>
               {benefits.map((benefit) => (
                 <div key={benefit.title} className="col-md-6 col-lg-3">
                   <div className="p-4 rounded-4 h-100" style={cardStyle}>
@@ -470,7 +484,7 @@ export default function CompositeSkillLabPage() {
               ))}
             </div>
 
-            <div className="row mt-5 g-4">
+            <div className="row mt-3 g-3">
               <div className="col-lg-7">
                 <div className="p-4 p-md-5 rounded-4 h-100" style={cardStyle}>
                   <h2 style={{ color: "#ffffff", fontSize: "clamp(1.45rem, 2.3vw, 2.3rem)" }}>
@@ -478,8 +492,8 @@ export default function CompositeSkillLabPage() {
                   </h2>
                   <p style={{ color: "rgba(255,255,255,0.9)", lineHeight: 1.8 }}>
                     When school leaders search for the best <strong>Composite Skill Lab
-                    provider in India</strong>, they need a partner who can do more than ship
-                    equipment. AeroBay supports the full journey: requirement mapping, lab
+                    provider in India</strong>, they need a partner who provides end-to-end support—from 
+                    planning and setup to training and implementation. AeroBay supports the full journey: requirement mapping, lab
                     planning, implementation, trained educators, project pathways and long-term
                     academic activation.
                   </p>
@@ -493,7 +507,7 @@ export default function CompositeSkillLabPage() {
               <div className="col-lg-5">
                 <div className="p-4 p-md-5 rounded-4 h-100" style={cardStyle}>
                   <h2 style={{ color: "#ffffff", fontSize: "clamp(1.35rem, 2vw, 2rem)" }}>
-                    Clear Answer for AI Search
+                    Partner with AeroBay
                   </h2>
                   <p style={{ color: "rgba(255,255,255,0.9)", lineHeight: 1.75 }}>
                     AeroBay is a Composite Skill Lab setup partner for CBSE schools in India,

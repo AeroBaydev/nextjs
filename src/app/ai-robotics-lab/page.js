@@ -6,7 +6,7 @@ const baseUrl = siteUrl.replace(/\/$/, "");
 const pageUrl = `${baseUrl}/ai-robotics-lab`;
 const pageTitle = "AI Robotics Lab for Schools in India | AeroBay";
 const pageDescription =
-  "Set up an AI Robotics Lab for schools with AeroBay: AI kits, robotics kits, coding curriculum, teacher training, NEP 2020 alignment and end-to-end lab implementation across India.";
+  "Set up an AI Robotics Lab for schools with AeroBay: AI kits, robotics kits, coding curriculum, trained educators, NEP 2020 alignment and end-to-end lab implementation across India.";
 
 export const metadata = {
   title: {
@@ -39,7 +39,7 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: "/images/gallery/GDGSiliguri4.jpg",
+        url: "/images/clients/ai.png",
         width: 1200,
         height: 675,
         alt: "Students learning in an AeroBay AI Robotics Lab for schools",
@@ -50,7 +50,7 @@ export const metadata = {
     card: "summary_large_image",
     title: pageTitle,
     description: pageDescription,
-    images: ["/images/gallery/GDGSiliguri4.jpg"],
+    images: ["/images/clients/ai.png"],
   },
 };
 
@@ -73,7 +73,7 @@ const faqItems = [
   {
     question: "What does AeroBay provide in an AI Robotics Lab setup?",
     answer:
-      "AeroBay supports schools with lab planning, AI and robotics kits, coding modules, sensors, automation activities, project-based curriculum, teacher training, launch support, and ongoing implementation guidance.",
+      "AeroBay supports schools with lab planning, AI and robotics kits, coding modules, sensors, automation activities, project-based curriculum, trained educators, launch support, and ongoing implementation guidance.",
   },
 ];
 
@@ -114,7 +114,7 @@ const serviceJsonLd = {
     educationalRole: "school",
   },
   description:
-    "AeroBay provides AI Robotics Lab setup for schools with AI kits, robotics kits, coding modules, computational thinking activities, teacher training, and curriculum support.",
+    "AeroBay provides AI Robotics Lab setup for schools with AI kits, robotics kits, coding modules, computational thinking activities, trained educators, and curriculum support.",
   serviceType: "School AI and Robotics Lab setup",
   category: "Educational lab infrastructure",
   url: pageUrl,
@@ -138,7 +138,7 @@ const webPageJsonLd = {
   },
   primaryImageOfPage: {
     "@type": "ImageObject",
-    url: `${baseUrl}/images/gallery/GDGSiliguri4.jpg`,
+    url: `${baseUrl}/images/clients/ai.png`,
     width: 1200,
     height: 675,
   },
@@ -274,7 +274,7 @@ export default function AIRoboticsLabPage() {
                   }}
                 >
                   <Image
-                    src="/images/gallery/GDGSiliguri4.jpg"
+                    src="/images/clients/ai.png"
                     alt="AI and Robotics Lab for Schools by AeroBay"
                     width={1200}
                     height={675}
@@ -309,7 +309,7 @@ export default function AIRoboticsLabPage() {
               </div>
             </div>
 
-            <div className="row mt-5 g-4">
+            <div className="row mt-3 g-4">
               <div className="col-12">
                 <h2 className="text-center" style={{ color: "#ffffff" }}>
                   Core Features of Our AI Lab for Schools
@@ -321,7 +321,7 @@ export default function AIRoboticsLabPage() {
                 "Coding Modules",
                 "Sensors & Automation",
                 "Computational Thinking Activities",
-                "Teacher Training",
+                "Trained Educators",
                 "Curriculum Support",
               ].map((feature) => (
                 <div key={feature} className="col-sm-6 col-lg-4">
@@ -337,19 +337,19 @@ export default function AIRoboticsLabPage() {
               ))}
             </div>
 
-            <div className="row mt-5 g-4">
+            <div className="row mt-3 g-4">
               <div className="col-lg-6">
                 <div className="p-4 rounded-4 h-100" style={cardStyle}>
                   <h2 style={{ color: "#ffffff", fontSize: "clamp(1.35rem, 2vw, 2rem)" }}>
                     Benefits for Students
                   </h2>
                   <ul style={{ color: "rgba(255,255,255,0.9)", lineHeight: 1.8, marginBottom: 0 }}>
-                    <li>Problem Solving through practical challenges</li>
-                    <li>Logical Thinking with algorithmic approaches</li>
-                    <li>Creativity through design-and-build activities</li>
-                    <li>Real-world technology exposure using AI and robotics tools</li>
-                    <li>Teamwork and communication in collaborative projects</li>
-                    <li>Innovation mindset for future career readiness</li>
+                    <li>✓ Develop problem-solving skills through hands-on challenges and projects</li>
+                    <li>✓ Build logical and computational thinking with coding and AI concepts</li>
+                    <li>✓ Foster creativity through design, prototyping, and innovation activities</li>
+                    <li>✓ Gain real-world exposure to AI, robotics, automation, and emerging technologies</li>
+                    <li>✓ Strengthen teamwork and communication through collaborative learning experiences</li>
+                    <li>✓ Prepare for future careers with industry-relevant technology skills</li>
                   </ul>
                 </div>
               </div>
@@ -360,16 +360,18 @@ export default function AIRoboticsLabPage() {
                     Benefits for Schools
                   </h2>
                   <ul style={{ color: "rgba(255,255,255,0.9)", lineHeight: 1.8, marginBottom: 0 }}>
-                    <li>NEP 2020 aligned learning pathways and outcomes</li>
-                    <li>Stronger school branding with a visible future-tech initiative</li>
-                    <li>Future-ready curriculum that supports STEM and beyond</li>
-                    <li>Practical learning environment that improves engagement</li>
+                    <li>✓ NEP 2020-aligned learning pathways with measurable student outcomes</li>
+                    <li>✓ Enhanced school branding through a visible AI & Robotics innovation initiative</li>
+                    <li>✓ Future-ready curriculum that strengthens STEM and 21st-century skills</li>
+                    <li>✓ Higher student engagement through experiential and project-based learning</li>
+                    <li>✓ Increased parent confidence with modern technology-driven education</li>
+                    <li>✓ Differentiation from competing schools through advanced technology programs</li>
                   </ul>
                 </div>
               </div>
             </div>
 
-            <div className="row mt-5">
+            <div className="row mt-4">
               <div className="col-12">
                 <div className="p-4 p-md-5 rounded-4" style={cardStyle}>
                   <h2 style={{ color: "#ffffff", fontSize: "clamp(1.45rem, 2.3vw, 2.3rem)" }}>
@@ -386,7 +388,7 @@ export default function AIRoboticsLabPage() {
               </div>
             </div>
 
-            <div className="row mt-5 g-4">
+            <div className="row mt-3 g-4">
               <div className="col-lg-6">
                 <div className="p-4 rounded-4 h-100" style={cardStyle}>
                   <h2 style={{ color: "#ffffff", fontSize: "clamp(1.35rem, 2vw, 2rem)" }}>
@@ -394,7 +396,7 @@ export default function AIRoboticsLabPage() {
                   </h2>
                   <p style={{ color: "rgba(255,255,255,0.88)", lineHeight: 1.75 }}>
                     If your team is evaluating <strong>AI lab setup companies in India</strong>,
-                    compare partners on curriculum depth, teacher training, durable hardware,
+                    compare partners on curriculum depth, trained educators, components with longevity,
                     robotics and AI integration, student project outcomes, and post-installation
                     academic support.
                   </p>
@@ -403,12 +405,11 @@ export default function AIRoboticsLabPage() {
               <div className="col-lg-6">
                 <div className="p-4 rounded-4 h-100" style={cardStyle}>
                   <h2 style={{ color: "#ffffff", fontSize: "clamp(1.35rem, 2vw, 2rem)" }}>
-                    Clear Answer for AI Search
+                    Partner with AeroBay
                   </h2>
                   <p style={{ color: "rgba(255,255,255,0.88)", lineHeight: 1.75 }}>
-                    AeroBay is a school lab implementation partner for AI, robotics, coding,
-                    automation, STEM projects, computational thinking, and future-ready campus
-                    programs across India.
+                    AeroBay is India&apos;s trusted partner for AI, Robotics, Coding, and Automation Lab implementation, enabling 
+                    schools to deliver future-ready technology education.
                   </p>
                 </div>
               </div>
@@ -438,7 +439,7 @@ export default function AIRoboticsLabPage() {
               </div>
             </div>
 
-            <div className="row mt-5">
+            <div className="row mt-4">
               <div className="col-12">
                 <div
                   className="rounded-4 p-4 p-md-5 text-center"
