@@ -130,7 +130,7 @@ export default function Home() {
         disableOnInteraction: false, // Continue autoplay after user interaction
       },
       loop: true, // Enable infinite loop
-      speed: 300, // Transition speed
+      speed: 3000, // Transition speed
       breakpoints: { // Responsive behavior
         0: {
           slidesPerView: 1, // Show 1 slide on small screens (mobile)
@@ -153,9 +153,9 @@ export default function Home() {
 
 
   const logoData = [
-    { icon: "/images/small-ico1.svg", count: "17", title: "States" },
-    { icon: "/images/small-ico2.svg", count: "100", title: "Schools" },
-    { icon: "/images/small-ico3.svg", count: "20", title: "Students" },
+    { icon: "/images/small-ico1.svg", count: "22", title: "States" },
+    { icon: "/images/small-ico2.svg", count: "250", title: "Schools" },
+    { icon: "/images/small-ico3.svg", count: "100", title: "Students" },
   ];
   const [formData, setFormData] = useState({
     name: "",
@@ -326,9 +326,9 @@ export default function Home() {
           preload="auto"
           id="bg-video"
         >
-          <source src="/videos/home-video.mp4" type="video/mp4" />
-          <source src="/videos/home-video.webm" type="video/webm" />
-          <source src="/videos/home-video.ogg" type="video/ogg" />
+          <source src="/videos/home.mp4" type="video/mp4" />
+          <source src="/videos/home.webm" type="video/webm" />
+          <source src="/videos/home.ogg" type="video/ogg" />
           Your browser does not support the video tag.
         </video>
         <div className="video-overlay header-text">
