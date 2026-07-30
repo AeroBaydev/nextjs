@@ -1,202 +1,265 @@
-"use client";
-
 import Image from "next/image";
+import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faArrowRight,
+  faCheck,
+  faPlay,
+} from "@fortawesome/free-solid-svg-icons";
+import styles from "./page.module.css";
+
+const milestones = [
+  {
+    year: "2019",
+    chapter: "Chapter 01",
+    title: "The pilot takes off",
+    image: "/images/jrny/cal-2.png",
+    summary:
+      "AeroBay came into existence with one bold belief: students learn best when they can build, test, and experience ideas for themselves.",
+    highlights: [
+      "Signed our first partner school in Delhi",
+      "Launched a 360° experiential learning solution",
+      "Won Best Startup at the AIM Congress in Dubai",
+    ],
+  },
+  {
+    year: "2020",
+    chapter: "Chapter 02",
+    title: "Early impact, scaled",
+    image: "/images/jrny/cal-3.png",
+    summary:
+      "The first school became a growing learning community as our hands-on programs reached more classrooms and more young innovators.",
+    highlights: [
+      "Expanded to 9 schools",
+      "Reached 2,500 students",
+      "Founder Neha Chauhan received the British Council Study UK Alumni Award",
+    ],
+  },
+  {
+    year: "2021",
+    chapter: "Chapter 03",
+    title: "A new EdTech era",
+    image: "/images/jrny/cal-4.png",
+    summary:
+      "Aviotron Aerospace Pvt. Ltd. was incorporated, setting the foundation for a complete school innovation ecosystem.",
+    highlights: [
+      "Expanded the AeroBay lab product range",
+      "Recognised by GESA and 500 Global’s Accelerator Aichi",
+      "Received the TiE Women Global recognition",
+    ],
+  },
+  {
+    year: "2022",
+    chapter: "Chapter 04",
+    title: "Learning without limits",
+    image: "/images/jrny/cal-5.png",
+    summary:
+      "When learning moved beyond classrooms, AeroBay adapted—building new ways to keep curiosity, making, and mentorship alive.",
+    highlights: [
+      "Launched AeroBay Online for direct-to-student learning",
+      "Raised seed funding under the Startup India Seed Fund Scheme",
+      "Featured on Shark Tank India and incubated at NSRCEL, IIM Bangalore",
+    ],
+  },
+  {
+    year: "2023",
+    chapter: "Chapter 05",
+    title: "Back to classrooms",
+    image: "/images/jrny/cal-6.png",
+    summary:
+      "We returned to schools with a stronger model, deeper curriculum integration, and a renewed commitment to measurable student impact.",
+    highlights: [
+      "Partnered with 40+ schools and reached 15,000+ students",
+      "Recognised by IDFC FIRST Bank’s Leap To Unicorn program",
+      "Selected by UNICEF India and YuWaah for the Education 5.0 report",
+    ],
+  },
+  {
+    year: "2024",
+    chapter: "Chapter 06",
+    title: "The 10 to 100 journey",
+    image: "/images/jrny/cal-7.png",
+    summary:
+      "A decade-sized ambition became national momentum, taking AeroBay across regions, school communities, and thousands of learning journeys.",
+    highlights: [
+      "Crossed 100+ schools across 17+ states",
+      "Raised a pre-Series A round from Enrission Capital",
+      "Founder honoured at the UK Parliament for business and entrepreneurship",
+    ],
+  },
+];
+
+const impact = [
+  { value: "250+", label: "Partner schools" },
+  { value: "22+", label: "States reached" },
+  { value: "100K+", label: "Student journeys" },
+];
 
 export default function TheAerobayStory() {
-    return (<div class="page-main meet-visionaries">
-
-        <section class="page_banner story_block bg-blk">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-9 mx-auto heading-section2 text-center">
-                    <div class="light_heading">Story</div>
-                        <h1 value="Story">The AeroBay Story</h1>
-                        <p>From the first spark of an idea to groundbreaking achievements{","} AeroBay{"'"}s story is driven by a passion for experiential learning and student empowerment. Our mission is to ignite curiosity, foster innovation{","} and nurture the leaders of tomorrow through immersive STEAM education. Discover how we are shaping futures and transforming dreams into reality</p>
-                        <div class="col-md-10 mx-auto">
-                            <div class="figure banner-fig">
-                                <div class="embed-responsive embed-responsive-16by9">
-                                    <iframe height="450" class="embed-responsive-item" src="https://www.youtube.com/embed/oILxs3Q3MXM?si=WK0ubMesRvIsfKK1"></iframe>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+  return (
+    <main className={styles.page}>
+      <section className={styles.hero}>
+        <div className={styles.heroGridPattern} aria-hidden="true" />
+        <div className={styles.shell}>
+          <div className={styles.heroGrid}>
+            <div>
+              <p className={styles.eyebrow}>The AeroBay story</p>
+              <h1>
+                One idea.
+                <span>Thousands of possibilities.</span>
+              </h1>
+              <p className={styles.heroCopy}>
+                AeroBay began with a simple question: what if every student
+                could experience the joy of building the future—not just
+                reading about it?
+              </p>
             </div>
 
-        </section>
-        {/* <!-- ***** Main Banner Area End ***** --> */}
-        <section class="journey-section bg-blk">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 heading-section text-center">
-                        <h2>Our Journey</h2>
-                        <p>Go through our journey</p>
-                    </div>
-                </div>
+            <aside className={styles.manifesto}>
+              <span className={styles.manifestoNumber}>01</span>
+              <p>
+                We are building a generation of curious thinkers, confident
+                makers, and fearless problem-solvers.
+              </p>
+              <div className={styles.impactGrid} aria-label="AeroBay impact">
+                {impact.map((item) => (
+                  <div key={item.label}>
+                    <strong>{item.value}</strong>
+                    <span>{item.label}</span>
+                  </div>
+                ))}
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.origin}>
+        <div className={styles.shell}>
+          <div className={styles.sectionHeading}>
+            <div>
+              <p className={styles.eyebrow}>Where it began</p>
+              <h2>Built for the moment curiosity becomes confidence.</h2>
             </div>
-            <div class="container">
-                {/* <div class="col-md-10 mx-auto fig-block left_figblock">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <h2>Year</h2>
-                            <div class="j-figure">
-                                <img src="/images/jrny/cal-1.png" alt="" />
-                            </div>
-                        </div>
-                        <div class="col-md-8 jrny-content">
-                            <figure class="sml-figr text-right">
-                                <img class="banner-ico1" src="/images/jrny/icon_1.png" alt="" />
-                            </figure>
-                            <div class="parra-btm">
-                                <h3>Pilot</h3>
-                                <p>Founded Aviotron Automations LLP</p>
-                                <p>Lots of MVP's and trials with drones and Aeromodelling in both colleges and schools</p>
-                            </div>
-                        </div>
-                    </div>
-                </div> */}
-                <div class="col-md-10 mx-auto fig-block right_figblock">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <h2>Year</h2>
-                            <div class="j-figure">
-                                <img src="/images/jrny/cal-2.png" alt="" />
-                            </div>
-                        </div>
-                        <div class="col-md-8 jrny-content">
-                            <figure class="sml-figr text-right">
-                                <img class="banner-ico2" src="/images/jrny/icon_2.png" alt="" />
-                            </figure>
-                            <div class="parra-btm">
-                                <h3><b>Pilot</b></h3>
-                                <p>{"'"}AeroBay{"'"} came into existence and signed our first school in Delhi</p>
-                                <p>Launched our 360° experiential learning solution</p>
-                                <p>We Won the {"'"}Best Startup Award{"'"} from 143 countries at Dubai Annual <br />Investment meet AIM Congress and won a USD 10{","}000 cash prize{","}<br /> Invited to the Next global Aviation Summit{","} as a special Invitee</p>
+            <p>
+              From aviation and aeromodelling to AI, robotics, design, and
+              advanced making, our ecosystem turns abstract concepts into
+              experiences students can see, touch, and shape.
+            </p>
+          </div>
 
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-md-10 mx-auto fig-block left_figblock">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <h2>Year</h2>
-                            <div class="j-figure">
-                                <img src="/images/jrny/cal-3.png" alt="" />
-                            </div>
-                        </div>
-                        <div class="col-md-8 jrny-content">
-                            <figure class="sml-figr text-right">
-                                <img class="banner-ico3" src="/images/jrny/icon_3.png" alt="" />
-                            </figure>
-                            <div class="parra-btm">
-                                <h3>Scaled Up</h3>
-                                <p>Scaled to 9 schools and 2500 students</p>
-                                <p>Our CEO Miss Neha won British Uk Alumni award in the category of<br /> Entrepreneurship </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-10 mx-auto fig-block right_figblock">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <h2>Year</h2>
-                            <div class="j-figure">
-                                <img src="/images/jrny/cal-4.png" alt="" />
-                            </div>
-                        </div>
-                        <div class="col-md-8 jrny-content">
-                            <figure class="sml-figr text-right">
-                                <img class="rounded-ball" src="/images/jrny/icon_4.png" alt="" />
-                            </figure>
-                            <div class="parra-btm">
-                                <h3>New Era</h3>
-                                <p>Incorporated Aviotron Aerospace Pvt Ltd, beginning of a <br /> new era for EdTech revolution</p>
-                                <p>Launched range of new products for AeroBay lab and included complete <br /> experiential learning ecosystem with skill learning and integrated curriculum <br /> embedded in the program</p>
-                                <p>GESA ( Global EdTech Startup AWARD ) winner</p>
-                                <p>Winner Accelerator Aichi 500 Global Company - Japan Initiative</p>
-                                <p>TiE Women Global award presented at Bombay Stock Exchange 2021, TiE </p>
-                                <p>women Regional winner presented at global competition at GITEX Dubai 2021</p>
-                                <p>Our CEO won British Uk Alumni Award in the category of Entrepreneurship </p>
-
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-md-10 mx-auto fig-block left_figblock">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <h2>Year</h2>
-                            <div class="j-figure">
-                                <img src="/images/jrny/cal-5.png" alt="" />
-                            </div>
-                        </div>
-                        <div class="col-md-8 jrny-content">
-                            <figure class="sml-figr text-right">
-                                <img class="banner-ico1" src="/images/jrny/icon_5.png" alt="" />
-                            </figure>
-                            <div class="parra-btm">
-                                <h3>The Online Test</h3>
-                                <p>Launched AeroBay online for D2C students during lockdown</p>
-                                <p>Raised funds from AIC Banasthali under Startup India Seed Fund Scheme</p>
-                                <p>Pitched at Shark Tank Season 1, received great response from Sharks</p>
-                                <p>We got Incubated at IIM BANGALORE 10,000 women NSRCEL</p>
-                                <p>Showcased at Horses Stable Season 2, later telecasted in JioTv. Got <br />funded on live TV</p>
-                                <p>We won the Maharashtra State Innovation award by government of <br />Maharashtra in the sector of Education and Skilling</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-10 mx-auto fig-block right_figblock">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <h2>Year</h2>
-                            <div class="j-figure">
-                                <img src="/images/jrny/cal-6.png" alt="" />
-                            </div>
-                        </div>
-                        <div class="col-md-8 jrny-content">
-                            <figure class="sml-figr text-right">
-                                <img class="rounded-ball" src="/images/jrny/icon_6.png" alt="" />
-                            </figure>
-                            <div class="parra-btm">
-                                <h3>Back To Basics</h3>
-                                <p>Back to offline mode, converted 40+ schools with more than 15000 students <br />enrolled in our program</p>
-                                <p>AeroBay is awarded at the IDFC First Bank Leap To Unicorn Program for STEM <br />Education</p>
-                                <p>Won Maharashtra State Innovation Award by government of Maharashtra in <br /> category of Education and Skilling</p>
-                                <p>
-                                    AeroBay got selected by UNICEFnicef India World Economic Forum under the<br /> initiative of YuWah Generation Unlimited India and Got Published in <br />Education 5.0 Report
-                                </p>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-md-10 mx-auto fig-block left_figblock">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <h2>Year</h2>
-                            <div class="j-figure">
-                                <img src="/images/jrny/cal-7.png" alt="" />
-                            </div>
-                        </div>
-                        <div class="col-md-8 jrny-content">
-                            <figure class="sml-figr text-right">
-                                <img class="banner-ico1" src="/images/jrny/icon_7.png" alt="" />
-                            </figure>
-                            <div class="parra-btm">
-                                <h3>The ‘10 To 100’ Journey</h3>
-                                <p>Raised our Pre-Serie A from a Japanese VC Enrission <br />Capital at INR 100 Cr Valuation.</p>
-                                <p>Crossed 100+ schools across 17+ states and on our way to reach 250 <br />schools across India</p>
-                                <p>Winner of the YI (Young India) 2024 National Award</p>
-                                <p>Our CEO Miss Neha Chauhan got selected for India U.K Achieveres honours and <br />got awarded in the Category of Business and Entrepreneurship at U.K<br /> parliament at Palace of Westminister</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+          <div className={styles.filmGrid}>
+            <div className={styles.videoFrame}>
+              <iframe
+                src="https://www.youtube.com/embed/oILxs3Q3MXM?si=WK0ubMesRvIsfKK1&rel=0"
+                title="The AeroBay story"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
+              <div className={styles.videoLabel} aria-hidden="true">
+                <span>
+                  <FontAwesomeIcon icon={faPlay} />
+                </span>
+                Watch our story
+              </div>
             </div>
-        </section>
-    </div>)
+
+            <blockquote className={styles.quote}>
+              <span className={styles.quoteMark}>“</span>
+              <p>
+                Education changes when students stop being observers and start
+                becoming creators.
+              </p>
+              <footer>
+                <strong>Our founding belief</strong>
+                <span>AeroBay</span>
+              </footer>
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.journey}>
+        <div className={styles.shell}>
+          <div className={styles.journeyIntro}>
+            <div>
+              <p className={styles.eyebrow}>Our journey</p>
+              <h2>From one classroom to a national movement.</h2>
+            </div>
+            <p>
+              Every chapter reflects the same purpose: helping schools make
+              future-ready learning real, relevant, and accessible.
+            </p>
+          </div>
+
+          <div className={styles.timeline}>
+            {milestones.map((milestone, index) => (
+              <article className={styles.milestone} key={milestone.year}>
+                <div className={styles.timelineMarker} aria-hidden="true">
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                </div>
+
+                <div className={styles.milestoneVisual}>
+                  <Image
+                    src={milestone.image}
+                    alt={`AeroBay milestone from ${milestone.year}`}
+                    fill
+                    sizes="(max-width: 767px) calc(100vw - 36px), (max-width: 1199px) 42vw, 520px"
+                  />
+                </div>
+
+                <div className={styles.milestoneContent}>
+                  <div className={styles.milestoneMeta}>
+                    <span>{milestone.chapter}</span>
+                    <strong>{milestone.year}</strong>
+                  </div>
+                  <h3>{milestone.title}</h3>
+                  <p>{milestone.summary}</p>
+                  <ul>
+                    {milestone.highlights.map((highlight) => (
+                      <li key={highlight}>
+                        <FontAwesomeIcon icon={faCheck} />
+                        <span>{highlight}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.nextChapter}>
+        <div className={styles.shell}>
+          <div className={styles.nextChapterCard}>
+            <div>
+              <p className={styles.eyebrow}>The next chapter</p>
+              <h2>The story is still being written.</h2>
+              <p>
+                The next milestone is not just ours—it belongs to every school,
+                educator, and student ready to reimagine what learning can be.
+              </p>
+            </div>
+            <div className={styles.actions}>
+              <Link href="/get-in-touch" className={styles.primaryAction}>
+                Build with us
+                <span>
+                  <FontAwesomeIcon icon={faArrowRight} />
+                </span>
+              </Link>
+              <Link
+                href="/about/meet-the-visionaries"
+                className={styles.secondaryAction}
+              >
+                Meet our team
+                <FontAwesomeIcon icon={faArrowRight} />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
 }

@@ -8,6 +8,12 @@ import NavBar from "@/components/common/navbar";
 
 export default function RootLayoutClient({ children }) {
   const path = usePathname();
+  const showMovingBackground =
+    path !== "/" &&
+    path !== "/about/meet-the-visionaries" &&
+    path !== "/about/the-aerobay-story" &&
+    path !== "/careers" &&
+    path !== "/get-in-touch";
 
   useEffect(() => {
     if (path === "/") {
@@ -23,16 +29,19 @@ export default function RootLayoutClient({ children }) {
 
   return (
     <>
-      <div className="moving-box">
-        <Image
-          className="bg-gred animate-four"
-          alt="Background banner"
-          src="/images/bg-banner.png"
-          width={1920}
-          height={1080}
-          priority
-        />
-      </div>
+      {showMovingBackground && (
+        <div className="moving-box">
+          <Image
+            className="bg-gred animate-four"
+            alt=""
+            aria-hidden="true"
+            src="/images/bg-banner.png"
+            width={1920}
+            height={1080}
+            priority
+          />
+        </div>
+      )}
       <NavBar />
       <main>{children}</main>
       <Footer />
