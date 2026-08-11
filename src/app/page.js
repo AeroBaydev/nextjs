@@ -7,62 +7,14 @@ import {
   faCheck,
 } from "@fortawesome/free-solid-svg-icons";
 import HomeHeroVideo from "./home-hero-video";
+import HomeSolutions from "./home-solutions";
+import HomeEcosystem from "./home-ecosystem";
 import styles from "./home.module.css";
 
 const impact = [
   { value: "22+", label: "States across India" },
   { value: "250+", label: "Partner schools" },
   { value: "100K+", label: "Students empowered" },
-];
-
-const solutions = [
-  {
-    number: "01",
-    title: "Composite Skill Lab",
-    copy: "One multidisciplinary space for design, aviation, electronics, making, and future-ready skills.",
-    image: "/images/gallery-big3.jpg",
-    href: "/composite-skill-lab",
-    tag: "Grades 1–12",
-  },
-  {
-    number: "02",
-    title: "AI & Robotics Lab",
-    copy: "A hands-on environment where students learn to code, automate, prototype, and solve real problems.",
-    image: "/images/tilt-imgs/tilt-2.jpg",
-    href: "/ai-robotics-lab",
-    tag: "Applied technology",
-  },
-  {
-    number: "03",
-    title: "AeroBay for Schools",
-    copy: "An end-to-end STEAM ecosystem combining labs, curriculum, kits, trainers, analytics, and competitions.",
-    image: "/images/gallery-big1.jpg",
-    href: "/aerobay-for-school",
-    tag: "Complete ecosystem",
-  },
-];
-
-const ecosystem = [
-  {
-    number: "01",
-    title: "Purpose-built labs",
-    copy: "Industrial-grade spaces designed to make advanced concepts tangible and exciting.",
-  },
-  {
-    number: "02",
-    title: "Integrated curriculum",
-    copy: "Age-appropriate, NEP-aligned pathways mapped to meaningful classroom outcomes.",
-  },
-  {
-    number: "03",
-    title: "Expert STEAM trainers",
-    copy: "Engineers and educators who guide students from first idea to working prototype.",
-  },
-  {
-    number: "04",
-    title: "Kits & competitions",
-    copy: "Project kits, certifications, and national opportunities that keep ambition moving forward.",
-  },
 ];
 
 const outcomes = [
@@ -92,9 +44,7 @@ export default function Home() {
               <span>become launchpads.</span>
             </h1>
             <p className={styles.heroCopy}>
-              AeroBay builds hands-on learning ecosystems that help schools
-              turn curiosity into capability—through aviation, AI, robotics,
-              design, and advanced making.
+              AeroBay builds and operates experiential STEM & STEAM learning ecosystems that turn curiosity into real-world skills, confidence and possibilities.
             </p>
             <div className={styles.heroActions}>
               <Link href="/get-in-touch" className={styles.primaryAction}>
@@ -136,86 +86,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className={styles.solutions}>
-        <div className={styles.shell}>
-          <div className={styles.sectionHeading}>
-            <div>
-              <p className={styles.eyebrow}>Learning infrastructure</p>
-              <h2>Built for schools that want more than a lab.</h2>
-            </div>
-            <p>
-              Every AeroBay solution connects space, curriculum, technology,
-              and mentorship into one outcome-driven learning experience.
-            </p>
-          </div>
+      <HomeSolutions />
 
-          <div className={styles.solutionGrid}>
-            {solutions.map((solution) => (
-              <Link
-                href={solution.href}
-                className={styles.solutionCard}
-                key={solution.title}
-              >
-                <Image
-                  src={solution.image}
-                  alt={`${solution.title} at an AeroBay partner school`}
-                  fill
-                  sizes="(max-width: 767px) calc(100vw - 36px), (max-width: 1199px) 33vw, 470px"
-                />
-                <div className={styles.solutionShade} />
-                <div className={styles.solutionTop}>
-                  <span>{solution.number}</span>
-                  <span>{solution.tag}</span>
-                </div>
-                <div className={styles.solutionContent}>
-                  <h3>{solution.title}</h3>
-                  <p>{solution.copy}</p>
-                  <span className={styles.cardArrow}>
-                    <FontAwesomeIcon icon={faArrowRight} />
-                  </span>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className={styles.ecosystem}>
-        <div className={styles.shell}>
-          <div className={styles.ecosystemIntro}>
-            <div>
-              <p className={styles.eyebrow}>The AeroBay difference</p>
-              <h2>A complete ecosystem. One accountable partner.</h2>
-            </div>
-            <p>
-              Schools shouldn’t have to coordinate multiple vendors to create
-              meaningful STEAM learning. We bring every essential layer
-              together and support it end to end.
-            </p>
-          </div>
-
-          <div className={styles.ecosystemGrid}>
-            {ecosystem.map((item) => (
-              <article key={item.title}>
-                <span>{item.number}</span>
-                <div>
-                  <h3>{item.title}</h3>
-                  <p>{item.copy}</p>
-                </div>
-              </article>
-            ))}
-          </div>
-
-          <div className={styles.ecosystemVisual}>
-            <Image
-              src="/images/feature-img.png"
-              alt="The complete AeroBay learning ecosystem"
-              fill
-              sizes="(max-width: 1440px) calc(100vw - 96px), 1440px"
-            />
-          </div>
-        </div>
-      </section>
+      <HomeEcosystem />
 
       <section className={styles.outcomes}>
         <div className={styles.shell}>

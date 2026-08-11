@@ -319,7 +319,7 @@
 }
 
 .solutions {
-  padding: 120px 0;
+  padding: 80px 0 64px;
   color: #1d1921;
   background: #f1eff4;
 }
@@ -354,19 +354,38 @@
   line-height: 1.75;
 }
 
-.solutionGrid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+.solutionCarousel {
+  min-width: 0;
+}
+
+.solutionTrack {
+  display: flex;
   gap: 20px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 3px 2px 12px;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+.solutionTrack::-webkit-scrollbar {
+  display: none;
 }
 
 .solutionCard {
+  flex: 0 0 calc((100% - 40px) / 3);
   height: 570px;
   position: relative;
+  display: block;
   overflow: hidden;
   border-radius: 20px;
   color: #fff;
   background: #27232b;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 .solutionCard > img {
@@ -378,13 +397,10 @@
   object-position: center;
 }
 
-.solutionCard:hover > img {
-  transform: scale(1.045);
-}
-
 .solutionShade {
   position: absolute;
   inset: 0;
+  transition: opacity 300ms ease;
   background:
     linear-gradient(180deg, rgba(10, 8, 12, 0.5), transparent 35%),
     linear-gradient(0deg, rgba(10, 8, 12, 0.94), transparent 62%);
@@ -419,7 +435,16 @@
   right: 0;
   bottom: 0;
   left: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 22px;
   padding: 30px;
+}
+
+.solutionText {
+  display: block;
+  transition: transform 250ms ease;
 }
 
 .solutionContent h3 {
@@ -434,7 +459,7 @@
 
 .solutionContent p {
   max-width: 355px;
-  margin: 15px 54px 0 0;
+  margin: 15px 0 0;
   color: #bbb5bf;
   font-size: 12px;
   line-height: 1.62;
@@ -443,9 +468,7 @@
 .cardArrow {
   width: 46px;
   height: 46px;
-  position: absolute;
-  right: 25px;
-  bottom: 28px;
+  flex: 0 0 46px;
   display: grid;
   place-items: center;
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -455,11 +478,127 @@
   transition: background 180ms ease, color 180ms ease, transform 180ms ease;
 }
 
-.solutionCard:hover .cardArrow {
-  border-color: var(--violet);
-  color: #171519;
-  transform: translateX(3px);
-  background: var(--violet);
+.solutionCardStatic .cardArrow {
+  opacity: 0.7;
+}
+
+.carouselFooter {
+  min-height: 62px;
+  display: grid;
+  grid-template-columns: 150px 1fr auto;
+  gap: 28px;
+  align-items: center;
+  margin-top: 22px;
+}
+
+.carouselProgress {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 11px;
+  align-items: center;
+  color: #312b35;
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: 0.1em;
+}
+
+.carouselProgress > span:nth-child(2) {
+  height: 1px;
+  background: rgba(29, 25, 33, 0.2);
+}
+
+.carouselProgress > span:last-child {
+  color: #8a838d;
+}
+
+.swipeHint {
+  margin: 0;
+  color: #817a84;
+  font-size: 10px;
+  letter-spacing: 0.04em;
+}
+
+.carouselControls {
+  display: flex;
+  gap: 10px;
+}
+
+.carouselControls button {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 1px solid rgba(29, 25, 33, 0.18);
+  border-radius: 50%;
+  color: #29232d;
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+  transition: color 180ms ease, background 180ms ease, border-color 180ms ease, transform 180ms ease;
+  background: transparent;
+}
+
+.carouselControls button:hover:not(:disabled) {
+  border-color: #1d1921;
+  color: #fff;
+  transform: translateY(-1px);
+  background: #1d1921;
+}
+
+.carouselControls button:disabled {
+  cursor: default;
+  opacity: 0.32;
+}
+
+.carouselControls button:focus-visible {
+  outline: 2px solid #7040ac;
+  outline-offset: 3px;
+}
+
+.solutionsVisible .sectionHeading > * {
+  animation: solutionReveal 620ms cubic-bezier(0.22, 0.7, 0.25, 1) both;
+}
+
+.solutionsVisible .sectionHeading > p {
+  animation-delay: 90ms;
+}
+
+.solutionsVisible .solutionCard {
+  animation: solutionReveal 650ms cubic-bezier(0.22, 0.7, 0.25, 1) both;
+  animation-delay: calc(110ms + (var(--card-index) * 55ms));
+}
+
+@keyframes solutionReveal {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .solutionCard[href]:hover > img {
+    transform: scale(1.04);
+  }
+
+  .solutionCard[href]:hover .solutionShade {
+    opacity: 0.92;
+  }
+
+  .solutionCard[href]:hover .solutionText {
+    transform: translateY(-2px);
+  }
+
+  .solutionCard[href]:hover .cardArrow {
+    border-color: var(--violet);
+    color: #171519;
+    transform: translateX(3px);
+    background: var(--violet);
+  }
 }
 
 .ecosystem {
@@ -474,56 +613,529 @@
 .ecosystemGrid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  margin-bottom: 26px;
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
+  gap: 14px;
+  margin-bottom: 80px;
 }
 
 .ecosystemGrid article {
-  min-height: 255px;
+  min-height: 350px;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 24px;
+  overflow: hidden;
+  padding: 23px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  isolation: isolate;
+  background: #211e24;
+  transition: transform 280ms cubic-bezier(0.2, 0.7, 0.25, 1), border-color 220ms ease;
 }
 
-.ecosystemGrid article + article {
-  border-left: 1px solid var(--line);
+.ecosystemGrid article > img {
+  z-index: -3;
+  object-fit: cover;
+  filter: saturate(0.78) contrast(1.04);
+  transition: transform 700ms cubic-bezier(0.2, 0.75, 0.25, 1), filter 300ms ease;
 }
 
-.ecosystemGrid article > span {
-  color: #746f78;
-  font-size: 10px;
+.ecosystemCardShade {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(10, 8, 12, 0.42) 0%, rgba(10, 8, 12, 0.08) 38%),
+    linear-gradient(0deg, rgba(10, 8, 12, 0.97) 0%, rgba(10, 8, 12, 0.7) 34%, transparent 72%);
+  transition: opacity 260ms ease;
+}
+
+.ecosystemCardNumber {
+  width: max-content;
+  padding: 7px 9px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  color: #eeeaf1;
+  font-size: 9px;
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.11em;
+  backdrop-filter: blur(9px);
+  background: rgba(17, 15, 19, 0.5);
 }
 
 .ecosystemGrid h3 {
-  margin: 0 0 11px;
+  max-width: 280px;
+  margin: 0 0 13px;
   color: #fff;
-  font-size: 19px;
-  font-weight: 600;
-  letter-spacing: -0.025em;
+  font-size: clamp(20px, 1.6vw, 26px);
+  font-weight: 550;
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+  transition: transform 220ms ease;
 }
 
 .ecosystemGrid p {
   margin: 0;
-  color: #918b95;
+  color: #aaa4af;
   font-size: 11px;
-  line-height: 1.65;
+  line-height: 1.68;
+  transition: color 220ms ease;
 }
 
-.ecosystemVisual {
-  min-height: 650px;
+.ecosystemStory {
+  height: 500vh;
   position: relative;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: 22px;
-  background: #111015;
 }
 
-.ecosystemVisual img {
-  object-fit: cover;
+.ecosystemSticky {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background:
+    radial-gradient(circle at 24% 45%, rgba(76, 45, 112, 0.2), transparent 35%),
+    #111015;
+}
+
+.ecosystemStickyActive {
+  position: fixed;
+  z-index: 5;
+}
+
+.ecosystemStickyAfter {
+  top: auto;
+  bottom: 0;
+}
+
+.storyShell {
+  width: min(1440px, calc(100% - 96px));
+  height: min(76vh, 760px);
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(330px, 0.85fr);
+  gap: clamp(55px, 7vw, 110px);
+  align-items: center;
+  margin: 0 auto;
+}
+
+.solarStage {
+  width: 100%;
+  max-width: 850px;
+  position: relative;
+  aspect-ratio: 1.18;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.075);
+  border-radius: 30px;
+  box-shadow: inset 0 0 90px rgba(0, 0, 0, 0.62), 0 34px 90px rgba(0, 0, 0, 0.22);
+  background:
+    radial-gradient(ellipse at 50% 50%, rgba(116, 65, 75, 0.17), transparent 25%),
+    radial-gradient(ellipse at 18% 14%, rgba(47, 89, 128, 0.11), transparent 34%),
+    radial-gradient(ellipse at 84% 78%, rgba(90, 49, 112, 0.09), transparent 38%),
+    #09090e;
+}
+
+.solarStage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.55;
+  background-image:
+    radial-gradient(circle at 18% 24%, rgba(255, 255, 255, 0.78) 0 0.7px, transparent 1.2px),
+    radial-gradient(circle at 77% 19%, rgba(183, 211, 255, 0.62) 0 0.8px, transparent 1.3px),
+    radial-gradient(circle at 64% 72%, rgba(255, 255, 255, 0.5) 0 0.7px, transparent 1.2px),
+    radial-gradient(circle at 29% 83%, rgba(255, 225, 194, 0.42) 0 0.7px, transparent 1.2px);
+  background-size: 173px 149px, 229px 207px, 277px 241px, 319px 283px;
+  pointer-events: none;
+}
+
+.solarVignette {
+  position: absolute;
+  z-index: 8;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 0 72px 20px rgba(3, 3, 7, 0.56);
+  pointer-events: none;
+}
+
+.orbitSystem {
+  position: absolute;
+  inset: 0;
+  transform: translate3d(var(--system-shift), 0, 0) rotate(var(--system-rotation));
+  transform-origin: 50% 50%;
+  transition: transform 900ms cubic-bezier(0.22, 0.68, 0.22, 1);
+}
+
+.orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  border: 1px solid rgba(214, 221, 235, 0.115);
+  pointer-events: none;
+  transform: translate(-50%, -50%) rotate(-7deg);
+  box-shadow: 0 0 18px rgba(170, 184, 217, 0.015);
+}
+
+.orbitOne { width: 31%; height: 22%; }
+.orbitTwo { width: 52%; height: 38%; }
+.orbitThree { width: 73%; height: 56%; }
+.orbitFour { width: 96%; height: 76%; }
+
+.solarSun {
+  width: clamp(116px, 11vw, 158px);
+  aspect-ratio: 1;
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: #fff;
+  transform: translate(-50%, -50%);
+  filter: drop-shadow(0 0 16px rgba(255, 126, 28, 0.5)) drop-shadow(0 0 44px rgba(217, 77, 26, 0.3));
+}
+
+.solarSun::before {
+  content: "";
+  position: absolute;
+  inset: -16%;
+  border-radius: inherit;
+  opacity: 0.55;
+  background: radial-gradient(circle, rgba(255, 154, 59, 0.19), rgba(255, 92, 20, 0.06) 49%, transparent 70%);
+  animation: sunAtmosphere 12s ease-in-out infinite alternate;
+}
+
+.solarSun > img {
+  z-index: 1;
+  object-fit: contain;
+  border-radius: 50%;
+  animation: sunRotation 90s linear infinite;
+}
+
+.solarSun span {
+  position: relative;
+  z-index: 2;
+  padding: 7px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  font-size: 9px;
+  font-weight: 750;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-shadow: 0 2px 10px rgba(29, 13, 16, 0.95);
+  backdrop-filter: blur(5px);
+  background: rgba(24, 10, 8, 0.34);
+}
+
+.planet {
+  position: absolute;
+  z-index: 4;
+  top: var(--planet-y);
+  left: var(--planet-x);
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 0;
+  border: 0;
+  color: #8f8994;
+  font: inherit;
+  cursor: pointer;
+  opacity: 0.56;
+  transform: translate(-50%, -50%) scale(0.92);
+  transition: opacity 440ms ease, color 360ms ease, filter 440ms ease, transform 720ms cubic-bezier(0.2, 0.72, 0.2, 1);
+  background: transparent;
+}
+
+.planetVisual {
+  width: var(--planet-size);
+  aspect-ratio: 1;
+  position: relative;
+  flex: 0 0 var(--planet-size);
+  display: block;
+  border-radius: 50%;
+  filter: brightness(0.68) saturate(0.78) drop-shadow(8px 10px 8px rgba(0, 0, 0, 0.62));
+  transition: filter 440ms ease, transform 600ms cubic-bezier(0.2, 0.72, 0.2, 1);
+}
+
+.planetVisual > img,
+.mobilePlanet > img {
+  object-fit: contain;
+}
+
+.planetMoon .planetVisual {
+  filter: grayscale(0.55) sepia(0.2) brightness(0.58) drop-shadow(7px 8px 7px rgba(0, 0, 0, 0.62));
+}
+
+.planetLabel {
+  max-width: 105px;
+  padding-left: 12px;
+  position: relative;
+  font-size: 7px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: 0.08em;
+  text-align: left;
+  text-transform: uppercase;
+  text-shadow: 0 2px 9px #000;
+  transition: transform 420ms ease;
+}
+
+.planetLabel::before {
+  content: "";
+  width: 7px;
+  height: 1px;
+  position: absolute;
+  top: 0.55em;
+  left: 0;
+  background: currentColor;
+  opacity: 0.55;
+}
+
+.planet:hover,
+.planet:focus-visible,
+.planetActive {
+  color: #fff;
+  opacity: 1;
+  z-index: 7;
+  transform: translate(-50%, -50%) scale(1.035);
+}
+
+.planet:focus-visible {
+  outline: 2px solid #c994ff;
+  outline-offset: 6px;
+  border-radius: 999px;
+}
+
+.planetActive .planetVisual,
+.planet:hover .planetVisual,
+.planet:focus-visible .planetVisual {
+  filter: brightness(1.08) saturate(1.08) drop-shadow(0 0 10px rgba(181, 205, 255, 0.24)) drop-shadow(10px 12px 9px rgba(0, 0, 0, 0.56));
+  transform: scale(1.08);
+}
+
+.planetActive .planetLabel {
+  transform: translateX(3px);
+}
+
+.storyPanel {
+  min-height: 470px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(34px, 4vw, 58px);
+  border-left: 1px solid var(--line);
+}
+
+.storyContent {
+  animation: storyContentIn 460ms cubic-bezier(0.22, 0.7, 0.25, 1) both;
+}
+
+.storyIndex,
+.storyLabel,
+.storyCopy,
+.storyScrollHint {
+  margin: 0;
+}
+
+.storyIndex {
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.storyIndex span {
+  color: #625d66;
+}
+
+.storyLabel {
+  margin-top: 58px;
+  color: #c994ff;
+  font-size: 9px;
+  font-weight: 750;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+}
+
+.storyContent h3 {
+  max-width: 520px;
+  margin: 15px 0 0;
+  color: #fff;
+  font-size: clamp(36px, 4vw, 64px);
+  font-weight: 500;
+  line-height: 1.02;
+  letter-spacing: -0.05em;
+}
+
+.storyCopy {
+  max-width: 500px;
+  margin-top: 24px;
+  color: #a29ca7;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.storyProgress {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 6px;
+  margin-top: 58px;
+}
+
+.storyProgress span {
+  height: 2px;
+  background: rgba(255, 255, 255, 0.12);
+  transition: background 260ms ease;
+}
+
+.storyProgress .storyProgressActive {
+  background: #ae72ff;
+}
+
+.storyScrollHint {
+  margin-top: 15px;
+  color: #65606a;
+  font-size: 8px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.ecosystemMobileStory {
+  display: none;
+}
+
+.mobileSolarOverview {
+  width: min(240px, 70vw);
+  aspect-ratio: 1;
+  position: relative;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 28px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  filter: drop-shadow(0 0 22px rgba(255, 112, 26, 0.28));
+}
+
+.mobileSolarOverview > img {
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.mobileSolarOverview span {
+  position: relative;
+  z-index: 1;
+  padding: 7px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  text-shadow: 0 2px 10px rgba(29, 13, 16, 0.95);
+  background: rgba(24, 10, 8, 0.38);
+}
+
+.mobileStoryItem {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr);
+  gap: 18px;
+  padding: 28px 0;
+  border-top: 1px solid var(--line);
+}
+
+.mobileStoryItem:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.mobilePlanet {
+  width: 44px;
+  aspect-ratio: 1;
+  position: relative;
+  display: block;
+  filter: drop-shadow(5px 7px 6px rgba(0, 0, 0, 0.5));
+}
+
+.mobileStoryItem .mobilePlanet {
+  width: 36px;
+  margin-top: 2px;
+}
+
+.mobileStoryItem .storyContent {
+  animation: none;
+}
+
+.mobileStoryItem .storyLabel {
+  margin-top: 17px;
+}
+
+.mobileStoryItem .storyContent h3 {
+  margin-top: 10px;
+  font-size: clamp(27px, 8vw, 38px);
+}
+
+.mobileStoryItem .storyCopy {
+  margin-top: 16px;
+  font-size: 13px;
+}
+
+.ecosystemVisible .ecosystemIntro > * {
+  animation: ecosystemReveal 620ms cubic-bezier(0.22, 0.7, 0.25, 1) both;
+}
+
+.ecosystemVisible .ecosystemIntro > p {
+  animation-delay: 80ms;
+}
+
+.ecosystemVisible .ecosystemGrid article {
+  animation: ecosystemReveal 560ms cubic-bezier(0.22, 0.7, 0.25, 1) both;
+  animation-delay: calc(100ms + (var(--pillar-index) * 55ms));
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .ecosystemGrid article:hover {
+    border-color: rgba(201, 148, 255, 0.26);
+    transform: translateY(-4px);
+  }
+
+  .ecosystemGrid article:hover > img {
+    filter: saturate(0.9) contrast(1.06);
+    transform: scale(1.035);
+  }
+
+  .ecosystemGrid article:hover h3 {
+    transform: translateX(3px);
+  }
+}
+
+@keyframes ecosystemReveal {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes storyContentIn {
+  from { opacity: 0; filter: blur(3px); transform: translateY(13px); }
+  to { opacity: 1; filter: blur(0); transform: translateY(0); }
+}
+
+@keyframes sunAtmosphere {
+  from { opacity: 0.42; transform: scale(0.96); }
+  to { opacity: 0.62; transform: scale(1.04); }
+}
+
+@keyframes sunRotation {
+  to { transform: rotate(360deg); }
 }
 
 .outcomes {
@@ -798,11 +1410,18 @@
   }
 
   .solutionCard {
+    flex-basis: calc((100% - 20px) / 2);
     height: 520px;
   }
 
-  .ecosystemVisual {
-    min-height: 520px;
+  .storyShell {
+    width: min(100% - 64px, 1200px);
+    grid-template-columns: minmax(0, 1.18fr) minmax(320px, 0.82fr);
+    gap: 40px;
+  }
+
+  .storyPanel {
+    padding: 32px;
   }
 
   .outcomesVisual {
@@ -857,11 +1476,8 @@
     gap: 22px;
   }
 
-  .solutionGrid {
-    grid-template-columns: 1fr;
-  }
-
   .solutionCard {
+    flex-basis: 48%;
     height: 480px;
   }
 
@@ -869,13 +1485,31 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .ecosystemGrid article:nth-child(3) {
-    border-left: 0;
-    border-top: 1px solid var(--line);
+  .ecosystemGrid article {
+    min-height: 340px;
   }
 
-  .ecosystemGrid article:nth-child(4) {
-    border-top: 1px solid var(--line);
+  .storyShell {
+    height: min(72vh, 670px);
+    grid-template-columns: minmax(0, 1.05fr) minmax(290px, 0.95fr);
+    gap: 24px;
+  }
+
+  .solarStage {
+    border-radius: 22px;
+  }
+
+  .storyPanel {
+    min-height: 410px;
+    padding: 26px;
+  }
+
+  .storyLabel {
+    margin-top: 40px;
+  }
+
+  .storyProgress {
+    margin-top: 40px;
   }
 
   .outcomesGrid {
@@ -905,11 +1539,19 @@
   .cta {
     padding: 88px 0;
   }
+
+  .solutions {
+    padding: 72px 0 60px;
+  }
 }
 
 @media (max-width: 767px) {
   .shell {
     width: calc(100% - 36px);
+  }
+
+  .solutions {
+    padding: 60px 0 48px;
   }
 
   .hero {
@@ -955,6 +1597,7 @@
   }
 
   .solutionCard {
+    flex-basis: 84%;
     height: 500px;
     border-radius: 17px;
   }
@@ -963,24 +1606,62 @@
     padding: 24px;
   }
 
+  .sectionHeading > * {
+    min-width: 0;
+  }
+
+  .sectionHeading h2 {
+    font-size: clamp(34px, 9.2vw, 40px);
+    overflow-wrap: break-word;
+  }
+
+  .sectionHeading > p {
+    overflow-wrap: break-word;
+  }
+
+  .carouselFooter {
+    grid-template-columns: 125px 1fr auto;
+    gap: 18px;
+    margin-top: 17px;
+  }
+
+  .swipeHint {
+    text-align: center;
+  }
+
   .ecosystemGrid {
     grid-template-columns: 1fr;
+    gap: 14px;
+    margin-bottom: 58px;
   }
 
   .ecosystemGrid article {
-    min-height: 205px;
+    min-height: 320px;
   }
 
-  .ecosystemGrid article + article,
-  .ecosystemGrid article:nth-child(4) {
-    border-top: 1px solid var(--line);
-    border-left: 0;
+  .ecosystemStory {
+    height: auto;
   }
 
-  .ecosystemVisual {
-    min-height: 0;
-    aspect-ratio: 1.25;
-    border-radius: 17px;
+  .ecosystemSticky {
+    display: none;
+  }
+
+  .ecosystemMobileStory {
+    display: grid;
+  }
+
+  .mobileSolarOverview {
+    margin-top: 2px;
+  }
+
+  .ecosystemIntro > * {
+    min-width: 0;
+  }
+
+  .ecosystemIntro h2 {
+    font-size: clamp(38px, 11vw, 54px);
+    overflow-wrap: break-word;
   }
 
   .outcomesVisual {
@@ -1060,12 +1741,15 @@
   .cardArrow {
     width: 40px;
     height: 40px;
-    right: 20px;
-    bottom: 23px;
+    flex-basis: 40px;
   }
 
-  .solutionContent p {
-    margin-right: 42px;
+  .carouselFooter {
+    grid-template-columns: 1fr auto;
+  }
+
+  .swipeHint {
+    display: none;
   }
 }
 
@@ -1073,10 +1757,55 @@
   .primaryAction,
   .textAction,
   .solutionCard > img,
+  .solutionShade,
+  .solutionText,
   .cardArrow,
+  .carouselControls button,
+  .ecosystemGrid article,
+  .ecosystemGrid article > img,
+  .ecosystemGrid h3,
+  .ecosystemGrid p,
+  .planet,
+  .planetVisual,
+  .orbitSystem,
   .photo img,
   .partnerGrid img {
     transition: none;
   }
 
+  .solutionTrack {
+    scroll-behavior: auto;
+  }
+
+  .solutionsVisible .sectionHeading > *,
+  .solutionsVisible .solutionCard,
+  .ecosystemVisible .ecosystemIntro > *,
+  .ecosystemVisible .ecosystemGrid article,
+  .storyContent,
+  .solarSun::before,
+  .solarSun > img {
+    animation: none;
+  }
+
+  .mobileSolarOverview > img {
+    display: none;
+  }
+
+  .mobileSolarOverview {
+    box-shadow: 0 0 34px rgba(255, 117, 30, 0.16);
+    background:
+      radial-gradient(circle at 35% 32%, #ffd76c 0 6%, #f59d2b 22%, #c84d1f 52%, #5f201a 73%, transparent 74%);
+  }
+
+  .ecosystemStory {
+    height: auto;
+  }
+
+  .ecosystemSticky {
+    display: none;
+  }
+
+  .ecosystemMobileStory {
+    display: grid;
+  }
 }

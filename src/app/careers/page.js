@@ -59,8 +59,8 @@ const teams = [
 const benefits = [
   "Meaningful work with visible classroom impact",
   "Cross-functional exposure and real ownership",
-  "Fast learning in a growing national EdTech company",
-  "Opportunities to work across education and technology",
+  "Fast learning in a growing education technology company",
+  "Exposure across education, technology, and management",
   "A team that values initiative over hierarchy",
   "Room to experiment, improve, and build your craft",
 ];
@@ -111,9 +111,9 @@ export default function Careers() {
                   href={jobsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={styles.primaryAction}
+                  className={`${styles.primaryAction} ${styles.applyAction}`}
                 >
-                  View open positions
+                  Apply now
                   <span>
                     <FontAwesomeIcon icon={faArrowRight} />
                   </span>
@@ -131,66 +131,28 @@ export default function Careers() {
         </div>
       </section>
 
-      <section className={styles.values}>
+      <nav className={styles.careerNav} aria-label="Careers page sections">
         <div className={styles.shell}>
-          <div className={styles.sectionHeading}>
-            <div>
-              <p className={styles.eyebrow}>How we work</p>
-              <h2>High ownership. Low ego. Real-world impact.</h2>
-            </div>
-            <p>
-              We move quickly because the opportunity is urgent—but we stay
-              thoughtful about the students, educators, and schools affected by
-              every decision.
-            </p>
-          </div>
-
-          <div className={styles.valueGrid}>
-            {values.map((value) => (
-              <article key={value.title}>
-                <span>{value.number}</span>
-                <div>
-                  <h3>{value.title}</h3>
-                  <p>{value.copy}</p>
-                </div>
-              </article>
-            ))}
-          </div>
+          <a href="#career-paths">
+            <span>01</span>
+            Career paths
+          </a>
+          <a href="#hiring-process">
+            <span>02</span>
+            Hiring process
+          </a>
+          <a href="#culture">
+            <span>03</span>
+            Culture
+          </a>
+          <a href="#life-at-aerobay">
+            <span>04</span>
+            Life at AeroBay
+          </a>
         </div>
-      </section>
+      </nav>
 
-      <section className={styles.life}>
-        <div className={styles.shell}>
-          <div className={styles.lifeHeading}>
-            <div>
-              <p className={styles.eyebrow}>Life at AeroBay</p>
-              <h2>Serious about the mission. Human in how we get there.</h2>
-            </div>
-            <p>
-              See the energy, collaboration, and sense of possibility behind
-              the work we do every day.
-            </p>
-          </div>
-
-          <div className={styles.videoFrame}>
-            <iframe
-              src="https://www.youtube.com/embed/bMSJqcYJtvQ?si=bbYaiakXQ4vUxnTr&rel=0"
-              title="Life at AeroBay"
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            />
-            <div className={styles.videoLabel} aria-hidden="true">
-              <span>
-                <FontAwesomeIcon icon={faPlay} />
-              </span>
-              Watch the film
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className={styles.teams}>
+      <section className={styles.teams} id="career-paths">
         <div className={styles.shell}>
           <div className={styles.teamsIntro}>
             <div>
@@ -264,15 +226,11 @@ export default function Careers() {
           <div className={styles.growthGrid}>
             <div className={styles.growthVisual}>
               <Image
-                src="/images/tilt-imgs/tilt-6.jpg"
+                src="/images/carrers.png"
                 alt="The AeroBay team creating hands-on learning experiences"
                 fill
                 sizes="(max-width: 991px) calc(100vw - 64px), 50vw"
               />
-              <div>
-                <strong>Build your career</strong>
-                <span>while building the future of learning</span>
-              </div>
             </div>
 
             <div className={styles.growthCopy}>
@@ -296,7 +254,7 @@ export default function Careers() {
         </div>
       </section>
 
-      <section className={styles.process}>
+      <section className={styles.process} id="hiring-process">
         <div className={styles.shell}>
           <div className={styles.processHeading}>
             <div>
@@ -321,6 +279,65 @@ export default function Careers() {
         </div>
       </section>
 
+      <section className={styles.values} id="culture">
+        <div className={styles.shell}>
+          <div className={styles.sectionHeading}>
+            <div>
+              <p className={styles.eyebrow}>How we work</p>
+              <h2>High ownership. Low ego. Real-world impact.</h2>
+            </div>
+            <p>
+              We move quickly because the opportunity is urgent—but we stay
+              thoughtful about the students, educators, and schools affected by
+              every decision.
+            </p>
+          </div>
+
+          <div className={styles.valueGrid}>
+            {values.map((value) => (
+              <article key={value.title}>
+                <span>{value.number}</span>
+                <div>
+                  <h3>{value.title}</h3>
+                  <p>{value.copy}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.life} id="life-at-aerobay">
+        <div className={styles.shell}>
+          <div className={styles.lifeHeading}>
+            <div>
+              <p className={styles.eyebrow}>Life at AeroBay</p>
+              <h2>Serious about the mission. Human in how we get there.</h2>
+            </div>
+            <p>
+              See the energy, collaboration, and sense of possibility behind
+              the work we do every day.
+            </p>
+          </div>
+
+          <div className={styles.videoFrame}>
+            <iframe
+              src="https://www.youtube.com/embed/MDSHfEntrwY?si=EAZXO5p8xWvNaAJ5"
+              title="Life at AeroBay"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            />
+            <div className={styles.videoLabel} aria-hidden="true">
+              <span>
+                <FontAwesomeIcon icon={faPlay} />
+              </span>
+              Watch the film
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className={styles.cta}>
         <div className={styles.shell}>
           <div className={styles.ctaCard}>
@@ -336,9 +353,9 @@ export default function Careers() {
               href={jobsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className={styles.primaryAction}
+              className={`${styles.primaryAction} ${styles.applyAction}`}
             >
-              Explore open roles
+              Apply now
               <span>
                 <FontAwesomeIcon icon={faArrowRight} />
               </span>

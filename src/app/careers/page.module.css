@@ -120,6 +120,48 @@
   box-shadow: 0 15px 34px rgba(134, 74, 210, 0.24);
 }
 
+.applyAction {
+  min-width: 196px;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: linear-gradient(110deg, #9f5ff1 0%, #bb80ff 52%, #a865f4 100%);
+  box-shadow:
+    0 16px 38px rgba(141, 73, 226, 0.34),
+    inset 0 1px 0 rgba(255, 255, 255, 0.34);
+}
+
+.applyAction::before {
+  content: "";
+  width: 42%;
+  position: absolute;
+  inset: -25% auto -25% -55%;
+  transform: skewX(-22deg);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.34),
+    transparent
+  );
+  animation: applyShine 3.8s ease-in-out infinite;
+}
+
+.applyAction span {
+  box-shadow: 0 7px 18px rgba(23, 21, 25, 0.3);
+}
+
+.applyAction:hover {
+  box-shadow:
+    0 21px 48px rgba(141, 73, 226, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+@keyframes applyShine {
+  0%, 55% { left: -55%; }
+  82%, 100% { left: 125%; }
+}
+
 .primaryAction span {
   width: 44px;
   height: 44px;
@@ -154,8 +196,49 @@
   color: #fff;
 }
 
+.careerNav {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: #171519;
+}
+
+.careerNav .shell {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.careerNav a {
+  min-height: 88px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0 24px;
+  color: #c7c1cb;
+  font-size: 11px;
+  font-weight: 650;
+  letter-spacing: 0.02em;
+  transition: color 180ms ease, background 180ms ease;
+}
+
+.careerNav a + a {
+  border-left: 1px solid var(--line);
+}
+
+.careerNav a span {
+  color: #7e7782;
+  font-size: 8px;
+  font-weight: 750;
+  letter-spacing: 0.12em;
+}
+
+.careerNav a:hover {
+  color: #fff;
+  background: rgba(174, 114, 255, 0.07);
+}
+
 .values {
-  padding: 120px 0;
+  scroll-margin-top: 82px;
+  padding: 105px 0;
   color: #1d1921;
   background: #f1eff4;
 }
@@ -201,7 +284,7 @@
 }
 
 .valueGrid article {
-  min-height: 285px;
+  min-height: 245px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -235,7 +318,8 @@
 }
 
 .life {
-  padding: 120px 0;
+  scroll-margin-top: 82px;
+  padding: 105px 0;
   background: #171519;
 }
 
@@ -245,7 +329,7 @@
 }
 
 .videoFrame {
-  min-height: 690px;
+  min-height: 610px;
   position: relative;
   overflow: hidden;
   border: 1px solid var(--line);
@@ -293,7 +377,8 @@
 }
 
 .teams {
-  padding: 120px 0;
+  scroll-margin-top: 82px;
+  padding: 105px 0;
   border-top: 1px solid var(--line);
   background: #171519;
 }
@@ -305,7 +390,7 @@
 }
 
 .teamGrid article {
-  min-height: 300px;
+  min-height: 260px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -366,8 +451,8 @@
   grid-template-columns: minmax(0, 1.15fr) minmax(380px, 0.85fr);
   gap: clamp(45px, 6vw, 90px);
   align-items: center;
-  margin-top: 90px;
-  padding-top: 90px;
+  margin-top: 72px;
+  padding-top: 72px;
   border-top: 1px solid var(--line);
 }
 
@@ -436,20 +521,20 @@
 }
 
 .growth {
-  padding: 120px 0;
+  padding: 105px 0;
   color: #1d1921;
   background: #f1eff4;
 }
 
 .growthGrid {
   display: grid;
-  grid-template-columns: minmax(0, 1.08fr) minmax(380px, 0.72fr);
-  gap: clamp(64px, 8vw, 125px);
+  grid-template-columns: minmax(0, 0.86fr) minmax(430px, 0.84fr);
+  gap: clamp(56px, 7vw, 110px);
   align-items: center;
 }
 
 .growthVisual {
-  min-height: 690px;
+  min-height: 590px;
   position: relative;
   overflow: hidden;
   border-radius: 22px;
@@ -518,8 +603,8 @@
   align-items: center;
   gap: 12px;
   color: #39333d;
-  font-size: 12px;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 550;
 }
 
 .growthCopy li svg {
@@ -532,7 +617,8 @@
 }
 
 .process {
-  padding: 120px 0;
+  scroll-margin-top: 82px;
+  padding: 105px 0;
   background: #171519;
 }
 
@@ -547,7 +633,7 @@
 }
 
 .processGrid article {
-  min-height: 245px;
+  min-height: 225px;
   padding: 27px;
   border: 1px solid var(--line);
   border-radius: 16px;
@@ -559,7 +645,7 @@
   height: 40px;
   display: grid;
   place-items: center;
-  margin-bottom: 48px;
+  margin-bottom: 36px;
   border: 1px solid rgba(174, 114, 255, 0.35);
   border-radius: 50%;
   color: #d0a4ff;
@@ -662,6 +748,19 @@
     gap: 22px;
   }
 
+  .careerNav .shell {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .careerNav a:nth-child(3) {
+    border-top: 1px solid var(--line);
+    border-left: 0;
+  }
+
+  .careerNav a:nth-child(4) {
+    border-top: 1px solid var(--line);
+  }
+
   .valueGrid,
   .processGrid {
     grid-template-columns: repeat(2, 1fr);
@@ -740,6 +839,12 @@
     flex-direction: column;
     gap: 22px;
     margin-top: 30px;
+  }
+
+  .careerNav a {
+    min-height: 72px;
+    padding: 0 14px;
+    font-size: 10px;
   }
 
   .valueGrid,
@@ -826,5 +931,9 @@
   .secondaryAction,
   .teamGrid article {
     transition: none;
+  }
+
+  .applyAction::before {
+    animation: none;
   }
 }
