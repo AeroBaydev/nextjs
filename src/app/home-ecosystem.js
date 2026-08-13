@@ -2,7 +2,6 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import styles from "./home.module.css";
 
 const pillars = [
@@ -223,7 +222,7 @@ const storyItems = [
   },
 ];
 
-function Planet({ item, index, activeIndex, onActivate }) {
+function Planet({ item, index, activeIndex, onActivate, onDeactivate }) {
   const isActive = index === activeIndex;
 
   return (
@@ -252,8 +251,11 @@ function Planet({ item, index, activeIndex, onActivate }) {
           className={`${styles.legacyPlanet} ${
             isActive ? styles.legacyPlanetActive : ""
           }`}
+          data-ecosystem-trigger
           onMouseEnter={() => onActivate(index)}
+          onMouseLeave={onDeactivate}
           onFocus={() => onActivate(index)}
+          onBlur={onDeactivate}
           onClick={() => onActivate(index)}
           aria-label={`Explore ${item.label}`}
           aria-pressed={isActive}
@@ -294,11 +296,16 @@ export default function HomeEcosystem() {
   const storyRef = useRef(null);
   const atmosphereRef = useRef(null);
   const stageRef = useRef(null);
-  const pointerFrameRef = useRef(null);
+  const leaveTimerRef = useRef(null);
+  const cardTimerRef = useRef(null);
+  const galaxyPausedRef = useRef(false);
   const [isVisible, setIsVisible] = useState(false);
   const [storyVisible, setStoryVisible] = useState(false);
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [hasActiveStory, setHasActiveStory] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(null);
+  const [isGalaxyPaused, setIsGalaxyPaused] = useState(false);
+  const [isCardMounted, setIsCardMounted] = useState(false);
+  const [isCardVisible, setIsCardVisible] = useState(false);
+  const [isSunHovered, setIsSunHovered] = useState(false);
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -320,40 +327,6 @@ export default function HomeEcosystem() {
 
     observer.observe(section);
     return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    const stage = stageRef.current;
-    if (!stage) return undefined;
-
-    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const moveCamera = (event) => {
-      if (reducedMotion.matches || window.innerWidth < 768) return;
-      if (pointerFrameRef.current) cancelAnimationFrame(pointerFrameRef.current);
-      pointerFrameRef.current = requestAnimationFrame(() => {
-        const bounds = stage.getBoundingClientRect();
-        const x = (event.clientX - bounds.left) / bounds.width - 0.5;
-        const y = (event.clientY - bounds.top) / bounds.height - 0.5;
-        stage.style.setProperty("--pointer-x", `${x * 10}px`);
-        stage.style.setProperty("--pointer-y", `${y * 7}px`);
-        stage.style.setProperty("--pointer-ry", `${x * 0.8}deg`);
-        stage.style.setProperty("--pointer-rx", `${y * -0.55}deg`);
-      });
-    };
-    const resetCamera = () => {
-      stage.style.setProperty("--pointer-x", "0px");
-      stage.style.setProperty("--pointer-y", "0px");
-      stage.style.setProperty("--pointer-rx", "0deg");
-      stage.style.setProperty("--pointer-ry", "0deg");
-    };
-
-    stage.addEventListener("pointermove", moveCamera, { passive: true });
-    stage.addEventListener("pointerleave", resetCamera);
-    return () => {
-      stage.removeEventListener("pointermove", moveCamera);
-      stage.removeEventListener("pointerleave", resetCamera);
-      if (pointerFrameRef.current) cancelAnimationFrame(pointerFrameRef.current);
-    };
   }, []);
 
   useEffect(() => {
@@ -400,8 +373,40 @@ export default function HomeEcosystem() {
   }, []);
 
   const activateStep = useCallback((index) => {
+    window.clearTimeout(leaveTimerRef.current);
+    window.clearTimeout(cardTimerRef.current);
+    galaxyPausedRef.current = true;
     setActiveIndex(index);
-    setHasActiveStory(true);
+    setIsSunHovered(false);
+    setIsGalaxyPaused(true);
+    setIsCardMounted(true);
+    requestAnimationFrame(() => setIsCardVisible(true));
+  }, []);
+
+  const activateSun = useCallback(() => {
+    window.clearTimeout(leaveTimerRef.current);
+    window.clearTimeout(cardTimerRef.current);
+    galaxyPausedRef.current = true;
+    setIsCardVisible(false);
+    setIsCardMounted(false);
+    setIsSunHovered(true);
+    setIsGalaxyPaused(true);
+  }, []);
+
+  const deactivateGalaxy = useCallback(() => {
+    window.clearTimeout(leaveTimerRef.current);
+    leaveTimerRef.current = window.setTimeout(() => {
+      galaxyPausedRef.current = false;
+      setIsCardVisible(false);
+      setIsSunHovered(false);
+      setIsGalaxyPaused(false);
+      cardTimerRef.current = window.setTimeout(() => setIsCardMounted(false), 280);
+    }, 90);
+  }, []);
+
+  useEffect(() => () => {
+    window.clearTimeout(leaveTimerRef.current);
+    window.clearTimeout(cardTimerRef.current);
   }, []);
 
   return (
@@ -458,11 +463,16 @@ export default function HomeEcosystem() {
           <div className={styles.storyShell}>
             <div
               className={`${styles.solarStage} ${
-                hasActiveStory ? styles.solarStageStoryActive : ""
+                isCardVisible ? styles.solarStageStoryActive : ""
+              } ${
+                isGalaxyPaused ? styles.solarStagePaused : ""
               }`}
               role="group"
               aria-label="Interactive AeroBay learning ecosystem"
               ref={stageRef}
+              onPointerDown={(event) => {
+                if (!event.target.closest("[data-ecosystem-trigger]")) deactivateGalaxy();
+              }}
             >
               <video
                 ref={atmosphereRef}
@@ -482,12 +492,6 @@ export default function HomeEcosystem() {
 
               <div
                 className={styles.galaxyScene}
-                style={{
-                  "--camera-x": storyItems[activeIndex].cameraX,
-                  "--camera-y": storyItems[activeIndex].cameraY,
-                  "--camera-rx": storyItems[activeIndex].cameraRotateX,
-                  "--camera-ry": storyItems[activeIndex].cameraRotateY,
-                }}
               >
                 {storyItems.map((item, index) => (
                   <Planet
@@ -495,24 +499,34 @@ export default function HomeEcosystem() {
                     index={index}
                     activeIndex={activeIndex}
                     onActivate={activateStep}
+                    onDeactivate={deactivateGalaxy}
                     key={item.label}
                   />
                 ))}
 
-                <div className={styles.legacySun} aria-label="AeroBay at the centre of the learning ecosystem">
+                <button
+                  type="button"
+                  className={`${styles.legacySun} ${isSunHovered ? styles.legacySunActive : ""}`}
+                  data-ecosystem-trigger
+                  onMouseEnter={activateSun}
+                  onMouseLeave={deactivateGalaxy}
+                  onFocus={activateSun}
+                  onBlur={deactivateGalaxy}
+                  onClick={activateSun}
+                  aria-label="Explore AeroBay at the centre of the learning ecosystem"
+                  aria-pressed={isSunHovered}
+                >
                   <span className={styles.legacySunGlow} aria-hidden="true" />
                   <Image className={styles.legacySunStatic} src="/images/hmsect-global/sun-static.webp" alt="" fill sizes="190px" />
                   <Image className={styles.legacySunMotion} src="/images/hmsect-global/sun.gif" alt="" fill sizes="190px" unoptimized />
                   <Image className={styles.legacyOrbitLogo} src="/images/hmsect-global/logo-orbit.gif" alt="" fill sizes="110px" unoptimized />
                   <span className={styles.legacySunName}>AeroBay</span>
-                </div>
+                </button>
               </div>
             </div>
 
-            {hasActiveStory ? <aside
-              className={`${styles.storyPanel} ${
-                styles[`storyPanel${storyItems[activeIndex].panelPosition}`]
-              }`}
+            {isCardMounted ? <aside
+              className={`${styles.storyPanel} ${isCardVisible ? styles.storyPanelVisible : ""}`}
               aria-live="polite"
               key={storyItems[activeIndex].label}
             >
@@ -539,9 +553,6 @@ export default function HomeEcosystem() {
                 ))}
               </div>
               <p className={styles.storyScrollHint}>Hover or focus a planet to explore</p>
-              <Link className={styles.storyCta} href="/aerobay-for-school">
-                Explore the AeroBay ecosystem <span aria-hidden="true">→</span>
-              </Link>
             </aside> : null}
           </div>
         </div>
