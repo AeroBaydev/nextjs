@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./home.module.css";
 
 const pillars = [
@@ -40,74 +41,185 @@ const storyItems = [
     label: "Curriculum",
     title: "Experiential Curriculum",
     copy: "Learning designed around practical application, real-world examples and projects—not theory alone.",
-    x: "28%",
-    y: "24%",
-    image: "/images/hmsect-global/4.png",
-    size: 68,
+    asset: 3,
+    figureAsset: 3,
+    size: 58,
+    orbitWidth: "31%",
+    orbitHeight: "35%",
+    orbitHeightPortrait: "28%",
+    orbitDuration: "29s",
+    orbitDelay: "-18s",
+    orbitInclination: "-2deg",
+    orbitDepth: "24px",
+    staticPosition: "63%",
+    rotationDuration: "9s",
+    glowColor: "rgba(255, 72, 33, 0.62)",
+    cameraX: "-1.5%",
+    cameraY: "1%",
+    cameraRotateX: "0.6deg",
+    cameraRotateY: "-1deg",
+    panelPosition: "rightTop",
   },
   {
     label: "Learning Spaces",
     title: "Purpose-Built Learning Spaces",
-    copy: "Purpose-designed environments give students room to explore, experiment, build and apply concepts through hands-on learning.",
-    x: "73%",
-    y: "29%",
-    image: "/images/hmsect-global/1.png",
-    size: 78,
+    copy: "Purpose-designed environments where students explore, experiment, build and apply concepts through hands-on learning.",
+    asset: 6,
+    figureAsset: 6,
+    size: 54,
+    orbitWidth: "40%",
+    orbitHeight: "43%",
+    orbitHeightPortrait: "35%",
+    orbitDuration: "37s",
+    orbitDelay: "-3s",
+    orbitInclination: "2.5deg",
+    orbitDepth: "-32px",
+    staticPosition: "8%",
+    rotationDuration: "12s",
+    glowColor: "rgba(221, 166, 104, 0.46)",
+    cameraX: "1%",
+    cameraY: "-1%",
+    cameraRotateX: "-0.8deg",
+    cameraRotateY: "1.2deg",
+    panelPosition: "leftBottom",
   },
   {
-    label: "Educators",
+    label: "STEM Educators",
     title: "Expert STEM Educators",
-    copy: "Trained educators connect explanation with demonstration, experimentation and hands-on implementation.",
-    x: "19%",
-    y: "57%",
-    image: "/images/hmsect-global/3.png",
-    size: 54,
+    copy: "Trained educators who bring concepts to life through demonstrations, experimentation and hands-on implementation.",
+    asset: 1,
+    figureAsset: 1,
+    size: 78,
+    orbitWidth: "49%",
+    orbitHeight: "51%",
+    orbitHeightPortrait: "42%",
+    orbitDuration: "43s",
+    orbitDelay: "-12s",
+    orbitInclination: "-1deg",
+    orbitDepth: "46px",
+    staticPosition: "29%",
+    rotationDuration: "15s",
+    glowColor: "rgba(255, 184, 74, 0.48)",
+    cameraX: "-1%",
+    cameraY: "1.5%",
+    cameraRotateX: "0.7deg",
+    cameraRotateY: "-1.4deg",
+    panelPosition: "rightBottom",
   },
   {
     label: "AeroBay Kits",
     title: "Materials Made for Exploration",
     copy: "Purposeful kits and components help students move from explanation to practical exploration and making.",
-    x: "78%",
-    y: "61%",
-    image: "/images/hmsect-global/7.png",
-    size: 72,
+    asset: 7,
+    figureAsset: 7,
+    size: 88,
+    orbitWidth: "58%",
+    orbitHeight: "59%",
+    orbitHeightPortrait: "49%",
+    orbitDuration: "51s",
+    orbitDelay: "-9s",
+    orbitInclination: "3deg",
+    orbitDepth: "-54px",
+    staticPosition: "18%",
+    rotationDuration: "17s",
+    glowColor: "rgba(52, 224, 255, 0.58)",
+    cameraX: "1.5%",
+    cameraY: "-1%",
+    cameraRotateX: "-0.6deg",
+    cameraRotateY: "1deg",
+    panelPosition: "leftTop",
   },
   {
     label: "Projects",
     title: "Learning Through Projects",
-    copy: "Practical projects encourage students to apply skills, test ideas and build confidence through experience.",
-    x: "39%",
-    y: "78%",
-    image: "/images/hmsect-global/5.png",
-    size: 76,
-  },
-  {
-    label: "Challenges",
-    title: "Challenges & Competitions",
-    copy: "Structured challenges and competitions give students a setting to apply their skills and learn through participation.",
-    x: "88%",
-    y: "43%",
-    image: "/images/hmsect-global/2.png",
-    size: 96,
+    copy: "Practical projects encourage students to apply their skills, test ideas and build confidence through experience.",
+    asset: 4,
+    figureAsset: 5,
+    size: 82,
+    orbitWidth: "67%",
+    orbitHeight: "67%",
+    orbitHeightPortrait: "56%",
+    orbitDuration: "59s",
+    orbitDelay: "-42s",
+    orbitInclination: "-3.5deg",
+    orbitDepth: "62px",
+    staticPosition: "72%",
+    rotationDuration: "19s",
+    glowColor: "rgba(84, 139, 255, 0.54)",
+    cameraX: "-1.25%",
+    cameraY: "-1%",
+    cameraRotateX: "-0.5deg",
+    cameraRotateY: "-1.2deg",
+    panelPosition: "rightTop",
   },
   {
     label: "Certifications",
     title: "Recognising the Learning Journey",
     copy: "Certifications provide students with a tangible record of participation in their AeroBay learning journey.",
-    x: "9%",
-    y: "36%",
-    image: "/images/hmsect-global/6.png",
-    size: 52,
+    asset: 2,
+    figureAsset: 2,
+    size: 104,
+    orbitWidth: "77%",
+    orbitHeight: "75%",
+    orbitHeightPortrait: "63%",
+    orbitDuration: "67s",
+    orbitDelay: "-30s",
+    orbitInclination: "1.5deg",
+    orbitDepth: "-76px",
+    staticPosition: "45%",
+    rotationDuration: "22s",
+    glowColor: "rgba(232, 199, 153, 0.48)",
+    cameraX: "1%",
+    cameraY: "1.25%",
+    cameraRotateX: "0.8deg",
+    cameraRotateY: "1.1deg",
+    panelPosition: "leftBottom",
   },
   {
-    label: "Program Support",
-    title: "A Connected Program",
-    copy: "Ongoing program support keeps learning spaces, educators, curriculum and activities connected under one accountable partner.",
-    x: "65%",
-    y: "84%",
-    image: "/images/hmsect-global/6.png",
-    size: 40,
-    moon: true,
+    label: "Competitions",
+    title: "Challenges & Competitions",
+    copy: "Structured challenges and competitions give students a setting to apply their skills and learn through participation.",
+    asset: 5,
+    figureAsset: 5,
+    size: 110,
+    orbitWidth: "87%",
+    orbitHeight: "83%",
+    orbitHeightPortrait: "70%",
+    orbitDuration: "76s",
+    orbitDelay: "-65s",
+    orbitInclination: "-1.5deg",
+    orbitDepth: "82px",
+    staticPosition: "86%",
+    rotationDuration: "25s",
+    glowColor: "rgba(255, 177, 30, 0.58)",
+    cameraX: "-1%",
+    cameraY: "0",
+    cameraRotateX: "0deg",
+    cameraRotateY: "-1deg",
+    panelPosition: "rightBottom",
+  },
+  {
+    label: "Analytics",
+    title: "Analytics & LMS",
+    copy: "AeroBay's learning management system supports program records, digital student portfolios and school-level learning insights.",
+    asset: 4,
+    figureAsset: 4,
+    size: 64,
+    orbitWidth: "97%",
+    orbitHeight: "91%",
+    orbitHeightPortrait: "77%",
+    orbitDuration: "88s",
+    orbitDelay: "-24s",
+    orbitInclination: "2deg",
+    orbitDepth: "-96px",
+    staticPosition: "94%",
+    rotationDuration: "28s",
+    glowColor: "rgba(126, 175, 255, 0.48)",
+    cameraX: "0.75%",
+    cameraY: "-0.5%",
+    cameraRotateX: "-0.4deg",
+    cameraRotateY: "0.8deg",
+    panelPosition: "leftTop",
   },
 ];
 
@@ -115,25 +227,51 @@ function Planet({ item, index, activeIndex, onActivate }) {
   const isActive = index === activeIndex;
 
   return (
-    <button
-      type="button"
-      className={`${styles.planet} ${item.moon ? styles.planetMoon : ""} ${
-        isActive ? styles.planetActive : ""
+    <div
+      className={`${styles.livingOrbit} ${
+        isActive ? styles.livingOrbitActive : ""
       }`}
       style={{
-        "--planet-x": item.x,
-        "--planet-y": item.y,
+        "--orbit-width": item.orbitWidth,
+        "--orbit-height": item.orbitHeight,
+        "--orbit-height-portrait": item.orbitHeightPortrait,
+        "--orbit-duration": item.orbitDuration,
+        "--orbit-delay": item.orbitDelay,
+        "--orbit-inclination": item.orbitInclination,
+        "--orbit-depth": item.orbitDepth,
+        "--static-position": item.staticPosition,
         "--planet-size": `${item.size}px`,
+        "--rotation-duration": item.rotationDuration,
+        "--planet-glow": item.glowColor,
       }}
-      onClick={() => onActivate(index)}
-      aria-label={`Explore ${item.label}`}
-      aria-pressed={isActive}
     >
-      <span className={styles.planetVisual} aria-hidden="true">
-        <Image src={item.image} alt="" fill sizes={`${item.size}px`} />
+      <span className={styles.livingOrbitLine} aria-hidden="true" />
+      <span className={styles.livingPlanetMotion}>
+        <button
+          type="button"
+          className={`${styles.legacyPlanet} ${
+            isActive ? styles.legacyPlanetActive : ""
+          }`}
+          onMouseEnter={() => onActivate(index)}
+          onFocus={() => onActivate(index)}
+          onClick={() => onActivate(index)}
+          aria-label={`Explore ${item.label}`}
+          aria-pressed={isActive}
+        >
+          <span className={styles.legacyPlanetFigure} aria-hidden="true">
+            <Image
+              src={`/images/hmsect-global/${item.asset}.png`}
+              alt=""
+              fill
+              sizes={`${item.size}px`}
+            />
+          </span>
+          <span className={styles.livingPlanetLabel} aria-hidden="true">
+            {item.label}
+          </span>
+        </button>
       </span>
-      <span className={styles.planetLabel}>{item.label}</span>
-    </button>
+    </div>
   );
 }
 
@@ -154,11 +292,13 @@ function StoryContent({ item, index }) {
 export default function HomeEcosystem() {
   const sectionRef = useRef(null);
   const storyRef = useRef(null);
-  const frameRef = useRef(null);
-  const tickingRef = useRef(false);
+  const atmosphereRef = useRef(null);
+  const stageRef = useRef(null);
+  const pointerFrameRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [storyVisible, setStoryVisible] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
-  const [storyPhase, setStoryPhase] = useState("before");
+  const [hasActiveStory, setHasActiveStory] = useState(false);
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -182,74 +322,86 @@ export default function HomeEcosystem() {
     return () => observer.disconnect();
   }, []);
 
-  const updateStory = useCallback(() => {
-    const story = storyRef.current;
-    const frame = frameRef.current;
-    tickingRef.current = false;
+  useEffect(() => {
+    const stage = stageRef.current;
+    if (!stage) return undefined;
 
-    if (!story || !frame || window.innerWidth < 768) return;
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const moveCamera = (event) => {
+      if (reducedMotion.matches || window.innerWidth < 768) return;
+      if (pointerFrameRef.current) cancelAnimationFrame(pointerFrameRef.current);
+      pointerFrameRef.current = requestAnimationFrame(() => {
+        const bounds = stage.getBoundingClientRect();
+        const x = (event.clientX - bounds.left) / bounds.width - 0.5;
+        const y = (event.clientY - bounds.top) / bounds.height - 0.5;
+        stage.style.setProperty("--pointer-x", `${x * 10}px`);
+        stage.style.setProperty("--pointer-y", `${y * 7}px`);
+        stage.style.setProperty("--pointer-ry", `${x * 0.8}deg`);
+        stage.style.setProperty("--pointer-rx", `${y * -0.55}deg`);
+      });
+    };
+    const resetCamera = () => {
+      stage.style.setProperty("--pointer-x", "0px");
+      stage.style.setProperty("--pointer-y", "0px");
+      stage.style.setProperty("--pointer-rx", "0deg");
+      stage.style.setProperty("--pointer-ry", "0deg");
+    };
 
-    const reducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches;
-    if (reducedMotion) return;
-
-    const rect = story.getBoundingClientRect();
-    const nextPhase =
-      rect.top > 0
-        ? "before"
-        : rect.bottom <= frame.offsetHeight
-          ? "after"
-          : "active";
-    const travel = Math.max(story.offsetHeight - frame.offsetHeight, 1);
-    const progress = Math.min(Math.max(-rect.top / travel, 0), 1);
-    const nextIndex = Math.min(
-      Math.round(progress * (storyItems.length - 1)),
-      storyItems.length - 1
-    );
-
-    setActiveIndex((current) =>
-      current === nextIndex ? current : nextIndex
-    );
-    setStoryPhase((current) =>
-      current === nextPhase ? current : nextPhase
-    );
+    stage.addEventListener("pointermove", moveCamera, { passive: true });
+    stage.addEventListener("pointerleave", resetCamera);
+    return () => {
+      stage.removeEventListener("pointermove", moveCamera);
+      stage.removeEventListener("pointerleave", resetCamera);
+      if (pointerFrameRef.current) cancelAnimationFrame(pointerFrameRef.current);
+    };
   }, []);
 
   useEffect(() => {
-    const requestUpdate = () => {
-      if (tickingRef.current) return;
-      tickingRef.current = true;
-      window.requestAnimationFrame(updateStory);
+    const story = storyRef.current;
+    if (!story || typeof IntersectionObserver === "undefined") {
+      setStoryVisible(true);
+      return undefined;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setStoryVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.02 }
+    );
+
+    observer.observe(story);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const motionPreference = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    );
+    const desktopVideo = atmosphereRef.current;
+    const syncAtmosphere = () => {
+      const reduce = motionPreference.matches;
+      desktopVideo?.pause();
+      if (!reduce) {
+        desktopVideo?.play().catch(() => {});
+      }
     };
 
-    updateStory();
-    window.addEventListener("scroll", requestUpdate, { passive: true });
-    window.addEventListener("resize", requestUpdate);
-
+    syncAtmosphere();
+    desktopVideo?.addEventListener("canplay", syncAtmosphere);
+    motionPreference.addEventListener("change", syncAtmosphere);
     return () => {
-      window.removeEventListener("scroll", requestUpdate);
-      window.removeEventListener("resize", requestUpdate);
+      desktopVideo?.removeEventListener("canplay", syncAtmosphere);
+      motionPreference.removeEventListener("change", syncAtmosphere);
     };
-  }, [updateStory]);
+  }, []);
 
   const activateStep = useCallback((index) => {
-    const story = storyRef.current;
-    const frame = frameRef.current;
-    if (!story || !frame) return;
-
     setActiveIndex(index);
-    const travel = Math.max(story.offsetHeight - frame.offsetHeight, 0);
-    const storyTop = window.scrollY + story.getBoundingClientRect().top;
-    const target = storyTop + (travel * index) / (storyItems.length - 1);
-    const reducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches;
-
-    window.scrollTo({
-      top: target,
-      behavior: reducedMotion ? "auto" : "smooth",
-    });
+    setHasActiveStory(true);
   }, []);
 
   return (
@@ -295,47 +447,48 @@ export default function HomeEcosystem() {
         </div>
       </div>
 
-      <div className={styles.ecosystemStory} id="ecosystem-story" ref={storyRef}>
-        <div
-          className={`${styles.ecosystemSticky} ${
-            storyPhase === "active"
-              ? styles.ecosystemStickyActive
-              : storyPhase === "after"
-                ? styles.ecosystemStickyAfter
-                : ""
-          }`}
-          ref={frameRef}
-        >
+      <div
+        className={`${styles.ecosystemStory} ${
+          storyVisible ? styles.ecosystemStoryVisible : ""
+        }`}
+        id="ecosystem-story"
+        ref={storyRef}
+      >
+        <div className={styles.ecosystemSticky}>
           <div className={styles.storyShell}>
             <div
-              className={styles.solarStage}
-              style={{
-                "--system-rotation": `${activeIndex * -1.15}deg`,
-                "--system-shift": `${(activeIndex - 3.5) * 0.22}%`,
-              }}
+              className={`${styles.solarStage} ${
+                hasActiveStory ? styles.solarStageStoryActive : ""
+              }`}
               role="group"
               aria-label="Interactive AeroBay learning ecosystem"
+              ref={stageRef}
             >
-              <div className={styles.solarVignette} aria-hidden="true" />
-              <div className={styles.orbitSystem}>
-                <div className={`${styles.orbit} ${styles.orbitOne}`} aria-hidden="true" />
-                <div className={`${styles.orbit} ${styles.orbitTwo}`} aria-hidden="true" />
-                <div className={`${styles.orbit} ${styles.orbitThree}`} aria-hidden="true" />
-                <div className={`${styles.orbit} ${styles.orbitFour}`} aria-hidden="true" />
-                <div
-                  className={styles.solarSun}
-                  role="img"
-                  aria-label="AeroBay at the centre of the ecosystem"
-                >
-                  <Image
-                    src="/images/hmsect-global/sun-static.webp"
-                    alt=""
-                    fill
-                    sizes="150px"
-                  />
-                  <span>AeroBay</span>
-                </div>
+              <video
+                ref={atmosphereRef}
+                className={styles.galaxyAtmosphere}
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                aria-hidden="true"
+                tabIndex={-1}
+              >
+                <source src="/videos/bg-cloud.mp4" type="video/mp4" />
+              </video>
+              <span className={styles.galaxyAtmosphereShade} aria-hidden="true" />
+              <div className={styles.legacySpaceGlow} aria-hidden="true" />
 
+              <div
+                className={styles.galaxyScene}
+                style={{
+                  "--camera-x": storyItems[activeIndex].cameraX,
+                  "--camera-y": storyItems[activeIndex].cameraY,
+                  "--camera-rx": storyItems[activeIndex].cameraRotateX,
+                  "--camera-ry": storyItems[activeIndex].cameraRotateY,
+                }}
+              >
                 {storyItems.map((item, index) => (
                   <Planet
                     item={item}
@@ -345,10 +498,34 @@ export default function HomeEcosystem() {
                     key={item.label}
                   />
                 ))}
+
+                <div className={styles.legacySun} aria-label="AeroBay at the centre of the learning ecosystem">
+                  <span className={styles.legacySunGlow} aria-hidden="true" />
+                  <Image className={styles.legacySunStatic} src="/images/hmsect-global/sun-static.webp" alt="" fill sizes="190px" />
+                  <Image className={styles.legacySunMotion} src="/images/hmsect-global/sun.gif" alt="" fill sizes="190px" unoptimized />
+                  <Image className={styles.legacyOrbitLogo} src="/images/hmsect-global/logo-orbit.gif" alt="" fill sizes="110px" unoptimized />
+                  <span className={styles.legacySunName}>AeroBay</span>
+                </div>
               </div>
             </div>
 
-            <aside className={styles.storyPanel} aria-live="polite">
+            {hasActiveStory ? <aside
+              className={`${styles.storyPanel} ${
+                styles[`storyPanel${storyItems[activeIndex].panelPosition}`]
+              }`}
+              aria-live="polite"
+              key={storyItems[activeIndex].label}
+            >
+              {storyItems[activeIndex].asset ? (
+                <div className={styles.storyFigure} key={`figure-${activeIndex}`} aria-hidden="true">
+                  <Image
+                    src={`/images/hmsect-global/card-fig${storyItems[activeIndex].figureAsset}.png`}
+                    alt=""
+                    fill
+                    sizes="320px"
+                  />
+                </div>
+              ) : null}
               <StoryContent
                 item={storyItems[activeIndex]}
                 index={activeIndex}
@@ -361,34 +538,15 @@ export default function HomeEcosystem() {
                   />
                 ))}
               </div>
-              <p className={styles.storyScrollHint}>Scroll to explore the ecosystem</p>
-            </aside>
+              <p className={styles.storyScrollHint}>Hover or focus a planet to explore</p>
+              <Link className={styles.storyCta} href="/aerobay-for-school">
+                Explore the AeroBay ecosystem <span aria-hidden="true">→</span>
+              </Link>
+            </aside> : null}
           </div>
         </div>
       </div>
 
-      <div className={`${styles.shell} ${styles.ecosystemMobileStory}`}>
-        <div
-          className={styles.mobileSolarOverview}
-          aria-label="AeroBay at the centre of the learning ecosystem"
-        >
-          <Image
-            src="/images/hmsect-global/sun-static.webp"
-            alt=""
-            fill
-            sizes="240px"
-          />
-          <span>AeroBay</span>
-        </div>
-        {storyItems.map((item, index) => (
-          <article className={styles.mobileStoryItem} key={item.label}>
-            <span className={styles.mobilePlanet} aria-hidden="true">
-              <Image src={item.image} alt="" fill sizes="44px" />
-            </span>
-            <StoryContent item={item} index={index} />
-          </article>
-        ))}
-      </div>
     </section>
   );
 }
