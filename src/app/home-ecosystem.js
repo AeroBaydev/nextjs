@@ -6,33 +6,35 @@ import styles from "./home.module.css";
 
 const pillars = [
   {
-    number: "01",
     title: "Purpose-Built Learning Spaces",
     copy: "Purpose-designed environments where students explore, experiment, build and apply concepts through hands-on learning.",
     image: "/images/gallery-big3.jpg",
     alt: "AeroBay purpose-built aerospace and STEM learning space",
   },
   {
-    number: "02",
     title: "Experiential Curriculum",
     copy: "Learning designed around practical application, real-world examples and projects—not theory alone.",
     image: "/images/tilt-imgs/tilt-1.jpg",
     alt: "Students taking part in a practical AeroBay STEM activity",
   },
   {
-    number: "03",
     title: "Expert STEM Educators",
     copy: "Trained educators who bring concepts to life through demonstrations, experimentation and hands-on implementation.",
     image: "/images/tilt-imgs/tilt-4.jpg",
     alt: "An AeroBay STEM educator guiding students through an aircraft activity",
   },
   {
-    number: "04",
     title: "Projects, Challenges & Opportunities",
     copy: "Practical projects and challenges that encourage students to apply their skills, build confidence and explore their interests.",
     image: "/images/gallery-big1.jpg",
     alt: "Students testing an AeroBay aerospace project outdoors",
   },
+];
+
+const impact = [
+  { value: "22+", label: "States across India" },
+  { value: "250+", label: "Partner schools" },
+  { value: "100K+", label: "Students empowered" },
 ];
 
 const storyItems = [
@@ -306,6 +308,7 @@ export default function HomeEcosystem() {
   const [isCardMounted, setIsCardMounted] = useState(false);
   const [isCardVisible, setIsCardVisible] = useState(false);
   const [isSunHovered, setIsSunHovered] = useState(false);
+  const [isSunSelected, setIsSunSelected] = useState(false);
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -378,6 +381,7 @@ export default function HomeEcosystem() {
     galaxyPausedRef.current = true;
     setActiveIndex(index);
     setIsSunHovered(false);
+    setIsSunSelected(false);
     setIsGalaxyPaused(true);
     setIsCardMounted(true);
     requestAnimationFrame(() => setIsCardVisible(true));
@@ -393,12 +397,18 @@ export default function HomeEcosystem() {
     setIsGalaxyPaused(true);
   }, []);
 
+  const selectSun = useCallback(() => {
+    activateSun();
+    setIsSunSelected(true);
+  }, [activateSun]);
+
   const deactivateGalaxy = useCallback(() => {
     window.clearTimeout(leaveTimerRef.current);
     leaveTimerRef.current = window.setTimeout(() => {
       galaxyPausedRef.current = false;
       setIsCardVisible(false);
       setIsSunHovered(false);
+      setIsSunSelected(false);
       setIsGalaxyPaused(false);
       cardTimerRef.current = window.setTimeout(() => setIsCardMounted(false), 280);
     }, 90);
@@ -417,38 +427,10 @@ export default function HomeEcosystem() {
       ref={sectionRef}
       aria-labelledby="ecosystem-heading"
     >
-      <div className={styles.shell}>
-        <div className={styles.ecosystemIntro}>
-          <div>
-            <p className={styles.eyebrow}>The AeroBay difference</p>
-            <h2 id="ecosystem-heading">
-              A complete ecosystem. One accountable partner.
-            </h2>
-          </div>
-          <p>
-            From learning spaces and curriculum to Expert STEM Educators,
-            projects and ongoing program support, AeroBay brings the essential
-            pieces together under one partner.
-          </p>
-        </div>
-
-        <div className={styles.ecosystemGrid}>
-          {pillars.map((item, index) => (
-            <article key={item.title} style={{ "--pillar-index": index }}>
-              <Image
-                src={item.image}
-                alt={item.alt}
-                fill
-                sizes="(max-width: 767px) calc(100vw - 36px), (max-width: 991px) 50vw, 25vw"
-              />
-              <span className={styles.ecosystemCardShade} aria-hidden="true" />
-              <span className={styles.ecosystemCardNumber}>{item.number}</span>
-              <div>
-                <h3>{item.title}</h3>
-                <p>{item.copy}</p>
-              </div>
-            </article>
-          ))}
+      <div className={styles.aerobayDefinition}>
+        <div className={styles.shell}>
+          <h2>What Is AeroBay?</h2>
+          <p>Revolutionizing K–12 education through experiential STEM and STEAM solutions.</p>
         </div>
       </div>
 
@@ -485,7 +467,7 @@ export default function HomeEcosystem() {
                 aria-hidden="true"
                 tabIndex={-1}
               >
-                <source src="/videos/bg-cloud.mp4" type="video/mp4" />
+                <source src="/videos/solarloop.mp4" type="video/mp4" />
               </video>
               <span className={styles.galaxyAtmosphereShade} aria-hidden="true" />
               <div className={styles.legacySpaceGlow} aria-hidden="true" />
@@ -506,13 +488,15 @@ export default function HomeEcosystem() {
 
                 <button
                   type="button"
-                  className={`${styles.legacySun} ${isSunHovered ? styles.legacySunActive : ""}`}
+                  className={`${styles.legacySun} ${
+                    isSunHovered ? styles.legacySunActive : ""
+                  } ${isSunSelected ? styles.legacySunSelected : ""}`}
                   data-ecosystem-trigger
                   onMouseEnter={activateSun}
                   onMouseLeave={deactivateGalaxy}
                   onFocus={activateSun}
                   onBlur={deactivateGalaxy}
-                  onClick={activateSun}
+                  onClick={selectSun}
                   aria-label="Explore AeroBay at the centre of the learning ecosystem"
                   aria-pressed={isSunHovered}
                 >
@@ -555,6 +539,59 @@ export default function HomeEcosystem() {
               <p className={styles.storyScrollHint}>Hover or focus a planet to explore</p>
             </aside> : null}
           </div>
+        </div>
+      </div>
+
+      <div className={styles.ecosystemImpact} id="impact">
+        <div className={styles.shell}>
+          <p className={styles.impactIntro}>
+            Building India’s next generation of thinkers, makers, and
+            problem-solvers.
+          </p>
+          <div className={styles.impactGrid}>
+            {impact.map((item) => (
+              <div key={item.label}>
+                <strong>{item.value}</strong>
+                <span>{item.label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className={`${styles.shell} ${styles.ecosystemDetails}`}>
+        <div className={styles.ecosystemIntro}>
+          <div>
+            <p className={styles.eyebrow}>The AeroBay difference</p>
+            <h2 id="ecosystem-heading">
+              A complete ecosystem. One accountable partner.
+            </h2>
+          </div>
+          <p>
+            From learning spaces and curriculum to Expert STEM Educators,
+            projects and ongoing program support, AeroBay brings the essential
+            pieces together under one partner.
+          </p>
+        </div>
+
+        <div className={styles.ecosystemGrid}>
+          {pillars.map((item, index) => (
+            <article key={item.title} style={{ "--pillar-index": index }}>
+              <div className={styles.ecosystemPillarImage}>
+                <Image
+                  src={item.image}
+                  alt={item.alt}
+                  fill
+                  sizes="(max-width: 767px) calc(100vw - 36px), (max-width: 991px) 50vw, 25vw"
+                />
+                <span className={styles.ecosystemCardShade} aria-hidden="true" />
+              </div>
+              <div className={styles.ecosystemPillarContent}>
+                <h3>{item.title}</h3>
+                <p>{item.copy}</p>
+              </div>
+            </article>
+          ))}
         </div>
       </div>
 

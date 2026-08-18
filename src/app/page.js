@@ -11,12 +11,6 @@ import HomeSolutions from "./home-solutions";
 import HomeEcosystem from "./home-ecosystem";
 import styles from "./home.module.css";
 
-const impact = [
-  { value: "22+", label: "States across India" },
-  { value: "250+", label: "Partner schools" },
-  { value: "100K+", label: "Students empowered" },
-];
-
 const outcomes = [
   "Designed for Grades 1–12",
   "Mapped to NEP 2020 priorities",
@@ -69,6 +63,9 @@ export default function Home() {
         </div>
       </section>
 
+      <HomeEcosystem />
+
+      {/* Impact statistics now belong to the merged HomeEcosystem section.
       <section className={styles.impact} id="impact">
         <div className={styles.shell}>
           <p className={styles.impactIntro}>
@@ -85,10 +82,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+      */}
 
       <HomeSolutions />
-
-      <HomeEcosystem />
 
       <section className={styles.outcomes}>
         <div className={styles.shell}>
