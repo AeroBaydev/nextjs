@@ -297,6 +297,7 @@ export default function HomeEcosystem() {
   const sectionRef = useRef(null);
   const storyRef = useRef(null);
   const atmosphereRef = useRef(null);
+  const impactVideoRef = useRef(null);
   const stageRef = useRef(null);
   const leaveTimerRef = useRef(null);
   const cardTimerRef = useRef(null);
@@ -561,12 +562,20 @@ export default function HomeEcosystem() {
 
       <div className={styles.impactFilm}>
         <video
+          ref={impactVideoRef}
           autoPlay
           muted
-          loop
           playsInline
           preload="auto"
           aria-label="AeroBay students and learning experiences"
+          onLoadedMetadata={(event) => {
+            event.currentTarget.currentTime = 4;
+            event.currentTarget.play().catch(() => undefined);
+          }}
+          onEnded={(event) => {
+            event.currentTarget.currentTime = 4;
+            event.currentTarget.play().catch(() => undefined);
+          }}
         >
           <source src="/videos/ab.mp4" type="video/mp4" />
           Your browser does not support the video element.
