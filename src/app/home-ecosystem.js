@@ -559,6 +559,20 @@ export default function HomeEcosystem() {
         </div>
       </div>
 
+      <div className={styles.impactFilm}>
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          aria-label="AeroBay students and learning experiences"
+        >
+          <source src="/videos/ab.mp4" type="video/mp4" />
+          Your browser does not support the video element.
+        </video>
+      </div>
+
       <div className={`${styles.shell} ${styles.ecosystemDetails}`}>
         <div className={styles.ecosystemIntro}>
           <div>

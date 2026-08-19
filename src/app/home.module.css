@@ -675,6 +675,17 @@
   align-items: center;
 }
 
+.impactFilm {
+  line-height: 0;
+}
+
+.impactFilm video {
+  width: 100%;
+  height: auto;
+  display: block;
+  pointer-events: none;
+}
+
 .ecosystemIntro > p {
   color: var(--ab-muted);
 }
