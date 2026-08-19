@@ -12,15 +12,13 @@ import styles from "./home.module.css";
 
 const solutions = [
   {
-    number: "01",
-    title: "Composite Skill Lab",
-    copy: "A multidisciplinary environment where students explore design, aviation, electronics, making and practical skills through hands-on projects.",
+    title: "Composite Skill & Kaushal Bodh Lab",
+    copy: "A multidisciplinary environment where students explore design, aviation, electronics, tools, making and practical skills through hands-on projects.",
     image: "/images/gallery-big3.jpg",
     href: "/composite-skill-lab",
-    tag: "Multidisciplinary",
+    tag: "Multidisciplinary skills",
   },
   {
-    number: "02",
     title: "AI & Robotics Lab",
     copy: "A hands-on environment where students learn to code, automate, prototype, and solve real problems.",
     image: "/images/gallery-big4.JPG",
@@ -28,28 +26,18 @@ const solutions = [
     tag: "Coding & automation",
   },
   {
-    number: "03",
     title: "STEAM Lab",
     copy: "A multidisciplinary space where students connect science, technology, engineering, arts and mathematics through practical projects.",
     image: "/images/tilt-imgs/tilt-1.jpg",
     tag: "Integrated STEAM",
   },
   {
-    number: "04",
-    title: "Kaushal Bodh Lab",
-    copy: "A practical learning environment for making, working with tools and applying classroom concepts through guided activities.",
-    image: "/images/tilt-imgs/tilt-4.jpg",
-    tag: "Applied skills",
-  },
-  {
-    number: "05",
     title: "Aeromodelling Lab",
     copy: "An aviation-focused environment where students explore aircraft design, build models and learn through testing and flight.",
     image: "/images/gallery-big1.jpg",
     tag: "Flight & design",
   },
   {
-    number: "06",
     title: "Idea Lab",
     copy: "A creative space where students develop ideas through design, prototyping, iteration and collaborative problem-solving.",
     image: "/images/gallery-big6.JPG",
@@ -68,7 +56,6 @@ function SolutionCard({ solution, index }) {
       />
       <span className={styles.solutionShade} aria-hidden="true" />
       <span className={styles.solutionTop}>
-        <span>{solution.number}</span>
         <span>{solution.tag}</span>
       </span>
       <span className={styles.solutionContent}>
@@ -109,7 +96,6 @@ export default function HomeSolutions() {
   const sectionRef = useRef(null);
   const trackRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
-  const [current, setCurrent] = useState(0);
   const [canMoveBack, setCanMoveBack] = useState(false);
   const [canMoveForward, setCanMoveForward] = useState(true);
 
@@ -139,16 +125,6 @@ export default function HomeSolutions() {
     const track = trackRef.current;
     if (!track) return;
 
-    const cards = Array.from(track.children);
-    const nearestIndex = cards.reduce((nearest, card, index) => {
-      const nearestDistance = Math.abs(
-        cards[nearest].offsetLeft - track.scrollLeft
-      );
-      const distance = Math.abs(card.offsetLeft - track.scrollLeft);
-      return distance < nearestDistance ? index : nearest;
-    }, 0);
-
-    setCurrent(nearestIndex);
     setCanMoveBack(track.scrollLeft > 2);
     setCanMoveForward(
       track.scrollLeft < track.scrollWidth - track.clientWidth - 2
@@ -182,10 +158,10 @@ export default function HomeSolutions() {
       ref={sectionRef}
       aria-labelledby="solutions-heading"
     >
-      <div className={styles.shell}>
+      <div className={`${styles.shell} ${styles.solutionsBody}`}>
         <div className={styles.sectionHeading}>
           <div>
-            <p className={styles.eyebrow}>Experiential learning</p>
+            <p className={styles.eyebrow}>What AeroBay Delivers · Experiential learning</p>
             <h2 id="solutions-heading">Explore. Build. Discover.</h2>
           </div>
           <p>
@@ -211,12 +187,6 @@ export default function HomeSolutions() {
           </div>
 
           <div className={styles.carouselFooter}>
-            <div className={styles.carouselProgress} aria-live="polite">
-              <span>{String(current + 1).padStart(2, "0")}</span>
-              <span aria-hidden="true" />
-              <span>/ {String(solutions.length).padStart(2, "0")}</span>
-            </div>
-
             <p className={styles.swipeHint}>Swipe or use the arrows to explore</p>
 
             <div className={styles.carouselControls}>

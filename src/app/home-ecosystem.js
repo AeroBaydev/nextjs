@@ -562,9 +562,9 @@ export default function HomeEcosystem() {
       <div className={`${styles.shell} ${styles.ecosystemDetails}`}>
         <div className={styles.ecosystemIntro}>
           <div>
-            <p className={styles.eyebrow}>The AeroBay difference</p>
+            <p className={styles.eyebrow}>The AeroBay</p>
             <h2 id="ecosystem-heading">
-              A complete ecosystem. One accountable partner.
+              A complete ecosystem. <br/>One accountable partner.
             </h2>
           </div>
           <p>
