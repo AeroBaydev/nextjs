@@ -92,6 +92,17 @@ export default function Careers() {
   return (
     <main className={styles.page}>
       <section className={styles.hero}>
+        <Image
+          className={styles.heroBackground}
+          src="/images/team/team1.jpeg"
+          alt=""
+          fill
+          priority
+          quality={82}
+          sizes="100vw"
+          aria-hidden="true"
+        />
+        <div className={styles.heroImageShade} aria-hidden="true" />
         <div className={styles.gridPattern} aria-hidden="true" />
         <div className={styles.shell}>
           <div className={styles.heroGrid}>

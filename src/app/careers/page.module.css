@@ -52,6 +52,24 @@
   background: #111015;
 }
 
+.heroBackground {
+  z-index: -3;
+  object-fit: cover;
+  object-position: center 44%;
+}
+
+.heroImageShade {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background: linear-gradient(
+    90deg,
+    rgba(17, 16, 21, 0.7) 0%,
+    rgba(17, 16, 21, 0.48) 48%,
+    rgba(17, 16, 21, 0.2) 100%
+  );
+}
+
 .gridPattern {
   position: absolute;
   inset: 0;
@@ -823,6 +841,14 @@
 
   .hero {
     padding: 82px 0 66px;
+  }
+
+  .heroBackground {
+    object-position: 58% center;
+  }
+
+  .heroImageShade {
+    background: rgba(17, 16, 21, 0.52);
   }
 
   .heroCopy h1 {
