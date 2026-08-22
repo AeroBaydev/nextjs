@@ -17,6 +17,7 @@ import styles from "./page.module.css";
 
 const initialForm = {
   name: "",
+  school_name: "",
   email: "",
   contact_no: "",
   message: "",
@@ -67,6 +68,9 @@ export default function GetInTouch() {
     const nextErrors = {};
 
     if (!formData.name.trim()) nextErrors.name = "Please enter your name.";
+    if (!formData.school_name.trim()) {
+      nextErrors.school_name = "Please enter your school or organisation.";
+    }
     if (!formData.email.trim()) {
       nextErrors.email = "Please enter your email address.";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
@@ -171,6 +175,25 @@ export default function GetInTouch() {
                     <option value="parent">Parent</option>
                     <option value="student">Student</option>
                   </select>
+                </div>
+                <div className={styles.field}>
+                  <label htmlFor="contact-school">School / organisation</label>
+                  <input
+                    id="contact-school"
+                    name="school_name"
+                    type="text"
+                    value={formData.school_name}
+                    onChange={handleChange}
+                    placeholder="Institution name"
+                    autoComplete="organization"
+                    aria-invalid={Boolean(errors.school_name)}
+                    aria-describedby={errors.school_name ? "school-error" : undefined}
+                  />
+                  {errors.school_name && (
+                    <span id="school-error" className={styles.errorText}>
+                      {errors.school_name}
+                    </span>
+                  )}
                 </div>
                 <div className={styles.fieldRow}>
                   <div className={styles.field}>
