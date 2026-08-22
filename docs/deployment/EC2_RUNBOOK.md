@@ -16,14 +16,14 @@ Use a supported Ubuntu LTS image. A small instance is feasible when the website 
 
 1. Back up and restore-test MySQL before the role/email migration.
 2. Create separate production and demo databases and least-privilege users.
-3. Store `/etc/aerobay/api.env` and `demo-api.env` as root-owned mode `0600`; never commit them.
+3. Store `/etc/aerobay/api.env` and `demo-api.env` as root-owned mode `0600`; never commit them. Set `UPLOAD_DIR=/srv/aerobay/shared/uploads` and `PUBLIC_API_URL=https://api.aerobay.in`.
 4. Build website/admin in CI or on a larger builder, then upload only `out/` and `build/` artifacts.
 5. Install API dependencies with `npm ci --omit=dev` on the target Linux release directory.
 6. Run migrations once from a recorded release, then switch the `current` symlink atomically.
 7. Validate Nginx with `nginx -t`, reload, and smoke-test `/health/live` and `/health/ready`.
 8. Issue TLS certificates before enabling HSTS. Test automatic renewal.
 9. Security group: public 80/443 only; use Systems Manager or restrict SSH to a trusted IP.
-10. Configure CloudWatch alarms for status checks, CPU, memory, disk, API health, and 5xx rates.
+10. Configure CloudWatch alarms for status checks, CPU, memory, disk, API health, and 5xx rates. Back up `/srv/aerobay/shared/uploads` alongside the database or move media to S3 before scale-out.
 
 Production CORS must be `https://admin.aerobay.in,https://aerobay.in`. Demo CORS must use only its Vercel/demo admin origins. Use independent JWT secrets for each environment.
 

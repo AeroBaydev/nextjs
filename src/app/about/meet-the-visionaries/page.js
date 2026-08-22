@@ -1,12 +1,13 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 import styles from "./page.module.css";
+import { fetchData } from "@/lib/api";
 
-const founders = [
+const fallbackFounders = [
   {
     name: "Neha Chauhan",
     role: "Founder & CEO",
@@ -27,16 +28,7 @@ const founders = [
   },
 ];
 
-const departments = [
-  "Sales & Marketing",
-  "Operations",
-  "Learning & Development",
-  "Product & Inventory",
-  "Creative & Design",
-  "HR & Administration",
-];
-
-const team = [
+const fallbackTeam = [
   {
     name: "Shrey Dixit",
     role: "National Sales Head",
@@ -317,6 +309,10 @@ function Portrait({ member, priority = false }) {
     );
   }
 
+  if (/^https?:\/\//.test(member.image)) {
+    return <img className={styles.portrait} src={member.image} alt={`${member.name}, ${member.role}`} loading={priority ? "eager" : "lazy"} />;
+  }
+
   return (
     <Image
       className={styles.portrait}
@@ -331,13 +327,30 @@ function Portrait({ member, priority = false }) {
 
 export default function MeetTheVisionaries() {
   const [activeDepartment, setActiveDepartment] = useState("All");
+  const [founders, setFounders] = useState(fallbackFounders);
+  const [team, setTeam] = useState(fallbackTeam);
+  const departments = useMemo(() => [...new Set(team.map((member) => member.department))], [team]);
+
+  useEffect(() => {
+    fetchData('/visionaries/public').then(({ visionaries }) => {
+      if (!visionaries?.length) return;
+      const normalized = visionaries.map((member) => ({
+        ...member,
+        role: member.designation,
+        image: member.image_url,
+        linkedin: member.linkedin_url,
+      }));
+      setFounders(normalized.filter((member) => member.member_type === 'founder'));
+      setTeam(normalized.filter((member) => member.member_type === 'team'));
+    }).catch(() => {});
+  }, []);
 
   const visibleTeam = useMemo(
     () =>
       activeDepartment === "All"
         ? team
         : team.filter((member) => member.department === activeDepartment),
-    [activeDepartment],
+    [activeDepartment, team],
   );
 
   return (

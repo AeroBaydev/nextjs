@@ -9,6 +9,7 @@ import HomeSolutions from "./home-solutions";
 import HomeEcosystem from "./home-ecosystem";
 import HomeStandout from "./home-standout";
 import HomeClients from "./home-clients";
+import HomeTestimonials from "./home-testimonials";
 import styles from "./home.module.css";
 
 export default function Home() {
@@ -58,6 +59,8 @@ export default function Home() {
       <HomeStandout />
 
       <HomeClients />
+
+      <HomeTestimonials />
 
       <section className={styles.cta}>
         <div className={styles.shell}>

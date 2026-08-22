@@ -1,25 +1,23 @@
+"use client";
+
+import { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import schools from "../../data/schools";
 import styles from "./home.module.css";
-
-const clientLanes = [
-  schools.filter((_, index) => index % 2 === 0),
-  schools.filter((_, index) => index % 2 !== 0),
-];
+import { fetchData } from "@/lib/api";
 
 function ClientCard({ school, duplicate = false }) {
+  const image = /^https?:\/\//.test(school.logo) ? (
+    <img src={school.logo} alt={duplicate ? "" : `${school.name} logo`} loading="lazy" />
+  ) : (
+    <Image src={school.logo} alt={duplicate ? "" : `${school.name} logo`} width={160} height={72} sizes="160px" />
+  );
   return (
     <div className={styles.clientLogoCard} aria-hidden={duplicate || undefined}>
-      <Image
-        src={school.logo}
-        alt={duplicate ? "" : `${school.name} logo`}
-        width={160}
-        height={72}
-        sizes="160px"
-      />
+      {image}
       <span>{school.name}</span>
       {school.location ? <small>{school.location}</small> : null}
     </div>
@@ -27,6 +25,14 @@ function ClientCard({ school, duplicate = false }) {
 }
 
 export default function HomeClients() {
+  const [clients, setClients] = useState(schools);
+  useEffect(() => {
+    fetchData('/clients/public').then(({ clients: managedClients }) => {
+      const featured = managedClients?.filter((client) => Number(client.featured) === 1);
+      if (featured?.length) setClients(featured.map((client) => ({ ...client, logo: client.logo_url })));
+    }).catch(() => {});
+  }, []);
+  const clientLanes = useMemo(() => [clients.filter((_, index) => index % 2 === 0), clients.filter((_, index) => index % 2 !== 0)], [clients]);
   return (
     <section className={styles.clientsShowcase} aria-labelledby="clients-heading">
       <div className={styles.shell}>

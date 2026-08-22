@@ -1,8 +1,17 @@
 "use client"
 
+import { useEffect, useState } from "react"
 import schools from "../../../../data/schools"
+import { fetchData } from "@/lib/api"
 
 const OurClient = () => {
+  const [clients, setClients] = useState(schools)
+
+  useEffect(() => {
+    fetchData('/clients/public').then(({ clients: managedClients }) => {
+      if (managedClients?.length) setClients(managedClients.map((client) => ({ ...client, logo: client.logo_url })))
+    }).catch(() => {})
+  }, [])
   return (
     <div className="page-main">
       <style jsx>{`
@@ -92,7 +101,7 @@ const OurClient = () => {
         <div className="container">
           <div className="partners-list mx-auto">
             <div className="row justify-content-center">
-              {schools.map((school) => (
+              {clients.map((school) => (
                 <div className="col col-6 col-sm-4 col-md-3 col-lg-2" key={school.logo}>
                   <div className="client-card">
                     <div className="client-logo-frame">

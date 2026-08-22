@@ -67,6 +67,8 @@ export default function WelcomeModal({ onClose }) {
         email: formData.email.trim(),
         contact_no: formData.contact_no.trim(),
         message: `First-visit Composite Skill Lab consultation request from ${formData.school.trim()}.`,
+        audience: "school",
+        source: "cta",
       });
 
       setStatus(

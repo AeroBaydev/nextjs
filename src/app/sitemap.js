@@ -13,7 +13,6 @@ const routes = [
   { path: "/about/meet-the-visionaries", priority: 0.6, changeFrequency: "monthly" },
   { path: "/more/our-clients", priority: 0.6, changeFrequency: "monthly" },
   { path: "/careers", priority: 0.6, changeFrequency: "monthly" },
-  { path: "/jobs", priority: 0.5, changeFrequency: "monthly" },
   { path: "/get-in-touch", priority: 0.8, changeFrequency: "monthly" },
 ];
 

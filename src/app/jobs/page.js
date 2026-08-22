@@ -3,7 +3,7 @@
 import { fetchData } from "@/lib/api";
 import { useEffect, useState } from "react";
 
-const AllJobs = () => {
+const LegacyJobs = () => {
     const [jobs, setJobs] = useState([]);
     const [filteredJobs, setFilteredJobs] = useState([]); // To hold filtered job results
     const [searchQuery, setSearchQuery] = useState("");
@@ -193,6 +193,21 @@ const AllJobs = () => {
                 </div>
             </section>
         </div>
+    );
+};
+
+const AllJobs = () => {
+    useEffect(() => {
+        window.location.replace("https://aerobay.zohorecruit.in/jobs/Careers");
+    }, []);
+
+    return (
+        <main style={{ minHeight: "60vh", display: "grid", placeItems: "center", padding: "40px" }}>
+            <p>
+                Redirecting to AeroBay careers…{" "}
+                <a href="https://aerobay.zohorecruit.in/jobs/Careers">Continue to Zoho Recruit</a>
+            </p>
+        </main>
     );
 };
 

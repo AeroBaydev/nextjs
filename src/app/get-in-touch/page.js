@@ -20,6 +20,7 @@ const initialForm = {
   email: "",
   contact_no: "",
   message: "",
+  audience: "school",
 };
 
 const contactCards = [
@@ -98,7 +99,7 @@ export default function GetInTouch() {
     setStatus("submitting");
 
     try {
-      const response = await postData("/getInTouch", formData);
+      const response = await postData("/getInTouch", { ...formData, source: "contact_page" });
 
       if (response?.message === "Entry created successfully") {
         setFormData(initialForm);
@@ -158,6 +159,19 @@ export default function GetInTouch() {
               </div>
 
               <form onSubmit={handleSubmit} noValidate>
+                <div className={styles.field}>
+                  <label htmlFor="contact-audience">I am contacting AeroBay as a</label>
+                  <select
+                    id="contact-audience"
+                    name="audience"
+                    value={formData.audience}
+                    onChange={handleChange}
+                  >
+                    <option value="school">School / institution</option>
+                    <option value="parent">Parent</option>
+                    <option value="student">Student</option>
+                  </select>
+                </div>
                 <div className={styles.fieldRow}>
                   <div className={styles.field}>
                     <label htmlFor="contact-name">Full name</label>
