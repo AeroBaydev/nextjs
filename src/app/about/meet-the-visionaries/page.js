@@ -333,7 +333,7 @@ export default function MeetTheVisionaries() {
 
   useEffect(() => {
     fetchData('/visionaries/public').then(({ visionaries }) => {
-      if (!visionaries?.length) return;
+      if (!Array.isArray(visionaries)) return;
       const normalized = visionaries.map((member) => ({
         ...member,
         role: member.designation,

@@ -29,7 +29,7 @@ export default function HomeClients() {
   useEffect(() => {
     fetchData('/clients/public').then(({ clients: managedClients }) => {
       const featured = managedClients?.filter((client) => Number(client.featured) === 1);
-      if (featured?.length) setClients(featured.map((client) => ({ ...client, logo: client.logo_url })));
+      if (Array.isArray(featured)) setClients(featured.map((client) => ({ ...client, logo: client.logo_url })));
     }).catch(() => {});
   }, []);
   const clientLanes = useMemo(() => [clients.filter((_, index) => index % 2 === 0), clients.filter((_, index) => index % 2 !== 0)], [clients]);

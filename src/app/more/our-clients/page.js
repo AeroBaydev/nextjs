@@ -9,7 +9,7 @@ const OurClient = () => {
 
   useEffect(() => {
     fetchData('/clients/public').then(({ clients: managedClients }) => {
-      if (managedClients?.length) setClients(managedClients.map((client) => ({ ...client, logo: client.logo_url })))
+      if (Array.isArray(managedClients)) setClients(managedClients.map((client) => ({ ...client, logo: client.logo_url })))
     }).catch(() => {})
   }, [])
   return (
