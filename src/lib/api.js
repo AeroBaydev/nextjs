@@ -1,28 +1,16 @@
-const API_BASE_URL = 'https://api.aerobay.in/api'; // For internal API calls (adjust as needed)
-import axios from 'axios';
+import axios from "axios";
 
-// Create an instance of axios
+const API_BASE_URL = (
+    process.env.NEXT_PUBLIC_API_URL || "http://localhost:5050/api"
+).replace(/\/$/, "");
+
 const apiClient = axios.create({
-    baseURL: API_BASE_URL, // Base URL for internal API
+    baseURL: API_BASE_URL,
+    timeout: 10000,
     headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkFlcm9iYXlAeW9wbWFpbC5jb20iLCJpYXQiOjE3MzczNTAwNzUsImV4cCI6MTczNzM1MzY3NX0.nUjsmRduZs43YFjUOrLDoc0GxjRKiVPIpfnAtCMvnvA`
+        "Content-Type": "application/json",
     },
 });
-
-// Add a request interceptor to include token
-apiClient.interceptors.request.use(
-    (config) => {
-        const token = localStorage.getItem('authToken'); // Example: Retrieve token from localStorage
-        if (token) {
-            config.headers.Authorization = `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkFlcm9iYXlAeW9wbWFpbC5jb20iLCJpYXQiOjE3MzczNTAwNzUsImV4cCI6MTczNzM1MzY3NX0.nUjsmRduZs43YFjUOrLDoc0GxjRKiVPIpfnAtCMvnvA`;
-        }
-        return config;
-    },
-    (error) => {
-        return Promise.reject(error);
-    }
-);
 
 export async function fetchData(endpoint, options = {}) {
     try {

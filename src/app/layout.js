@@ -30,11 +30,11 @@ export const metadata = {
   creator: "AeroBay",
   publisher: "Aviotron Aerospace Pvt Ltd",
   robots: {
-    index: true,
-    follow: true,
+    index: process.env.NEXT_PUBLIC_ENVIRONMENT === "production",
+    follow: process.env.NEXT_PUBLIC_ENVIRONMENT === "production",
     googleBot: {
-      index: true,
-      follow: true,
+      index: process.env.NEXT_PUBLIC_ENVIRONMENT === "production",
+      follow: process.env.NEXT_PUBLIC_ENVIRONMENT === "production",
       "max-image-preview": "large",
       "max-snippet": -1,
       "max-video-preview": -1,

@@ -26,7 +26,7 @@ const AllJobs = () => {
     };
 
     const getJobs = () => {
-        fetchData('/jobs')
+        fetchData('/jobs/public')
             .then((json) => {
                 setJobs(json.jobs);
                 setFilteredJobs(json.jobs);
