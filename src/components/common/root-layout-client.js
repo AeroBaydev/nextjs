@@ -13,7 +13,9 @@ export default function RootLayoutClient({ children }) {
     path !== "/about/meet-the-visionaries" &&
     path !== "/about/the-aerobay-story" &&
     path !== "/careers" &&
-    path !== "/get-in-touch";
+    path !== "/get-in-touch" &&
+    path !== "/aerobay-for-school" &&
+    path !== "/more/our-clients";
 
   useEffect(() => {
     if (path === "/") {
