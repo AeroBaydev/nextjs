@@ -227,9 +227,9 @@
   justify-content: space-between;
   gap: 24px;
   padding: 7px 7px 7px 22px;
-  border-radius: var(--ab-radius-sm);
+  border-radius: 999px;
   color: var(--ab-white);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 750;
   transition: transform 180ms ease, box-shadow 180ms ease;
   background: var(--ab-purple);
@@ -241,33 +241,48 @@
   height: 44px;
   display: grid;
   place-items: center;
-  border-radius: 9px;
-  color: #fff;
-  background: var(--ab-dark-surface);
+  border-radius: 50%;
+  color: var(--ab-text);
+  background: #fff;
 }
 
 .primaryAction:hover {
-  color: var(--ab-text);
+  color: #fff;
   transform: translateY(-2px);
   box-shadow: 0 18px 40px rgba(134, 74, 210, 0.32);
 }
 
 .textAction {
+  min-height: 58px;
   display: inline-flex;
   align-items: center;
-  gap: 12px;
-  padding-bottom: 5px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.34);
+  justify-content: space-between;
+  gap: 22px;
+  padding: 7px 7px 7px 26px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
   color: #fff;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 700;
-  transition: gap 180ms ease, border-color 180ms ease;
+  background: rgba(255, 255, 255, 0.025);
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
 }
 
 .textAction:hover {
-  gap: 17px;
   border-color: var(--violet);
   color: #fff;
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.textAction > span {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--ab-text);
+  background: #fff;
 }
 
 .scrollCue {
@@ -2864,7 +2879,8 @@
 }
 
 @media (max-width: 480px) {
-  .primaryAction {
+  .primaryAction,
+  .textAction {
     width: 100%;
   }
 

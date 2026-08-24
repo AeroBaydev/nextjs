@@ -15,7 +15,8 @@ export default function RootLayoutClient({ children }) {
     path !== "/careers" &&
     path !== "/get-in-touch" &&
     path !== "/aerobay-for-school" &&
-    path !== "/more/our-clients";
+    path !== "/more/our-clients" &&
+    !path.startsWith("/more/education");
 
   useEffect(() => {
     if (path === "/") {

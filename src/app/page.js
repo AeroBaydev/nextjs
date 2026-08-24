@@ -38,7 +38,9 @@ export default function Home() {
               </Link>
               <Link href="/aerobay-for-school" className={styles.textAction}>
                 Explore the ecosystem
-                <FontAwesomeIcon icon={faArrowRight} />
+                <span>
+                  <FontAwesomeIcon icon={faArrowRight} />
+                </span>
               </Link>
             </div>
           </div>

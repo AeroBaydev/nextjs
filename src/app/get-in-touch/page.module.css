@@ -276,8 +276,8 @@
   margin-top: 5px;
   padding: 0 8px 0 22px;
   border: 0;
-  border-radius: 12px;
-  color: #171319;
+  border-radius: 999px;
+  color: #fff;
   font: inherit;
   font-size: 13px;
   font-weight: 750;
@@ -311,10 +311,10 @@
   height: 42px;
   display: grid;
   place-items: center;
-  border-radius: 9px;
-  color: #fff;
+  border-radius: 50%;
+  color: #171519;
   font-size: 13px;
-  background: #171519;
+  background: #fff;
 }
 
 .privacyNote {
@@ -491,22 +491,38 @@ a.contactCard:hover .contactArrow {
 }
 
 .directions {
+  min-height: 58px;
   width: max-content;
   display: inline-flex;
   align-items: center;
-  gap: 13px;
+  justify-content: space-between;
+  gap: 22px;
   margin-top: 30px;
-  padding-bottom: 6px;
-  border-bottom: 1px solid rgba(201, 148, 255, 0.5);
-  color: #d7aeff;
-  font-size: 12px;
+  padding: 7px 7px 7px 22px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  color: #fff;
+  font-size: 13px;
   font-weight: 700;
-  transition: gap 180ms ease, color 180ms ease;
+  background: rgba(255, 255, 255, 0.025);
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
 }
 
 .directions:hover {
-  gap: 18px;
+  border-color: var(--violet);
   color: #fff;
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.directions span {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: #171519;
+  background: #fff;
 }
 
 .map {

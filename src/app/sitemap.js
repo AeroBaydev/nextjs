@@ -9,6 +9,11 @@ const routes = [
   { path: "/ai-robotics-lab", priority: 0.95, changeFrequency: "weekly" },
   { path: "/aerobay-for-school", priority: 0.9, changeFrequency: "monthly" },
   { path: "/more/education", priority: 0.9, changeFrequency: "monthly" },
+  {
+    path: "/more/education/revolutionising-education-with-composite-skill-labs",
+    priority: 0.7,
+    changeFrequency: "monthly",
+  },
   { path: "/about/the-aerobay-story", priority: 0.7, changeFrequency: "monthly" },
   { path: "/about/meet-the-visionaries", priority: 0.6, changeFrequency: "monthly" },
   { path: "/more/our-clients", priority: 0.6, changeFrequency: "monthly" },

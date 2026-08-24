@@ -381,7 +381,9 @@ export default function GetInTouch() {
                 className={styles.directions}
               >
                 Get directions
-                <FontAwesomeIcon icon={faArrowRight} />
+                <span aria-hidden="true">
+                  <FontAwesomeIcon icon={faArrowRight} />
+                </span>
               </a>
             </div>
 

@@ -254,7 +254,9 @@ export default function TheAerobayStory() {
                 className={styles.secondaryAction}
               >
                 Meet our team
-                <FontAwesomeIcon icon={faArrowRight} />
+                <span>
+                  <FontAwesomeIcon icon={faArrowRight} />
+                </span>
               </Link>
             </div>
           </div>

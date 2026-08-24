@@ -500,15 +500,15 @@
   align-items: center;
   justify-content: space-between;
   gap: 22px;
-  border-radius: 12px;
-  font-size: 12px;
+  border-radius: 999px;
+  font-size: 13px;
   font-weight: 750;
   transition: transform 180ms ease, border-color 180ms ease;
 }
 
 .primaryAction {
   padding: 7px 7px 7px 20px;
-  color: #171519;
+  color: #fff;
   background: var(--violet);
 }
 
@@ -517,16 +517,26 @@
   height: 42px;
   display: grid;
   place-items: center;
-  border-radius: 9px;
-  color: #fff;
-  background: #171519;
+  border-radius: 50%;
+  color: #171519;
+  background: #fff;
 }
 
 .secondaryAction {
-  padding: 0 18px;
+  padding: 7px 7px 7px 20px;
   border: 1px solid var(--line);
   color: #ddd8e0;
   background: rgba(255, 255, 255, 0.03);
+}
+
+.secondaryAction span {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: #171519;
+  background: #fff;
 }
 
 .primaryAction:hover,
