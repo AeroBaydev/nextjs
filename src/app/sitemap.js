@@ -19,6 +19,8 @@ const routes = [
   { path: "/more/our-clients", priority: 0.6, changeFrequency: "monthly" },
   { path: "/careers", priority: 0.6, changeFrequency: "monthly" },
   { path: "/get-in-touch", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/privacy-policy", priority: 0.3, changeFrequency: "yearly" },
+  { path: "/terms-and-conditions", priority: 0.3, changeFrequency: "yearly" },
 ];
 
 export default function sitemap() {

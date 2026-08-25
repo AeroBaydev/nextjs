@@ -8,6 +8,7 @@ import HomeHeroVideo from "./home-hero-video";
 import HomeSolutions from "./home-solutions";
 import HomeEcosystem from "./home-ecosystem";
 import HomeStandout from "./home-standout";
+import HomeBrandNetwork from "./home-brand-network";
 import HomeClients from "./home-clients";
 import HomeTestimonials from "./home-testimonials";
 import styles from "./home.module.css";
@@ -60,9 +61,9 @@ export default function Home() {
 
       <HomeStandout />
 
-      <HomeClients />
+      <HomeBrandNetwork />
 
-      <HomeTestimonials />
+      <HomeClients />
 
       <section className={styles.cta}>
         <div className={styles.shell}>
@@ -84,6 +85,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <HomeTestimonials />
     </main>
   );
 }

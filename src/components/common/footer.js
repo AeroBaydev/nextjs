@@ -1,129 +1,213 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {  faInstagram, faFacebook, faLinkedin, faYoutube } from '@fortawesome/free-brands-svg-icons';
-import { faPhone } from '@fortawesome/free-solid-svg-icons';
-import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
-import Image from 'next/image';
-const Footer = () => {
-    return (<>  <footer className="footer">
-        <div className="footer-top">
-            <div className="container">
-                <div className="col-12 form-tp">
-                    <div className="row">
-                        <div className="col-md-7">
-                            <h4 className="text-uppercase">Only the good stuff! <span>we promise!</span></h4>
-                        </div>
-                        <div className="col-md-5">
-                            <form className="subscribe_fm">
-                                <input type="email" className="form-control" placeholder="Your Email" required />
-                                <button type="submit" className="btn btn-primary"><span className="outer-bx">Subscribe</span></button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <div className="col-12 social">
-                    <div className="row">
-                        <ul className="social_links d-flex">
-                            <li>
-                                <a target="_blank" href="https://www.instagram.com/aero_bay?igsh=MW05OHVzOW9naGx0OQ%3D%3D&utm_source=qr">
-                                    <FontAwesomeIcon icon={faInstagram} />
-                                </a>
-                            </li>
-                            <li>
-                                <a target="_blank" href="https://www.facebook.com/aviotronaerospace?mibextid=LQQJ4d">
-                                    <FontAwesomeIcon icon={faFacebook} />
-                                </a>
-                            </li>
-                            <li>
-                                <a target="_blank" href="https://www.linkedin.com/company/aviotron-aerospace/">
-                                    <FontAwesomeIcon icon={faLinkedin} />
-                                </a>
-                            </li>
-                            <li>
-                                <a target="_blank" href="https://youtube.com/@aerobaypodcast?si=vobd5gUxB0NJX_bD">
-                                    <FontAwesomeIcon icon={faYoutube} />
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div className="footer-middle mb-5">
-            <div className="container">
-                <div className="col-12">
-                    <div className="row">
-                        <div className="col-md-5">
-                            <div className="card card-logo">
-                                <img src="/images/ftr-logo.svg" alt="" />
-                            </div>
-                        </div>
-                        <div className="col-md-7">
-                            <div className="col-md-12 p-0 card ftr-card">
-                                <div className="row">
-                                    <div className="col-md-8">
-                                        <p>‘AeroBay’ brand is owned and operated by Aviotron Aerospace Pvt Ltd. We are one of the fastest-growing companies in India and are focused on upskilling the next generation of Aviators, Designers, Scientists and many more. Our experiential learning solutions are adored by students, parents and educational institutions.</p>
-                                        <div className="col-md-10 p-0 crd-btm-content">
-                                            <div className="row">
-                                                <div className="col-md-6">
-                                                    <h6>Phone</h6>
-                                                    <ul className="list-inline">
-                                                        <li>
-                                                            <a href="tel:9942329092">
-                                                                <FontAwesomeIcon icon={faPhone} /> +91 9942329092
-                                                            </a>
-                                                        </li>
-														<li>
-                                                            <a href="tel:9871213152">
-                                                                <FontAwesomeIcon icon={faPhone} /> +91 9871213152
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                                <div className="col-md-6">
-                                                    <h6>Address</h6>
-                                                    <p>D-64, D Block, Sector 63, Noida, Hazratpur Wajidpur, Uttar Pradesh 201301</p>
-                                                </div>
-                                            </div>
+"use client";
 
-                                        </div>
-                                    </div>
-                                    <div className="col-md-3 offset-md-1 ftr-combobx">
-                                        <div className="cmb-wraps">
-                                            <ul className="list-inline ftr-rtlist">
-                                                <li><a href="#">Our story</a></li>
-                                                <li><a href="#">Blog</a></li>
-                                                <li><a href="#">Terms & conditions</a></li>
-                                                <li><a href="#">Privacy policy</a></li>
-                                            </ul>
-                                            <div className="crd-btm-content2">
-                                                <ul className="list-inline btm-list ">
-                                                    <li>General Enquiry:</li>
-                                                    <li><a href="mailto:info@aviotron.com">info@aviotron.com</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div className="footer-btm text-center">
-            <div className="container">
-                <p>©2024 Aviotron Aerospace Pvt. Ltd</p>
-            </div>
-        </div>
-    </footer>
-        {/* <!-- Back to top-- > */}
-        <div className="btn-back-to-top" id="myBtn">
-            <span className="symbol-btn-back-to-top">
-                
-				<FontAwesomeIcon icon={faChevronUp} />
+import { useEffect, useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFacebookF,
+  faInstagram,
+  faLinkedinIn,
+  faYoutube,
+} from "@fortawesome/free-brands-svg-icons";
+import {
+  faArrowRight,
+  faChevronUp,
+  faEnvelope,
+  faLocationDot,
+  faPhone,
+} from "@fortawesome/free-solid-svg-icons";
+import styles from "./footer.module.css";
+
+const exploreLinks = [
+  { label: "Our Story", href: "/about/the-aerobay-story" },
+  { label: "AeroBay for Schools", href: "/aerobay-for-school" },
+  { label: "Our School Network", href: "/more/our-clients" },
+  { label: "Education", href: "/more/education" },
+  { label: "Careers", href: "/careers" },
+];
+
+const socialLinks = [
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/aero_bay?igsh=MW05OHVzOW9naGx0OQ%3D%3D&utm_source=qr",
+    icon: faInstagram,
+  },
+  {
+    label: "Facebook",
+    href: "https://www.facebook.com/aviotronaerospace?mibextid=LQQJ4d",
+    icon: faFacebookF,
+  },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/company/aviotron-aerospace/",
+    icon: faLinkedinIn,
+  },
+  {
+    label: "YouTube",
+    href: "https://youtube.com/@aerobaypodcast?si=vobd5gUxB0NJX_bD",
+    icon: faYoutube,
+  },
+];
+
+const contactLinks = [
+  { label: "+91 9942329092", href: "tel:9942329092", icon: faPhone },
+  { label: "+91 9871213152", href: "tel:9871213152", icon: faPhone },
+  {
+    label: "info@aviotron.com",
+    href: "mailto:info@aviotron.com",
+    icon: faEnvelope,
+  },
+];
+
+export default function Footer() {
+  const [showBackToTop, setShowBackToTop] = useState(false);
+
+  useEffect(() => {
+    const updateBackToTop = () => setShowBackToTop(window.scrollY > 700);
+
+    updateBackToTop();
+    window.addEventListener("scroll", updateBackToTop, { passive: true });
+
+    return () => window.removeEventListener("scroll", updateBackToTop);
+  }, []);
+
+  const scrollToTop = () => {
+    const reduceMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+
+    window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
+  };
+
+  return (
+    <footer className={styles.footer}>
+      <div className={styles.shell}>
+        <section className={styles.cta} aria-labelledby="footer-cta-title">
+          <div className={styles.ctaCopy}>
+            <p className={styles.eyebrow}>Start a conversation</p>
+            <h2 id="footer-cta-title">
+              Let&apos;s build <span>what&apos;s next.</span>
+            </h2>
+          </div>
+          <p className={styles.ctaText}>
+            Bring hands-on learning and technology experiences closer to your
+            students.
+          </p>
+          <Link href="/get-in-touch" className={styles.primaryAction}>
+            Talk to AeroBay
+            <span aria-hidden="true">
+              <FontAwesomeIcon icon={faArrowRight} />
             </span>
+          </Link>
+        </section>
+
+        <div className={styles.divider} aria-hidden="true">
+          <span />
         </div>
-    </>)
+
+        <div className={styles.navigation}>
+          <div className={styles.brandColumn}>
+            <Link href="/" className={styles.logoLink} aria-label="AeroBay home">
+              <Image
+                src="/images/logo.png"
+                alt="AeroBay"
+                width={166}
+                height={78}
+                className={styles.logo}
+              />
+            </Link>
+            <p className={styles.brandStatement}>
+              An experiential learning ecosystem helping the next generation
+              explore technology, design, science and real-world problem solving.
+            </p>
+            <p className={styles.ownership}>
+              AeroBay is a brand owned and operated by Aviotron Aerospace Pvt Ltd.
+            </p>
+          </div>
+
+          <nav className={styles.linkColumn} aria-label="Footer navigation">
+            <p className={styles.columnTitle}>Explore</p>
+            <ul>
+              {exploreLinks.map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href}>{link.label}</Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          <div className={styles.linkColumn}>
+            <p className={styles.columnTitle}>Connect</p>
+            <Link href="/get-in-touch" className={styles.contactPageLink}>
+              Get in Touch
+            </Link>
+            <ul className={styles.socialList}>
+              {socialLinks.map((link) => (
+                <li key={link.label}>
+                  <a
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${link.label} — opens in a new tab`}
+                    title={link.label}
+                  >
+                    <span aria-hidden="true">
+                      <FontAwesomeIcon icon={link.icon} />
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <address className={styles.contactColumn}>
+            <p className={styles.columnTitle}>Contact</p>
+            <ul>
+              {contactLinks.map((link) => (
+                <li key={link.href}>
+                  <a href={link.href}>
+                    <span aria-hidden="true">
+                      <FontAwesomeIcon icon={link.icon} />
+                    </span>
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+              <li className={styles.location}>
+                <span aria-hidden="true">
+                  <FontAwesomeIcon icon={faLocationDot} />
+                </span>
+                <span>
+                  D-64, D Block, Sector 63, Noida,
+                  <br />
+                  Hazratpur Wajidpur, Uttar Pradesh 201301, India
+                </span>
+              </li>
+            </ul>
+          </address>
+        </div>
+
+        <div className={styles.bottomBar}>
+          <p>
+            &copy; {new Date().getFullYear()} AeroBay / Aviotron Aerospace Pvt. Ltd.
+          </p>
+          <nav className={styles.legalLinks} aria-label="Legal">
+            <Link href="/privacy-policy">Privacy Policy</Link>
+            <Link href="/terms-and-conditions">Terms &amp; Conditions</Link>
+          </nav>
+        </div>
+      </div>
+
+      <button
+        type="button"
+        className={`${styles.backToTop} ${showBackToTop ? styles.visible : ""}`}
+        onClick={scrollToTop}
+        aria-label="Back to top"
+        tabIndex={showBackToTop ? 0 : -1}
+      >
+        <FontAwesomeIcon icon={faChevronUp} aria-hidden="true" />
+      </button>
+    </footer>
+  );
 }
-export default Footer;
-// Note: Ensure that the FontAwesome icons are properly imported and available in your project.

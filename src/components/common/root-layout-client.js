@@ -16,6 +16,8 @@ export default function RootLayoutClient({ children }) {
     path !== "/get-in-touch" &&
     path !== "/aerobay-for-school" &&
     path !== "/more/our-clients" &&
+    path !== "/privacy-policy" &&
+    path !== "/terms-and-conditions" &&
     !path.startsWith("/more/education");
 
   useEffect(() => {

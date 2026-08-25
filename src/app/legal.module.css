@@ -1,0 +1,150 @@
+.page {
+  min-height: 100vh;
+  color: #211d25;
+  background: #f4f1f6;
+}
+
+.hero {
+  padding: clamp(96px, 10vw, 152px) 0 clamp(54px, 6vw, 86px);
+  color: #fff;
+  background:
+    radial-gradient(circle at 82% 10%, rgba(145, 76, 232, 0.26), transparent 35%),
+    #0d0b11;
+}
+
+.shell {
+  width: min(100% - 48px, 1120px);
+  margin: 0 auto;
+}
+
+.eyebrow {
+  margin: 0 0 17px;
+  color: #b879ff;
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  max-width: 850px;
+  margin: 0;
+  font-size: clamp(48px, 6vw, 84px);
+  font-weight: 450;
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+}
+
+.updated {
+  margin: 24px 0 0;
+  color: #918a98;
+  font-size: 12px;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 230px minmax(0, 720px);
+  gap: clamp(48px, 8vw, 110px);
+  align-items: start;
+  padding: clamp(60px, 7vw, 100px) 0 clamp(80px, 9vw, 130px);
+}
+
+.sideNote {
+  position: sticky;
+  top: 100px;
+  padding-top: 17px;
+  border-top: 1px solid rgba(33, 29, 37, 0.18);
+}
+
+.sideNote p {
+  margin: 0 0 18px;
+  color: #746e78;
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+.sideNote a {
+  color: #7437c2;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.article {
+  min-width: 0;
+}
+
+.intro {
+  margin: 0 0 45px;
+  color: #4f4854;
+  font-size: clamp(17px, 1.5vw, 20px);
+  line-height: 1.75;
+}
+
+.article section {
+  padding: 30px 0;
+  border-top: 1px solid rgba(33, 29, 37, 0.12);
+}
+
+.article section:last-child {
+  padding-bottom: 0;
+}
+
+.article h2 {
+  margin: 0 0 14px;
+  color: #211d25;
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+.article p,
+.article li {
+  color: #625b67;
+  font-size: 14px;
+  line-height: 1.78;
+}
+
+.article p {
+  margin: 0;
+}
+
+.article p + p {
+  margin-top: 12px;
+}
+
+.article ul {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding-left: 19px;
+  list-style: disc;
+}
+
+.article a {
+  color: #7437c2;
+  font-weight: 650;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.article a:focus-visible,
+.sideNote a:focus-visible {
+  outline: 2px solid #7437c2 !important;
+  outline-offset: 4px;
+}
+
+@media (max-width: 760px) {
+  .shell {
+    width: calc(100% - 36px);
+  }
+
+  .content {
+    grid-template-columns: 1fr;
+    gap: 42px;
+  }
+
+  .sideNote {
+    position: static;
+    max-width: 500px;
+  }
+}
