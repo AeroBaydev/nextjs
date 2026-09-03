@@ -32,7 +32,7 @@ const pillars = [
 ];
 
 const impact = [
-  { value: "22+", label: "States across India" },
+  { value: "23+", label: "States across India" },
   { value: "250+", label: "Partner schools" },
   { value: "100K+", label: "Students empowered" },
 ];

@@ -32,12 +32,6 @@ const solutions = [
     tag: "Integrated STEAM",
   },
   {
-    title: "Aeromodelling Lab",
-    copy: "An aviation-focused environment where students explore aircraft design, build models and learn through testing and flight.",
-    image: "/images/gallery-big1.jpg",
-    tag: "Flight & design",
-  },
-  {
     title: "Idea Lab",
     copy: "A creative space where students develop ideas through design, prototyping, iteration and collaborative problem-solving.",
     image: "/images/gallery-big6.JPG",

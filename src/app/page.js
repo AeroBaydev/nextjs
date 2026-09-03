@@ -28,7 +28,7 @@ export default function Home() {
               <span>become launchpads.</span>
             </h1>
             <p className={styles.heroCopy}>
-              AeroBay builds and operates experiential STEM & STEAM learning ecosystems that turn curiosity into real-world skills, confidence and possibilities.
+              AeroBay builds and operates experiential STEAM Composite Skill Lab learning ecosystems that transform curiosity into real-world skills, confidence, and possibilities.
             </p>
             <div className={styles.heroActions}>
               <Link href="/get-in-touch" className={styles.primaryAction}>

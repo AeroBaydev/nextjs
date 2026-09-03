@@ -91,7 +91,7 @@ const milestones = [
 
 const impact = [
   { value: "250+", label: "Partner schools" },
-  { value: "22+", label: "States reached" },
+  { value: "23+", label: "States reached" },
   { value: "100K+", label: "Student journeys" },
 ];
 
