@@ -1,13 +1,13 @@
 import React, { useMemo } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import '../../../node_modules/swiper/swiper-bundle.min.css'; // Correct import path for Swiper's CSS
+import 'swiper/css/bundle';
 import Image from 'next/image';
 import "./style.css"
 export default function Slider({ data, style, options }) {
     // Memoize the data and options to prevent re-renders caused by prop changes
     const memoizedData = useMemo(() => data, [JSON.stringify(data)]);
     const memoizedOptions = useMemo(() => options, [JSON.stringify(options)]);
-    
+
     const truncateText = (text, wordLimit = 8) => {
         if (!text) return '';
         const words = text.split(' ');
